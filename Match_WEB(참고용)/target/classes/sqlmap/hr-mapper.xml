@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hr.mapper">
+<!-- TOP3 년도별 채용인원수 조회 -->
+<!-- <select id="hirement_top3_year" resultType="hashmap"> -->
+<select id="hirement_top3_year" resultType="common.LowerKeyMap">
+<![CDATA[ 
+	select (select department_name from departments where department_id=e.department_id) department_name, 
+	       sum( decode(unit, 2001, count, 0) ) y2001, 
+	       sum( decode(unit, 2002, count, 0) ) y2002,
+	       sum( decode(unit, 2003, count, 0) ) y2003,
+	       sum( decode(unit, 2004, count, 0) ) y2004,
+	       sum( decode(unit, 2005, count, 0) ) y2005,
+	       sum( decode(unit, 2006, count, 0) ) y2006,
+	       sum( decode(unit, 2007, count, 0) ) y2007,
+	       sum( decode(unit, 2008, count, 0) ) y2008
+	from ( select department_id, to_char(hire_date, 'yyyy') unit, count(*) count
+	       from employees
+	       where department_id in ( select department_id 
+	                                from (select dense_rank() over( order by count desc ) rank, department_id, count
+	                                      from (select department_id, count(*) count
+	                                            from employees
+	                                            group by department_id) ) e
+	                                where rank <= 3 )
+	       group by department_id, to_char(hire_date, 'yyyy') ) e
+	group by department_id       
+	order by 1
+]]>	
+</select>
+
+<!-- TOP3 월별 채용인원수 조회 -->
+<select id="hirement_top3_month" resultType="hashmap">
+<![CDATA[ 
+	select (select department_name from departments where department_id=e.department_id) department_name, 
+	       sum( decode(unit, '01', count, 0) ) m01, 
+	       sum( decode(unit, '02', count, 0) ) m02,
+	       sum( decode(unit, '03', count, 0) ) m03,
+	       sum( decode(unit, '04', count, 0) ) m04,
+	       sum( decode(unit, '05', count, 0) ) m05,
+	       sum( decode(unit, '06', count, 0) ) m06,
+	       sum( decode(unit, '07', count, 0) ) m07,
+	       sum( decode(unit, '08', count, 0) ) m08,
+	       sum( decode(unit, '09', count, 0) ) m09,
+	       sum( decode(unit, '10', count, 0) ) m10,
+	       sum( decode(unit, '11', count, 0) ) m11,
+	       sum( decode(unit, '12', count, 0) ) m12
+	from ( select department_id, to_char(hire_date, 'mm') unit, count(*) count
+	       from employees
+	       where department_id in ( select department_id 
+	                                from (select dense_rank() over( order by count desc ) rank, department_id, count
+	                                      from (select department_id, count(*) count
+	                                            from employees
+	                                            group by department_id) ) e
+	                                where rank <= 3 )
+	       group by department_id, to_char(hire_date, 'mm') ) e
+	group by department_id       
+	order by 1
+]]>	
+</select>
+
+<!-- 년도별 채용인원수 조회 -->
+<select id="hirement_year" resultType="hashmap">
+	select to_char(hire_date,'yyyy') || '년' unit, count(*) count
+	from employees
+	group by  to_char(hire_date,'yyyy')
+	order by 1
+</select>
+
+<!-- 월별 채용인원수 조회 -->
+<select id="hirement_month" resultType="hashmap">
+	select to_char(hire_date, 'mm') || '월' unit, count(*) count
+	from employees
+	group by to_char(hire_date, 'mm')
+	order by 1
+</select>
+
+
+
+<!-- 부서별사원수 조회 -->
+<select id="department_chart" resultType="hashmap">
+	select  nvl( (select department_name from departments 
+	              where department_id=e.department_id), '미배치' ) department_name, count(*) count
+	from employees e
+	group by department_id
+	order by 1
+</select>
+
+
+<select id="list" resultType="employee.EmployeeVO">
+	select e.*,(select department_name from departments where department_id = e.department_id) department_name
+	,(select job_title from jobs where job_id = e.job_id) job_title
+	from employees e
+</select>
+	<select id="department" resultType="employee.DepartmentVO">
+	select distinct department_id,
+					nvl(
+          (select department_name from departments
+                where department_id=e.department_id) , '기타') department_name
+          
+	from employees e
+  order by department_id
+</select>
+
+<select id="depts" resultType="employee.EmployeeVO">
+	select e.*,(select department_name from departments where department_id = e.department_id) department_name
+	,(select job_title from jobs where job_id = e.job_id) job_title
+	from employees e
+	<if test='depts==0'>where e.department_id is null</if>
+	<if test='depts>0'>where e.department_id = #{depts}</if>
+</select>
+<select id="detail" resultType="employee.EmployeeVO">
+
+select e.*, last_name ||' ' || first_name , department_name , job_title
+from employees e , departments d, jobs j 
+where employee_id = #{id}
+and e.department_id = d.department_id(+)
+and e.job_id = j.job_id
+</select>
+
+
+
+</mapper>
