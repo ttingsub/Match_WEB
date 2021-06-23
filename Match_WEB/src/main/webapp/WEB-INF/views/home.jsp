@@ -1,38 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-	<meta charset="utf-8">
-       <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 
-	<title>Home</title>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
- Firebase + Realtime + Web 
+<img alt="x" src="imgs/hanul.png" style="width: 80%" />
+	<h1>홈화면입니다. 막막합니다 ,,</h1>
+	버튼누르면 real time에 등록됨 일단 이렇게 놔둠
+	<p id="demo">A Paragraph.</p>
 
-        <p id="demo">A Paragraph.</p>
+	<pre id="object"></pre>
 
-        <pre id="object"></pre>
-
-        <button type="button" onclick="myFunction()">데이터 쓰기</button>
+	<button type="button" onclick="myFunction()">데이터 쓰기</button>
 
 
 
 
-<P>  The time on the server is ${serverTime}. </P>
+	<P>The time on the server is ${serverTime}.</P>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-<script>
+	<script
+		src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+	<script
+		src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+	<script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
  var firebaseConfig = {
@@ -66,10 +63,10 @@
   });
 
 </script>
-  
-  
-  
-<script>
+
+
+
+	<script>
 
             function myFunction() {
 
