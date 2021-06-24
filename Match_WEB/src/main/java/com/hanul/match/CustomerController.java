@@ -16,7 +16,7 @@ import customer.CustomerVO;
 
 @Controller
 public class CustomerController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 	
 	@Autowired private CustomerServiceImpl service;
 	

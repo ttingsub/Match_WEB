@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <body>
-<img alt="x" src="imgs/hanul.png" style="width: 80%" />
+<img alt="x" src="imgs/header.png" style="width: 60%" />
 	<h1>홈화면입니다. 막막합니다 ,,</h1>
 	버튼누르면 real time에 등록됨 일단 이렇게 놔둠
 	<p id="demo">A Paragraph.</p>
@@ -70,19 +70,33 @@
 
             function myFunction() {
 
-                document.getElementById("demo").innerHTML = "쓰기를 완료";
+                document.getElementById("demo").innerHTML = "쓰기를 완료 5트";
 
-                alert("쓰기 완료");
+                alert("쓰기 완료2");
 
                 
 
                 //firebase에 쓰기
 
-                firebase.database().ref('Demo').set({
+                firebase.database().ref('matchapp/UserAccount/Web').set({
 
-                    username: "제발 ㅅㅂ",
+                    address: " 웹에서 가져온 이름입니다.",
 
-                    age: 11                    
+                    changed: 11,
+                    
+                    emailId: "테스트 테스트 테스트",
+                    
+                    idToken: "임시",
+                    
+                    latitude: 22,
+                    
+                    longitude: 33,
+                    
+                    nickName: "명섭",
+                    
+                    phoneNumber: "+821056067426"
+                    
+                    
 
                 });
 
