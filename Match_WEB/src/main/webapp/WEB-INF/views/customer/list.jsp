@@ -29,40 +29,29 @@
 	// Get a reference to the database service
 	var database = firebase.database();
 	
-	//고유 아이디 만들기
-	function guid() {
-		function s4() {
-		  return ((1 + Math.random()) * 0x10000 | 0).toString(16).substring(1);
-		}
-		return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-	}
-
-	//메세지 읽기
-	var UserAccountRef = database.ref("UserAccount");
-	UserAccountRef.on('child_added', function(snapshot) {
-	  var data = snapshot.val();
-		var UserAccount = data.nickName;
-		if(UserAccount != undefined){
-			result.value += UserAccount + "\n";
-			
-			logger.info(result);
-			logger.info(UserAccount);
-
-		}
-	});
+	
+var tbody = '';
+	//메세지 읽기 파이어베이스 값 불러오기
+ var dbTestRef = database.ref('matchapp/UserAccount');
+            dbTestRef.on('child_added', function(data){
+            	$('table tbody').html('');
+            	$(data.val()).each(function(){
+            		tbody += '<tr><td><a class="UserAccount">'+ this.nickName +'</a></td><td>'+this.emailId+'</td></tr>' ;
+            	});
+           		$('table tbody').html(tbody );
+            });
 	</script>
 <body>
 	<!--Content  -->
 	<table>
-		<tr><th>고객명</th>
+		<thead>
+		<tr><th>닉네임</th>
 			<th>이메일</th>
 		</tr>
-		<c:forEach items="${list}" var="vo">
-			<tr>
-				<th><a id="result"></a></th>
-				<th><a id="UserAccount"'></a></th>
-			</tr>
-		</c:forEach>
+		</thead>
+		<tbody>
+		
+		</tbody>
 	</table>
 
 </body>

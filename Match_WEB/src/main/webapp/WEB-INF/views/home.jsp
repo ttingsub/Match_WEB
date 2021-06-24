@@ -52,15 +52,15 @@
 
   var preObject = document.getElementById("object");
 
-  var dbRef = firebase.database().ref().child("Demo");
 
   //dbRef.on('value',snap => demo.innerHTML = snap.val());
 
-  dbRef.on('value',snap => {
+ /*  dbRef.on('value',snap => {
 
       preObject.innerText = JSON.stringify(snap.val(),null,3);
 
-  });
+  }); */
+
 
 </script>
 
@@ -78,7 +78,7 @@
 
                 //firebase에 쓰기
 
-                firebase.database().ref('matchapp/UserAccount/Web').set({
+                firebase.database().ref('matchapp/UserAccount').push({
 
                     address: " 웹에서 가져온 이름입니다.",
 
@@ -102,6 +102,11 @@
 
             }
 
+            
+            var dbTestRef = database.ref('matchapp/UserAccount/')
+            dbTestRef.on('child_added', function(data){
+            	console.log(data.val())
+            })
         </script>
 
 
