@@ -4,11 +4,11 @@
 <header style="border-bottom: 1px solid #ccc; padding: 15px 0; text-align: left ">
 		<div class='category' style='margin-left: 100px'>
 			<ul>
-				<li><a href='<c:url value="/" />'><img alt="x" src="imgs/hanul.logo.png"></a></li>
+				<li><a href='<c:url value="/" />'><img alt="x" src="imgs/momo.logo.png" style="width: 54px; height: 48px;"></a></li>
 				<li><a class="${category eq 'cu' ? 'active' : ''}" href='list.cu'>고객관리</a></li>
 				<li><a class="${category eq 'hr' ? 'active' : ''}" href='list.hr'>사원관리</a></li>
 				<li><a class="${category eq 'no' ? 'active' : ''}" href='list.no'>공지사항</a></li>
-				<li><a class="${category eq 'bo' ? 'active' : ''}" href='list.bo'>방명록</a></li>
+				<li><a class="${category eq 'bo' ? 'active' : ''}" href='list.bo'>매칭방</a></li>
 				<li><a class="${category eq 'da' ? 'active' : ''}"  href='list.da'>공공데이터</a></li>
 				<li><a class="${category eq 'vi' ? 'active' : ''}"  href='list.vi'>시각화</a></li>
 			</ul>

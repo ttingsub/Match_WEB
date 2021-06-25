@@ -14,6 +14,8 @@
 #comment_regist span { width:50%; float:left; }
 </style>
 </head>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
 <body>
 <h3>방명록 안내</h3>
 <table>
@@ -21,9 +23,9 @@
 	<td colspan='5' class='left' style="word-break:break-all; ">${vo.title}</td>
 </tr>
 <tr><th>작성자</th>
-	<td>${vo.name}</td>
+	<td class='writer'></td>
 	<th class='w-px100'>작성일자</th>
-	<td class='w-px100'>${vo.writedate}</td>
+	<td class='w-px100'></td>
 	<th class='w-px80'>조회수</th>
 	<td class='w-px80'>${vo.readcnt}</td>
 </tr>
@@ -74,33 +76,33 @@
 
 <script type="text/javascript" src="js/file_check.js"></script>
 <script type="text/javascript">
-function comment_regist(){
-	if( ${ empty logininfo } ){
-		alert('댓글을 등록하려면 로그인하세요!');
-		return ;
-	}else if( $.trim($('#comment').val())=='' ){
-		alert('댓글을 입력하세요!');
-		$('#comment').focus();
-		$('#comment').val('');
-		return;
-	}
+// function comment_regist(){
+// 	if( ${ empty logininfo } ){
+// 		alert('댓글을 등록하려면 로그인하세요!');
+// 		return ;
+// 	}else if( $.trim($('#comment').val())=='' ){
+// 		alert('댓글을 입력하세요!');
+// 		$('#comment').focus();
+// 		$('#comment').val('');
+// 		return;
+// 	}
 	
-	$.ajax({
-		url: 'board/comment/insert',
-		data: { content:$('#comment').val(), pid:${vo.id} },
-		success: function( response ){
-			if( response ){
-				alert('댓글이 저장되었습니다!');
-				$('#comment').val('');
-				comment_list();
-			}else
-				alert('댓글 저장 실패 ㅠㅠ');
+// 	$.ajax({
+// 		url: 'board/comment/insert',
+// 		data: { content:$('#comment').val(), pid:${vo.id} },
+// 		success: function( response ){
+// 			if( response ){
+// 				alert('댓글이 저장되었습니다!');
+// 				$('#comment').val('');
+// 				comment_list();
+// 			}else
+// 				alert('댓글 저장 실패 ㅠㅠ');
 			
-		},error: function(req, text){
-			alert(text+':'+req.status);
-		}
-	});
-}
+// 		},error: function(req, text){
+// 			alert(text+':'+req.status);
+// 		}
+// 	});
+// }
 
 
 function comment_list(){
@@ -157,6 +159,57 @@ $(document).on('click', '#preview-img', function(){
 	$('#popup, #popup-background').css('display', 'none');
 	
 });
+
+
+
+
+
+//파이어베이스
+//Initialize Firebase
+	var firebaseConfig = {
+			 apiKey: "AIzaSyCXREheHWnwVa7eL6I5zKGAjuRdwKp7QRc",
+			    authDomain: "match-app-b8c4a.firebaseapp.com",
+			    databaseURL: "https://match-app-b8c4a-default-rtdb.firebaseio.com",
+			    projectId: "match-app-b8c4a",
+			    storageBucket: "match-app-b8c4a.appspot.com",
+			    messagingSenderId: "217394658931",
+			    appId: "1:217394658931:web:5a5fda3f5e377b29f3f406",
+			    measurementId: "G-0NK2LLS1Z8"
+	};
+	firebase.initializeApp(firebaseConfig);
+	
+	var PostField = document.getElementById("Post"); 
+	var database = firebase.database();
+
+	
+	var tbody = '';
+	
+	var dbTestRef = database.ref('matchapp/Post');
+		dbTestRef.on('child_added', function(data){
+			$('table').html('');
+			
+			
+			
+			$(data.val()).each(function(){
+				thead += '<tr><th class="w-px120">제목</th><td colspan="5" class="left" style="word-break:break-all; ">'+ this.title +'</td></tr>';
+				tbody += '<tr><th>작성자</th><td class="writer">'+ this.writer'</td><th class="w-px100">작성일자</th><td class="w-px100">'+ this.time + '</td></tr>' ;
+				tfoot += '<tr><th>내용</th><td colspan="5" class="left">'+ this.content +'</td></tr>';
+				
+			});
+			$('table thead').html(thead);
+			$('table tbody').html(tbody);
+			$('table tfoot').html(tfoot);
+//			console.log(Post);
+		
+			/* <tr><th>작성자</th>
+			<td class='writer'></td>
+			<th class='w-px100'>작성일자</th>
+			<td class='w-px100'></td>
+			<th class='w-px80'>조회수</th>
+			<td class='w-px80'>${vo.readcnt}</td>
+		</tr> */
+		
+		});
 </script>
 </body>
 </html>

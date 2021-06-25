@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
 <body>
 	<h3>공지글 목록</h3>
 	<form action="list.no" method="post">
@@ -36,14 +38,20 @@
 		<input type="hidden" name='curPage' value='1' />
 	</form>
 	<table class='tb_list'>
+		<thead>
+<!-- 			<th class="w-px60">번호</th> -->
 		<tr>
-			<th class="w-px60">번호</th>
 			<th class="w-px100">제목</th>
 			<th class="w-px120">작성자</th>
 			<th class="w-px120">작성일자</th>
 		</tr>
-		<c:forEach items="${page.list}" var="vo">
-			<tr>
+		</thead>
+			<tbody>
+			
+			</tbody>
+			
+			
+			<%-- <tr>
 				<td>${vo.no}</td>
 				<td class="left">
 					<c:forEach var="i" begin="1" end="${vo.indent }" >
@@ -53,14 +61,46 @@
 				</td>
 					<td>${vo.writer}</td>
 					<td>${vo.writedate}</td>
-			</tr>
-		</c:forEach>
+			</tr> --%>
 		
 	</table>
 	<div class="btnSet">
 		<jsp:include page="/WEB-INF/views/include/page.jsp"/>
 	</div>
-	
+	<script>
+	//파이어베이스
+	// Initialize Firebase
+		var firebaseConfig = {
+				 apiKey: "AIzaSyCXREheHWnwVa7eL6I5zKGAjuRdwKp7QRc",
+				    authDomain: "match-app-b8c4a.firebaseapp.com",
+				    databaseURL: "https://match-app-b8c4a-default-rtdb.firebaseio.com",
+				    projectId: "match-app-b8c4a",
+				    storageBucket: "match-app-b8c4a.appspot.com",
+				    messagingSenderId: "217394658931",
+				    appId: "1:217394658931:web:5a5fda3f5e377b29f3f406",
+				    measurementId: "G-0NK2LLS1Z8"
+		};
+		firebase.initializeApp(firebaseConfig);
+		
+		var ServiceCenterField = document.getElementById("ServiceCenter"); 
+		var database = firebase.database();
+
+		
+		var tbody = '';
+		
+		var dbTestRef = database.ref('matchapp/ServiceCenter');
+			dbTestRef.on('child_added', function(data){
+				$('table tbody').html('');
+				console.log('>',data.val());
+				
+				
+				$(data.val()).each(function(){
+					tbody += '<tr><td><a class="ServiceCenter">' + this.title + '</a></td><td>' + this.writer +'</td><td>' + this.time + '</td></tr>'  ;
+				});
+				$('table tbody').html(tbody);
+//	 			console.log(Post);
+			});
+	</script>
 </body>
 </html>
 

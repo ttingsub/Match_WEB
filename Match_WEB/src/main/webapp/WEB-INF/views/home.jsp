@@ -10,7 +10,7 @@
 </head>
 <body>
 <img alt="x" src="imgs/header.png" style="width: 60%" />
-	<h1>홈화면입니다. 막막합니다 ,,</h1>
+	<h1>홈화면 구상중.</h1>
 	버튼누르면 real time에 등록됨 일단 이렇게 놔둠
 	<p id="demo">A Paragraph.</p>
 

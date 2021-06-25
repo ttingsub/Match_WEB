@@ -20,8 +20,11 @@ public class BoardDAO implements BoardService {
 	@Override
 	public BoardPage board_list(BoardPage page) {
 		//전체 목록건수 조회
-		page.setTotalList( sql.selectOne("board.mapper.totalList", page) );
-		page.setList( sql.selectList("board.mapper.list", page) );
+		int paget =  sql.selectOne("board.mapper.totalList", page) ;
+		page.setTotalList(paget);
+		
+		List<BoardVO> list =  sql.selectList("board.mapper.list", page) ; 
+		page.setList(list);
 		return page;
 	}
 

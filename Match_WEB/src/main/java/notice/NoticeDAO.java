@@ -55,9 +55,11 @@ public class NoticeDAO implements NoticeService{
 	@Override
 	public NoticePage notice_list(NoticePage page) {
 		//총 글 갯수를 가져와서 setTotalList
-		page.setTotalList( sql.selectOne("notice.mapper.totalList" , page) );
+		int pagett = sql.selectOne("notice.mapper.totalList" , page);
+		page.setTotalList(pagett );
 		//총 글 내용을 가지고 올것
-		page.setList( sql.selectList("notice.mapper.list" , page) );
+		List<NoticeVO> list =  sql.selectList("notice.mapper.list" , page);
+		page.setList( list);
 		return page;
 	}
 

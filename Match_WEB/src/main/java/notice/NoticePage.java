@@ -15,6 +15,8 @@ public class NoticePage extends PageVO{
 		return list;
 	}
 
+	
+	
 	public void setList(List<NoticeVO> list) {
 		this.list = list;
 	}

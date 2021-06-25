@@ -18,4 +18,5 @@ public class BoardPage extends PageVO {
 		this.list = list;
 	}
 	
+	
 }
