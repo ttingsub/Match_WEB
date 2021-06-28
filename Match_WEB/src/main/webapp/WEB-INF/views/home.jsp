@@ -60,17 +60,38 @@
 			
 			$(data.val()).each(function(){
 			 idx += 1;
+			 
+			 /* for (int i = 0; i<5; i++){
+				 tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ; 
+					$('div.title').html(tbody);
+			 } */
 				
 				if( idx==0 ){
 					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ; 
 					$('div.title').html(tbody);
-				}
-				else if( idx==1 ){
-					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ; 
+					tbody = "";
+				} else if( idx==1 ){
+					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
 					$('div.title1').html(tbody);
+					tbody = "";
+				} else if( idx==2 ){
+					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
+					$('div.title2').html(tbody);
+					tbody = "";
+				} else if( idx==3 ){
+					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
+					$('div.title3').html(tbody);
+					tbody = "";
+				} else if( idx==4 ){
+					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
+					$('div.title4').html(tbody);
+					tbody = "";
+				} else if( idx==5 ){
+					tbody += '<div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div><img src ="' + data.val().imgPath + '" alt="...">' ;
+					$('div.title5').html(tbody);
+					tbody = "";
 				}
 			});
-			
 			
 			
 		});
@@ -161,15 +182,7 @@
                             </a>
                             <div class="portfolio-caption">
                             	<div class='title'></div>
-<!--                                 <table> -->
-<!--                                 <thead> -->
-                                
-<!--                                 </thead> -->
-<!--                                 <tbody> -->
-                                
-<!--                                 </tbody> -->
-<!--                                 </table> -->
-                                <!-- <div class="portfolio-caption-heading">1번방</div> -->
+
                                 
                             </div>
                         </div>
@@ -181,6 +194,8 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
+                                
+                                
                                 <img class="img-fluid" src="resources/assets/img/portfolio/2.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
@@ -198,8 +213,9 @@
                                 <img class="img-fluid" src="resources/assets/img/portfolio/3.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">3번방</div>
-                                <div class="portfolio-caption-subheading text-muted">3번방 작성자</div>
+                                <div class="title2"></div>
+                                <!-- <div class="portfolio-caption-heading">3번방</div>
+                                <div class="portfolio-caption-subheading text-muted">3번방 작성자</div> -->
                             </div>
                         </div>
                     </div>
@@ -213,8 +229,7 @@
                                 <img class="img-fluid" src="resources/assets/img/portfolio/4.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">4번방</div>
-                                <div class="portfolio-caption-subheading text-muted">4번방 작성자</div>
+                                <div class="title3"></div>
                             </div>
                         </div>
                     </div>
@@ -228,8 +243,7 @@
                                 <img class="img-fluid" src="resources/assets/img/portfolio/5.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">5번방</div>
-                                <div class="portfolio-caption-subheading text-muted">5번방 작성자</div>
+                               <div class="title4"></div>
                             </div>
                         </div>
                     </div>
@@ -243,8 +257,7 @@
                                 <img class="img-fluid" src="resources/assets/img/portfolio/6.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">6번방</div>
-                                <div class="portfolio-caption-subheading text-muted">6번방 작성자</div>
+                               <div class="title5"></div>
                             </div>
                         </div>
                     </div>
@@ -677,6 +690,12 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+        <script type="text/javascript">
+        function detailF(){
+        	document.location.href="/match/detailF.bo";
+        }
+        </script>
     </body>
 </html>
 
