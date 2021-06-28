@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header style="border-bottom: 1px solid #ccc; padding: 15px 0; text-align: left ">
@@ -36,4 +36,4 @@
 	.category li a:hover,
 	.category li a.active{ font-weight: bold; color: #0000cd;}
 	
-</style>
+</style> --%>

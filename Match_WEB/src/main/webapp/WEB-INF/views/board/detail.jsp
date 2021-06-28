@@ -20,26 +20,19 @@
 <h3>방명록 안내</h3>
 <table>
 <tr><th class='w-px120'>제목</th>
-	<td colspan='5' class='left' style="word-break:break-all; ">${vo.title}</td>
+	<td colspan='5' class='left' style="word-break:break-all; "></td>
 </tr>
 <tr><th>작성자</th>
 	<td class='writer'></td>
 	<th class='w-px100'>작성일자</th>
 	<td class='w-px100'></td>
 	<th class='w-px80'>조회수</th>
-	<td class='w-px80'>${vo.readcnt}</td>
+	<td class='w-px80'></td>
 </tr>
 <tr><th>내용</th>
 	<td colspan='5' class='left'>${fn: replace(vo.content, crlf, '<br>')}</td>
 </tr>
-<tr><th>첨부파일</th>
-	<td colspan='5' class='left'>${vo.filename}
-		<c:if test="${!empty vo.filename}">
-		<a id='preview'></a>
-		<a href='download.bo?id=${vo.id}'><i class='fas fa-download font-img'></i></a>
-		</c:if>
-	</td>
-</tr>
+
 </table>
 <div class='btnSet'>
 	<a class='btn-fill' onclick="$('form').submit()">목록으로</a>

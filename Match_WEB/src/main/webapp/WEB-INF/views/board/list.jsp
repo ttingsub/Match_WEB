@@ -149,7 +149,6 @@ $(window).resize(function(){
 	
 	var dbTestRef = database.ref('matchapp/Post');
 		dbTestRef.on('child_added', function(data){
-			$('.firebase_title').html('');
 			console.log('>',data.val());
 			
 			
@@ -168,7 +167,7 @@ $(window).resize(function(){
 
 
 function detailF(){
-	document.location.href="/board/detailF.jsp";
+	document.location.href="/match/detailF.bo";
 }
 </script>
 </body>
