@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <footer style="border-top: 1px solid #ccc; padding: 15px 0;
 	background-color: #5e666e; color: #919191; ">
@@ -86,4 +86,4 @@
       </div>
     </div>
   </div>
-</footer> --> --%>
+</footer>-->
