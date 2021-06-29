@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <footer style="border-top: 1px solid #ccc; padding: 15px 0;
-	background-color: #5e666e; color: #919191; ">
+	background-color: #5e666e; color: #919191; " id="foot">
 		<div>우리 모두의 모임</div>
 		<div>대표번호 : 010 - 1111 - 2222</div>
 		<div>Copyright 2021</div>

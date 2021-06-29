@@ -21,6 +21,20 @@
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
+<style type="text/css">
+
+#head{
+	display: none;
+}
+#foot{
+	display: none;
+}
+
+/* #wrap header .masthead {
+	display: inline;
+} */
+</style>
+
 <!-- 파이어베이스 -->
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 
@@ -103,7 +117,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <!-- <a class="navbar-brand" href="#page-top"><img src="resources/assets/img/navbar-logo.svg" alt="..." /></a> -->
+               <a class="navbar-brand" href="#page-top"><img src="resources/assets/img/navbar-logo.svg" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -125,7 +139,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To MoMo!</div>
                 <div class="masthead-heading text-uppercase">우리 모두의 모임</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">모모 시작하기!</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="list.cu">모모 시작하기!</a>
             </div>
         </header>
         <!-- Services-->

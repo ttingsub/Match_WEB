@@ -1,7 +1,7 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<header style="border-bottom: 1px solid #ccc; padding: 15px 0; text-align: left ">
+<header style="border-bottom: 1px solid #ccc; padding: 15px 0; text-align: left " id="head">
 		<div class='category' style='margin-left: 100px'>
 			<ul>
 				<li><a href='<c:url value="/" />'><img alt="x" src="imgs/momo.logo.png" style="width: 54px; height: 48px;"></a></li>
