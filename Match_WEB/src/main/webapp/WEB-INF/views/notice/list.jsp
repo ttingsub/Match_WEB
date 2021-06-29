@@ -11,7 +11,7 @@
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
 <body>
-	<h3>공지글 목록</h3>
+	<h3>공지 글목록</h3>
 	<form action="list.no" method="post">
 		<div id='list-top'>
 			<div>
@@ -19,39 +19,54 @@
 					<li>
 						<select name="search" class="w-px80">
 							<option value="all" ${page.search eq 'all' ? 'selected' : '' }>전체</option>
-							<option value="title"  ${page.search eq 'title' ? 'selected' : '' }>제목</option>
-							<option value="content"  ${page.search eq 'content' ? 'selected' : '' }>내용</option>
-							<option value="writer"  ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
+							<option value="title" ${page.search eq 'title' ? 'selected' : '' }>제목</option>
+							<option value="content" ${page.search eq 'content' ? 'selected' : '' }>내용</option>
+							<option value="writer" ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
 						</select>
 					</li>
-					<li><input type="text" name="keyword" value='${page.keyword}' class="w-px300"/> </li>
-					<li><a class="btn-fill" onclick="$('form').submit()">검색</a> </li>
+					<li><input type="text" name="keyword" value='${page.keyword }' class="w-px300"/></li>
+					<li><a class="btn-fill" onclick="$('form').submit()">검색</a></li>
 				</ul>
 				<ul>
-					<c:if test="${logininfo.admin eq 'Y' }">
-						<li><a class="btn-fill" href="new.no">글쓰기</a> </li>
+					<c:if test="${logininfo.admin eq 'Y' }"><%-- 관리자인지 아닌지 테스트 --%>
+						<li><a class="btn-fill" href="new.no">글쓰기</a></li>
 					</c:if>
 				</ul>
 			</div>
 		</div>
-		<!--검색 했을떄 페이지를 1로  -->
-		<input type="hidden" name='curPage' value='1' />
+		<!-- 검색했을 때 페이지를 1로 -->
+		<input type="hidden" name="curPage" value="1"/>
 	</form>
 	<table class='tb_list'>
-		<thead>
-<!-- 			<th class="w-px60">번호</th> -->
 		<tr>
+			<th class="w-px60">번호</th>
 			<th class="w-px100">제목</th>
-			<th class="w-px120">작성자</th>
-			<th class="w-px120">작성일자</th>
+			<th class="w-px100">작성자</th>			
+			<th class="w-px120">작성일자</th>			
 		</tr>
-		</thead>
+		
+		<c:forEach items="${page.list}" var="vo">
+			<tr>
+				<td>${vo.no}</td>
+				<td class="left">
+					<c:forEach var="i" begin="1" end="${vo.indent }" >
+						${i eq vo.indent ? "<img src='imgs/re.gif'/>" : "&nbsp&nbsp;" }
+					</c:forEach>
+					<a href="view.no?id=${vo.id}">${vo.title}</a>
+				</td>
+					<td>${vo.writer}</td>
+					<td>${vo.writedate}</td>
+			</tr>
+		</c:forEach>
+		
+<%-- 파이어베이스
+ 		</thead>
 			<tbody>
 			
 			</tbody>
 			
 			
-			<%-- <tr>
+			<tr>
 				<td>${vo.no}</td>
 				<td class="left">
 					<c:forEach var="i" begin="1" end="${vo.indent }" >
@@ -67,7 +82,7 @@
 	<div class="btnSet">
 		<jsp:include page="/WEB-INF/views/include/page.jsp"/>
 	</div>
-	<script>
+<!-- 	<script>
 	//파이어베이스
 	// Initialize Firebase
 		var firebaseConfig = {
@@ -78,7 +93,7 @@
 				    storageBucket: "match-app-b8c4a.appspot.com",
 				    messagingSenderId: "217394658931",
 				    appId: "1:217394658931:web:5a5fda3f5e377b29f3f406",
-				    measurementId: "G-0NK2LLS1Z8"
+				    measurementId "G-0NK2LLS1Z8"
 		};
 		firebase.initializeApp(firebaseConfig);
 		
@@ -99,8 +114,8 @@
 				});
 				$('table tbody').html(tbody);
 //	 			console.log(Post);
-			});
-	</script>
+			}); 
+	</script>-->
 </body>
 </html>
 
