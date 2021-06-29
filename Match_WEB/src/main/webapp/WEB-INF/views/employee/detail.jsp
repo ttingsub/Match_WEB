@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-	<title>AI</title>
+	<title>모모</title>
 </head>
 <body>
 <h3>[ ${vo.department_name } 고객정보 ]</h3>

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-	<title>AI</title>
+	<title>모모</title>
 </head>
 <body>
 <h3>[ ${vo.name } 고객정보 ]</h3>

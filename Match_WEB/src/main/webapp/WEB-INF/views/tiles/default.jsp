@@ -12,7 +12,7 @@
 	<c:set var="title" value="로그인 :"/>
 </c:when>
 </c:choose>
-<title>${title} AI</title>
+<title>${title} 모모</title>
 <link rel='icon' type='image/x-icon' href='img/hanul.icon'>
 <link rel="stylesheet" type="text/css" href="css/common.css?v=<%=new java.util.Date().getTime() %>">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

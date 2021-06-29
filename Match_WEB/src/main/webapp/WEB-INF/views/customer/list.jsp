@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>AI</title>
+	<title>모모</title>
 </head>
 
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
