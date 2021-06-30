@@ -8,11 +8,13 @@
 <body>
 	<!--Content  -->
 	<table>
-		<tr><th>고객명</th>
+		<tr><th>아이디</th>
+			<th>고객명</th>
 			<th>이메일</th>
 		</tr>
 		<c:forEach items="${list}" var="vo">
 			<tr>
+				<th><a href='detail.cu?id=${vo.id}'> ${vo.id} </a></th>
 				<th><a href='detail.cu?id=${vo.name}'> ${vo.name} </a></th>
 				<th><a href='detail.cu?id=${vo.email}'> ${vo.email}</a></th>
 			</tr>

@@ -46,7 +46,7 @@ public class CustomerDAO implements CustomerService{
 
 	@Override
 	public void customer_delete(String id) {
-		// TODO Auto-generated method stub
+		sql.delete("cu.mapper.delete", id);
 		
 	}
 

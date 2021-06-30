@@ -10,9 +10,6 @@
 <head>
 <meta charset="UTF-8">
 <c:choose>
-<c:when test="${category eq 'cu' }">
-	<c:set var="title" value="고객관리 :"/>
-</c:when>
 <c:when test="${category eq 'no' }">
 	<c:set var="title" value="공지사항 :"/>
 </c:when>
@@ -21,6 +18,9 @@
 </c:when>
 <c:when test="${category eq 'da' }">
 	<c:set var="title" value="공공데이터 :"/>
+</c:when>
+<c:when test="${category eq 'cu' }">
+	<c:set var="title" value="고객관리 :"/>
 </c:when>
 <c:when test="${category eq 'hr' }">
 	<c:set var="title" value="사원관리 :"/>

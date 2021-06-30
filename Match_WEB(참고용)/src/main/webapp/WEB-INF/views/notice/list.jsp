@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>공지글 목록</h3>
+	<h3>모모 고객센터</h3>
 	<form action="list.no" method="post">
 		<div id='list-top'>
 			<div>
@@ -26,7 +26,7 @@
 					<li><a class="btn-fill" onclick="$('form').submit()">검색</a> </li>
 				</ul>
 				<ul>
-					<c:if test="${logininfo.admin eq 'Y' }">
+					<c:if test="${logininfo.id eq 'admin' }">
 						<li><a class="btn-fill" href="new.no">글쓰기</a> </li>
 					</c:if>
 				</ul>

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import customer.CustomerServiceImpl;
 import customer.CustomerVO;
+import member.MemberVO;
 
 @Controller
 public class CustomerController {
@@ -61,7 +62,6 @@ public class CustomerController {
 	@RequestMapping("insert.cu")
 	public String cuInsert(CustomerVO vo) {
 		logger.info(vo.getName());
-		vo.setId("zzzzz");
 		service.customer_insert(vo);
 		//인서트 처리
 		return "redirect:list.cu";
@@ -81,5 +81,12 @@ public class CustomerController {
 		//인서트 처리
 		return "redirect:list.cu";
 	}
+	@RequestMapping("delete.cu")
+	public String cuDelete(String id) {
+		service.customer_delete(id);
+		return "redirect:list.cu";
+	}
+	
+	
 	
 }

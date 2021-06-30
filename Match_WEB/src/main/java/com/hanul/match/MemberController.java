@@ -28,8 +28,8 @@ public class MemberController {
 	@Autowired
 	private MemberServiceImpl service;
 
-	private String naver_client_id = "mhh3qIevSb9m2MleiJde";
-	private String kakao_client_id = "0bdeb6b5055303d45957fa65d0c1ea68";
+	private String naver_client_id = "l5MkMEEsd_TzZBjDmycm";
+	private String kakao_client_id = "39d87dc9c5ce8064cc990bf9b3658829";
 	
 	//카카오로그인
 	@RequestMapping("/kakaologin")
@@ -44,7 +44,7 @@ public class MemberController {
 		StringBuffer url 
 			= new StringBuffer("https://kauth.kakao.com/oauth/authorize?response_type=code");
 		url.append("&client_id=").append(kakao_client_id);
-		url.append("&redirect_uri=").append("http://localhost:8989/iot/kakaocallback");
+		url.append("&redirect_uri=").append("http://localhost:8989/match/kakaocallback");
 		url.append("&state=").append(state);
 		
 		return "redirect:" + url.toString();
@@ -65,7 +65,7 @@ public class MemberController {
 		StringBuffer url 
 			= new StringBuffer("https://kauth.kakao.com/oauth/token?grant_type=authorization_code");
 		url.append("&client_id=").append(kakao_client_id);
-//		url.append("&redirect_uri=").append("http://localhost:8989/iot/kakaocallback");
+//		url.append("&redirect_uri=").append("http://localhost:8989/match/kakaocallback");
 		url.append("&code=").append(code);
 		
 		JSONObject json = new JSONObject( common.requestAPI(url) );
@@ -123,7 +123,7 @@ public class MemberController {
 			= new StringBuffer("https://nid.naver.com/oauth2.0/authorize?response_type=code");
 		url.append("&client_id=").append(naver_client_id);
 		url.append("&state=").append(state);
-		url.append("&redirect_uri=").append("http://localhost:8989/iot/navercallback");
+		url.append("&redirect_uri=").append("http://localhost:8989/match/navercallback");
 		
 		return "redirect:" + url.toString();
 	}
@@ -146,7 +146,7 @@ public class MemberController {
 		StringBuffer url 
 			= new StringBuffer("https://nid.naver.com/oauth2.0/token?grant_type=authorization_code");
 		url.append("&client_id=").append(naver_client_id);
-		url.append("&client_secret=IUP2xdZC42");
+		url.append("&client_secret=Qg2lT0Ah3Y");
 		url.append("&code=").append(code);
 		url.append("&state=").append(state);
 		JSONObject json = new JSONObject( common.requestAPI(url) );
@@ -234,7 +234,7 @@ public class MemberController {
 			
 			StringBuffer url = new StringBuffer("https://kauth.kakao.com/oauth/logout");
 			url.append("?client_id=").append( kakao_client_id );
-			url.append("&logout_redirect_uri=").append("http://localhost:8989/iot");
+			url.append("&logout_redirect_uri=").append("http://localhost:8989/match");
 			
 			return "redirect:" + url.toString();
 			

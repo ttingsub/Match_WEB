@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script><body>
-<h3>매칭방 목록</h3>
+<body>
+<h3>방명록 목록</h3>
 
 <div id='list-top'>
 <form method="post" action="list.bo">
@@ -51,19 +51,23 @@
 <input type='hidden' name='id' />
 </form>
 </div>
+
 <div class='tb_wrap'>
 <c:if test="${page.viewType eq 'list' }">
 <table class='tb_list'>
-<thead>
-	<tr><th>장소</th><th>제목</th>
-		<th class='w-px100'>작성자</th>
-		<th class='w-px100'>작성일자</th>	
-		
-	</tr>
-</thead>
-	<tbody>
-	
-	</tbody>
+<tr><th class='w-px70'>번호</th><th>제목</th>
+	<th class='w-px100'>작성자</th>
+	<th class='w-px100'>작성일자</th>
+	<th class='w-px60'>첨부파일</th>
+</tr>
+<c:forEach items="${page.list}" var="vo">
+<tr><td>${vo.no}</td>
+	<td class='left'><a onclick="go_detail(${vo.id})">${vo.title}</a></td>
+	<td>${vo.name}</td>
+	<td>${vo.writedate}</td>
+	<td>${empty vo.filename ? '' : '<img src="imgs/attach.png" class="file-img" />'}</td>
+</tr>
+</c:forEach>
 </table>
 </c:if>
 
@@ -80,9 +84,9 @@
 
 </div>
 
-<!-- <div class='btnSet'> -->
-<%-- 	<jsp:include page="/WEB-INF/views/include/page.jsp"/> --%>
-<!-- </div> -->
+<div class='btnSet'>
+	<jsp:include page="/WEB-INF/views/include/page.jsp"/>
+</div>
 <script type="text/javascript">
 function go_detail(id){
 	$('[name=id]').val(id);
@@ -124,51 +128,6 @@ $(function(){
 $(window).resize(function(){
 	resize();
 });
-</script>
-
-<script type="text/javascript">
-//파이어베이스
-// Initialize Firebase
-	var firebaseConfig = {
-			 apiKey: "AIzaSyCXREheHWnwVa7eL6I5zKGAjuRdwKp7QRc",
-			    authDomain: "match-app-b8c4a.firebaseapp.com",
-			    databaseURL: "https://match-app-b8c4a-default-rtdb.firebaseio.com",
-			    projectId: "match-app-b8c4a",
-			    storageBucket: "match-app-b8c4a.appspot.com",
-			    messagingSenderId: "217394658931",
-			    appId: "1:217394658931:web:5a5fda3f5e377b29f3f406",
-			    measurementId: "G-0NK2LLS1Z8"
-	};
-	firebase.initializeApp(firebaseConfig);
-	
-	var PostField = document.getElementById("Post"); 
-	var database = firebase.database();
-
-	
-	var tbody = '';
-	
-	var dbTestRef = database.ref('matchapp/Post');
-		dbTestRef.on('child_added', function(data){
-			console.log('>',data.val());
-			
-			
-			$(data.val()).each(function(){
-				tbody += '<tr><td>' + this.place + '</td><td><a class="Post" onclick="detailF()">' + this.title+ '</a></td><td>' + this.writer + '</td><td>' + this.time + '</td></tr>'  ;
-			});
-			$('table tbody').html(tbody);
-// 			console.log(Post);
-		});
-		
-// 		<td>${vo.no}</td>
-// 		<td class='left'><a onclick="go_detail(${vo.id})">${vo.title}</a></td>
-// 		<td>${vo.name}</td>
-// 		<td>${vo.writedate}</td>
-// 		<td>${empty vo.filename ? '' : '<img src="imgs/attach.png" class="file-img" />'}</td>
-
-
-function detailF(){
-	document.location.href="/match/detailF.bo";
-}
 </script>
 </body>
 </html>

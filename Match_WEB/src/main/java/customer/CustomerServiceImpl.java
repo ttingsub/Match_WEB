@@ -39,7 +39,7 @@ public class CustomerServiceImpl  implements CustomerService{
 
 	@Override
 	public void customer_delete(String id) {
-		// TODO Auto-generated method stub
+		dao.customer_delete(id);
 		
 	}
 

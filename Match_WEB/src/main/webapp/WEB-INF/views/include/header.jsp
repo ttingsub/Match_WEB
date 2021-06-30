@@ -6,11 +6,13 @@
 			<ul>
 				<li><a href='<c:url value="/" />'><img alt="x" src="imgs/momo.logo.png" style="width: 54px; height: 48px;"></a></li>
 				<li><a class="${category eq 'bo' ? 'active' : ''}" href='list.bo'>모임</a></li>
-				<li class='momo-center'><a class="${category eq 'no' ? 'active' : ''}" href='#'>고객센터</a>
-				<li><a class="${category eq 'da' ? 'active' : ''}" href='list.da'>공공데이터</a></li>
 				<li><a class="${category eq 'vi' ? 'active' : ''}" href='list.vi'>시각화</a></li>
-				<li><a class="${category eq 'cu' ? 'active' : ''}" href='list.cu'>고객관리</a></li>
-				<li><a class="${category eq 'hr' ? 'active' : ''}" href='list.hr'>사원관리</a></li>
+				<li><a class="${category eq 'da' ? 'active' : ''}" href='list.da'>공공데이터</a></li>
+				<li class='momo-center'><a class="${category eq 'no' ? 'active' : ''}" href='list.no'>고객센터</a>
+				 <c:if test="${logininfo.name eq '관리자' }">
+					<li><a class="${category eq 'cu' ? 'active' : ''}" href='list.cu'>고객관리</a></li>
+					<li><a class="${category eq 'hr' ? 'active' : ''}" href='list.hr'>사원관리</a></li>
+				</c:if> 
 			</ul>
 		</div>
 		<div class="subMenu">

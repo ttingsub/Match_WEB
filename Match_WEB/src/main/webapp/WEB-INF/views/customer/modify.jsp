@@ -32,7 +32,7 @@
 	
 		<tr>
 			<th>전화번호</th>
-			<td><input type="tel" name='phone' value="${vo.phone}"/></td>
+			<td><input type="tel" name='tel' value="${vo.tel}"/></td>
 		</tr>
 	
 	</table>

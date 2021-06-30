@@ -11,7 +11,7 @@
 	<table>
 		<tr>
 			<th>아이디</th>
-			<td><input type='text' name='id' /></td>
+			<td><input type="text" name='id' /></td>
 		</tr>
 		<tr>
 			<th>성명</th>
@@ -32,7 +32,7 @@
 	
 		<tr>
 			<th>전화번호</th>
-			<td><input type="tel" name='phone'/></td>
+			<td><input type="text" name='tel'/></td>
 		</tr>
 	
 	</table>

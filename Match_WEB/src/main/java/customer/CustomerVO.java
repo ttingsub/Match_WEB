@@ -2,7 +2,7 @@ package customer;
 
 public class CustomerVO {
 //DTO <-> DB간에는 상호 작용
-	private String id , name , gender , email , phone;
+	private String id , name , gender , email , tel;
 
 	public String getId() {
 		return id;
@@ -36,12 +36,12 @@ public class CustomerVO {
 		this.email = email;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getTel() {
+		return tel;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 	
 	

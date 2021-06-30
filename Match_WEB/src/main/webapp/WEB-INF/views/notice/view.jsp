@@ -42,7 +42,7 @@
  	 <a class="btn-fill" href='list.no?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 
-	 <c:if test="${logininfo.admin eq 'Y' }">
+	 <c:if test="${logininfo.id eq 'admin' }">
 	 	<a class="btn-fill" href="modify.no?id=${vo.id}">수정</a>
 	 	<a class="btn-fill" onclick="if (confirm('정말 삭제하시겠습니까?') ){ location='delete.no?id=${vo.id}' } ">
 	 	삭제</a>

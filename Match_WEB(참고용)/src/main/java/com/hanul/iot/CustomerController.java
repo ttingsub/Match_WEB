@@ -61,7 +61,7 @@ public class CustomerController {
 	@RequestMapping("insert.cu")
 	public String cuInsert(CustomerVO vo) {
 		logger.info(vo.getName());
-		vo.setId("zzzzz");
+		//vo.setId("zzzzz");
 		service.customer_insert(vo);
 		//인서트 처리
 		return "redirect:list.cu";

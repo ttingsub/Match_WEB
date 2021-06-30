@@ -11,7 +11,7 @@
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
 <body>
-	<h3>공지 글목록</h3>
+	<h3>모모 고객센터</h3>
 	<form action="list.no" method="post">
 		<div id='list-top'>
 			<div>
@@ -28,7 +28,7 @@
 					<li><a class="btn-fill" onclick="$('form').submit()">검색</a></li>
 				</ul>
 				<ul>
-					<c:if test="${logininfo.admin eq 'Y' }"><%-- 관리자인지 아닌지 테스트 --%>
+					<c:if test="${logininfo.name eq '관리자' }"><%-- 관리자인지 아닌지 테스트 --%>
 						<li><a class="btn-fill" href="new.no">글쓰기</a></li>
 					</c:if>
 				</ul>

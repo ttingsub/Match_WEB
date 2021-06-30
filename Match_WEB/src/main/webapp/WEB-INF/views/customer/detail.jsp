@@ -14,7 +14,7 @@
 	<tr>
 		<td>${vo.gender }</td>
 		<td>${vo.email }</td>
-		<td>${vo.phone }</td>
+		<td>${vo.tel }</td>
 	</tr>
 </table>
 <!--2021-05-13 class css줄라고했는데 아직 이름생각못함  -->
