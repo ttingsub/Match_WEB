@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h3>QnA 글 목록</h3>
-	<form action="list.no" method="post">
+	<form action="list.qn" method="post">
 		<div id='list-top'>
 			<div>
 				<ul>
@@ -27,7 +27,7 @@
 				</ul>
 				<ul>
 					<c:if test="${logininfo.admin eq 'Y' }"><%-- 관리자인지 아닌지 테스트 --%>
-						<li><a class="btn-fill" href="new.no">글쓰기</a></li>
+						<li><a class="btn-fill" href="new.qn">글쓰기</a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -50,7 +50,7 @@
 					<c:forEach var="i" begin="1" end="${vo.indent }" >
 						${i eq vo.indent ? "<img src='imgs/re.gif'/>" : "&nbsp&nbsp;" }
 					</c:forEach>
-					<a href="view.no?id=${vo.id}">${vo.title}</a>
+					<a href="view.qn?id=${vo.id}">${vo.title}</a>
 				</td>
 					<td>${vo.writer}</td>
 					<td>${vo.writedate}</td>
