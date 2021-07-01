@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +53,12 @@ public class HomeController {
 		int code = (Integer)request.getAttribute("javax.servlet.error.status_code");
 		return "error/" + (code==404 ? "404" : "default") ;
 		
+	}
+	
+	@RequestMapping("momo.ho")
+	public String momo(HttpSession session) {
+		session.setAttribute("category", "ho");
+		return "momo";
 	}
 	
 }

@@ -31,7 +31,7 @@
 		<th>첨부파일</th>
 		<td colspan="5" class="left">${vo.filename}
 		<c:if test="${! empty vo.filename}">
-			<a href="download.no?id=${vo.id}">
+			<a href="download.qn?id=${vo.id}">
 				<i class="fas fa-download"></i>
 			</a>
 		</c:if>
@@ -39,18 +39,18 @@
 </table>
 
 <div class="btnset">
- 	 <a class="btn-fill" href='list.no?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
+ 	 <a class="btn-fill" href='list.qn?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 
-	 <c:if test="${logininfo.admin eq 'Y' }">
-	 	<a class="btn-fill" href="modify.no?id=${vo.id}">수정</a>
-	 	<a class="btn-fill" onclick="if (confirm('정말 삭제하시겠습니까?') ){ location='delete.no?id=${vo.id}' } ">
+	<!-- 로그인한 사용자가 작성한 글에 대해서만 수정/삭제 권한 있음 -->
+	<c:if test="${logininfo.id eq vo.writer}">
+	 	<a class="btn-fill" href="modify.qn?id=${vo.id}">수정</a>
+	 	<a class="btn-fill" onclick="if (confirm('정말 삭제하시겠습니까?') ){ location='delete.qn?id=${vo.id}' } ">
 	 	삭제</a>
 
 	 </c:if>
-	  <c:if test="${! empty logininfo}">
-	  <!--답글 기능 추가 예정  -->
-	  	<a class="btn-fill" href="reply.no?id=${vo.id}">답글쓰기</a>
+	  <c:if test="${logininfo.name eq '관리자' }">
+	  	<a class="btn-fill" href="reply.qn?id=${vo.id}">답글쓰기</a>
 	  </c:if>
 </div>
 </body>

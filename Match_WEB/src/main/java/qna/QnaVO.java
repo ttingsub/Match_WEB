@@ -3,11 +3,30 @@ package qna;
 import java.sql.Date;
 
 public class QnaVO {
-	private int id, readcnt, no;
+	private int id, readcnt, no, root, step, indent;
 	private String writer, title, content, filename, filepath;
 	private Date writedate;
 	
 	
+	
+	public int getRoot() {
+		return root;
+	}
+	public void setRoot(int root) {
+		this.root = root;
+	}
+	public int getStep() {
+		return step;
+	}
+	public void setStep(int step) {
+		this.step = step;
+	}
+	public int getIndent() {
+		return indent;
+	}
+	public void setIndent(int indent) {
+		this.indent = indent;
+	}
 	public int getNo() {
 		return no;
 	}
