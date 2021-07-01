@@ -5,6 +5,7 @@
 		<div class='category' style='margin-left: 100px'>
 			<ul>
 				<li><a href='<c:url value="/" />'><img alt="x" src="imgs/momo.logo.png" style="width: 54px; height: 48px;"></a></li>
+				<li><a class="${category eq 'ho' ? 'active' : ''}" href='momo.ho'>모모 소개</a></li>
 				<li><a class="${category eq 'bo' ? 'active' : ''}" href='list.bo'>모임</a></li>
 				<li><a class="${category eq 'vi' ? 'active' : ''}" href='list.vi'>시각화</a></li>
 				<li><a class="${category eq 'da' ? 'active' : ''}" href='list.da'>공공데이터</a></li>
@@ -22,7 +23,7 @@
 			</ul>
 			<ul >
 				<li><a href="list.no">공지사항</a></li>
-				<li><a href="list.qn">자주 묻는 질문</a></li>
+				<li><a href="list.qn">문의 게시판</a></li>
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 			<ul >
@@ -94,7 +95,7 @@
 	
 </style>
 <script>
-$('.category ul li:eq(4)').hover(function(){
+$('.category ul li:eq(5)').hover(function(){
 // $('.momo-center').hover(function(){
 	$('.subMenu').css('display', 'block');
 	$('.subMenu ul').css('display', 'none');
