@@ -1,25 +1,22 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<header style="border-bottom: 1px solid #ccc; padding-bottom: 0px; text-align: center; background-color: #74e7f7;" id="head">
+<header style="border-bottom: 1px solid #ccc; padding-bottom: 0px; text-align: center;" id="head">
 		<div class="category" style="margin-left: 100px; ">
 		<div style="float: right; margin-right: 20px; margin-top: 0px; font-size: 0.6em;">
 			<ul>
 				<!--로그인 하지 않은경우  -->
-				
 					<li><a href="login">로그인</a></li>
 					<li><a href="member">회원가입</a></li>
-				
-				
 			</ul>
 		</div>
-		<div style="padding-top: 20px; margin-top:20px; font-weight:bold; ">
+		<div style="padding-top: 20px; font-weight:bold;">
 			<ul>
-				<li style="padding:  10px 20px;"class="menu"><a href="/match/"><img alt="x" src="imgs/momo.logo.png" style="width: 54px; height: 48px; float: left;"></a></li>
-				<li style="padding:  10px 20px;"class="menu"><a href="momo.ho">모모 소개</a></li>
-				<li style="padding:  10px 20px;"class="menu"><a href="list.bo">모임</a></li>
-				<li style="padding:  10px 20px;"class="menu"><a href="list.vi">시각화</a></li>
-				<li style="padding:  10px 20px;"class="menu"><a href="list.da">공공데이터</a></li>
+				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="/match/"><img alt="x" src="imgs/momo.logo.png" style="width: 80px; height: 80px; float: left;"></a></li>
+				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="momo.ho">모모 소개</a></li>
+				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.bo">모임</a></li>
+				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.vi">시각화</a></li>
+				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.da">공공데이터</a></li>
 				<li class="menu" style="padding:  10px 20px;"><a class="dropdown" href="list.no">고객센터</a>
 					<ul class="dropdown-content">
 						<li><a href="list.no">공지사항</a></li>

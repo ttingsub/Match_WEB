@@ -152,34 +152,34 @@
                 <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
+            	<div>
+                    <img alt="모모" src="imgs/momo.logo2.png" style="width: 300px; height: 300px;">
+                </div>
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">우리 동네 운동친구</h2>
-                    <h3 class="section-subheading text-muted">우리 동네에서 같이 운동할 친구 어디없나?</h3>
+                    <h2 class="section-heading text-uppercase">우리 모두의 모임, 모모</h2>
+                    <h3 class="section-subheading text-muted">같이 운동할 친구 어디 없나?</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                            <img alt="matching" src="imgs/matching.png" style="width: 100px; height: 100px;">
                         </span>
-                        <h4 class="my-3">근처가 아니여도 약속!</h4>
-                        <p class="text-muted">모모는 우리 동네뿐만아니라 약속장소와 시간만 성사된다면 지구어디에서도 운동할 수 있습니다!</p>
+                        <h4 class="my-3">혼자 운동은 이제 그만!</h4>
+                        <p class="text-muted">혼자서 하는 운동이 외롭거나 홈 트레이닝이 지겹다면, 모모를 통해 함께 운동하세요!</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                            <img alt="computer" src="imgs/android.png" style="width: 100px; height: 100px;">
                         </span>
-                        <h4 class="my-3">실시간 매칭방을 통해 현재방 확인!</h4>
-                        <p class="text-muted">실시간 공고글, 매칭방을 통해 상대방과 운동약속을 잡으세요! 자세한 사항은 모바일로 확인해주세요</p>
+                        <h4 class="my-3">실시간으로 현재 모임 확인!</h4>
+                        <p class="text-muted">모모 어플리케이션을 다운로드 받아 실시간으로 모임을 만들고, 운동 약속을 잡으세요!</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                            <img alt="schedule" src="imgs/schedule.png" style="width: 100px; height: 100px;">
                         </span>
-                        <h4 class="my-3">여러분들의 소중한 개인정보!</h4>
-                        <p class="text-muted">여러분들의 소중한 개인정보는 암호화되어 관리됩니다!</p>
+                        <h4 class="my-3">당신이 원하는 대로!</h4>
+                        <p class="text-muted">내가 하고 싶을 때, 내가 하고 싶은 곳에서 운동 모임을 만들 수 있습니다!</p>
                     </div>
                 </div>
             </div>
@@ -188,8 +188,8 @@
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">실시간 매칭방 현황</h2>
-                    <h3 class="section-subheading text-muted">실시간 매칭방 현황을 통해 상대방과 경기를 잡아보세요!</h3>
+                    <h2 class="section-heading text-uppercase">실시간 모임 현황</h2>
+                    <h3 class="section-subheading text-muted">실시간 모임을 확인하고 상대방과 경기를 잡아보세요!</h3>
                 </div>
                 
                 <div class="row">
@@ -229,43 +229,43 @@
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/1.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/5.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2020-2021</h4>
                                 <h4 class="subheading">AI활용 응용소프트웨어 개발자 양성</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">2020년 12월 31일 입교식을 통해 팀원들이 만났고, AI활용 응용소프트웨어라는 개발자 양성 프로그램을 통해 각자 기초와 기반을 다지고나서 지난 2021년 5월 중순경 3명의 조가 편성되었다!</p></div>
+                            <div class="timeline-body"><p class="text-muted">2020년 12월 31일 개강한 'AI활용 응용소프트웨어 개발자 양성 프로그램'을 통해 기초와 기반을 다지고, 2021년 5월 중순 경 3명의 조가 편성되었다.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/2.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/6.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>May 2021</h4>
-                                <h4 class="subheading">모모를 계획하게된 계기</h4>
+                                <h4 class="subheading">모모 기획</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">스포츠 매칭이라는 주제는 많은 어플들이 있었으나 관리자의 소홀함으로 인해 많이 서비스가 중단되곤 하였다. </p></div>
+                            <div class="timeline-body"><p class="text-muted">스포츠 매칭이라는 주제로 많은 어플들이 있었으나 많은 서비스가 중단되곤 하였다. </p></div>
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/3.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Jun 2021</h4>
-                                <h4 class="subheading">모모</h4>
+                                <h4 class="subheading">모모 설계</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">지난 7개월간 학교에서 배운 내용을 잘 활용한다면 기존의 스포츠매칭 어플과 웹보다 질 좋은 서비스를 제공할 수 있다고 판단하였다.</p></div>
+                            <div class="timeline-body"><p class="text-muted">지난 7개월간 학교에서 배운 내용을 잘 활용해 질 좋은 서비스를 제공할 수 있도록 준비하였다.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/4.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="resources/assets/img/about/8.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>July 2021</h4>
                                 <h4 class="subheading">우리 모두의 모임</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">모모는 운동은 좋아하지만 같이 할 동료가 없어서 운동을 못한 사람, 팀은 있지만 상대가 없어서 경기를 못한 팀, 항상 같은 친구들과 경기를 해서 지루함을 느끼는 친구들을 위해 창설되었습니다. 이제 언제 어디서나 약속과 장소만 정해진다면 우리 모두의 모임을 가져봅시다!</p></div>
+                            <div class="timeline-body"><p class="text-muted">모모는 운동은 좋아하지만 같이 할 동료가 없어서 운동을 못한 사람, 팀은 있지만 상대가 없어서 경기를 못한 팀, 항상 같은 친구들과 경기를 해서 지루함을 느끼는 친구들을 포함한 모두를 위해 창설되었다. 이제 언제 어디서나 우리 모두의 모임을 가질 수 있게 되었다.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -322,29 +322,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">'모모' 팀의 개발자들입니다. 문의사항이나 건의사항은 고객센터로 문의주시고, 하고 싶은 말이있다면 개발자들에게 개인적으로 메시지를 보내보세요!</p></div>
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">모모 팀의 개발자들입니다. 궁금한 게 있으시면 고객센터로 문의를 주시거나 개인적으로 메시지를 보내 주세요</p></div>
                 </div>
             </div>
         </section>
-        <!-- Clients-->
-        <div class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="resources/assets/img/logos/microsoft.svg" alt="..." /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="resources/assets/img/logos/google.svg" alt="..." /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="resources/assets/img/logos/facebook.svg" alt="..." /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="resources/assets/img/logos/ibm.svg" alt="..." /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         
         <!-- Footer-->
         <footer class="footer py-4">
