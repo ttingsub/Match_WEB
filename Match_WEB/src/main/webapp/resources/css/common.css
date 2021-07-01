@@ -242,3 +242,74 @@ textarea[name=content] { width:calc(100% - 24px); resize:none; height:150px; }
 .w-px140 { width:140px; }
 
 .w-px120 { width:120px; }
+
+.menu:hover{
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.menu:active {
+	background-color: #9dbfc4;
+	cursor: pointer;
+}
+
+
+/* 여기부터 외부 링크 */
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 75px;
+	padding: 5px;
+	
+}
+
+.dropdown-content a{
+	text-decoration: none;
+	display: block;	
+}
+
+.dropdown-content a:hover{
+	
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+.dropdown:hover .dropdown-content{
+	
+}	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
