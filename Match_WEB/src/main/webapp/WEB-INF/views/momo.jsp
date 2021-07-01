@@ -63,6 +63,7 @@
 
 	
 	var tbody = '', idx = -1;
+	var tfoot = '', idx = -1;
 	
 	var dbTestRef = database.ref('matchapp/Post');
 		dbTestRef.on('child_added', function(data){
@@ -77,30 +78,48 @@
 					$('div.title').html(tbody);
 			 } */
 				
-				if( idx==0 ){
+			 if( idx==0 ){
 					tbody += '<div class="portfolio-item"><a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1"><div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div><img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" style="width:300px; height:300px;"/></a><div class="portfolio-caption"></div></div><div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ; 
 					$('div.title').html(tbody);
 					tbody = "";
+					tfoot += '<div class="modal-body"><h3 class="text-uppercase">' + data.val().title + '</h3><p class="item-intro text-muted">' + data.val().game + '</p><img class="img-fluid d-block mx-auto" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" /><p>' + data.val().content + '</p><ul class="list-inline"><li><strong>일시:&nbsp; </strong>' + data.val().time +'</li><li><strong>장소: </strong>' + data.val().place + '</li></ul><button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button></div>';
+					$('div.action_title').html(tfoot);
+					tfoot = "";
 				} else if( idx==1 ){
 					tbody += '<div class="portfolio-item"><a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2"><div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div><img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" style="width:300px; height:300px;"/></a><div class="portfolio-caption"></div></div><div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
 					$('div.title1').html(tbody);
 					tbody = "";
+					tfoot += '<div class="modal-body"><h3 class="text-uppercase">' + data.val().title + '</h3><p class="item-intro text-muted">' + data.val().game + '</p><img class="img-fluid d-block mx-auto" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" /><p>' + data.val().content + '</p><ul class="list-inline"><li><strong>일시:&nbsp; </strong>' + data.val().time +'</li><li><strong>장소: </strong>' + data.val().place + '</li></ul><button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button></div>';
+					$('div.action_title1').html(tfoot);
+					tfoot = "";
 				} else if( idx==2 ){
 					tbody += '<div class="portfolio-item"><a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3"><div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div><img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" style="width:300px; height:300px;"/></a><div class="portfolio-caption"></div></div><div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
 					$('div.title2').html(tbody);
 					tbody = "";
+					tfoot += '<div class="modal-body"><h3 class="text-uppercase">' + data.val().title + '</h3><p class="item-intro text-muted">' + data.val().game + '</p><img class="img-fluid d-block mx-auto" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" /><p>' + data.val().content + '</p><ul class="list-inline"><li><strong>일시:&nbsp; </strong>' + data.val().time +'</li><li><strong>장소: </strong>' + data.val().place + '</li></ul><button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button></div>';
+					$('div.action_title2').html(tfoot);
+					tfoot = "";
 				} else if( idx==3 ){
 					tbody += '<div class="portfolio-item"><a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4"><div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div><img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" style="width:300px; height:300px;"/></a><div class="portfolio-caption"></div></div><div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
 					$('div.title3').html(tbody);
 					tbody = "";
+					tfoot += '<div class="modal-body"><h3 class="text-uppercase">' + data.val().title + '</h3><p class="item-intro text-muted">' + data.val().game + '</p><img class="img-fluid d-block mx-auto" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" /><p>' + data.val().content + '</p><ul class="list-inline"><li><strong>일시:&nbsp; </strong>' + data.val().time +'</li><li><strong>장소: </strong>' + data.val().place + '</li></ul><button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button></div>';
+					$('div.action_title3').html(tfoot);
+					tfoot = "";
 				} else if( idx==4 ){
 					tbody += '<div class="portfolio-item"><a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5"><div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div><img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" style="width:300px; height:300px;"/></a><div class="portfolio-caption"></div></div><div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
 					$('div.title4').html(tbody);
 					tbody = "";
+					tfoot += '<div class="modal-body"><h3 class="text-uppercase">' + data.val().title + '</h3><p class="item-intro text-muted">' + data.val().game + '</p><img class="img-fluid d-block mx-auto" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" /><p>' + data.val().content + '</p><ul class="list-inline"><li><strong>일시:&nbsp; </strong>' + data.val().time +'</li><li><strong>장소: </strong>' + data.val().place + '</li></ul><button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button></div>';
+					$('div.action_title4').html(tfoot);
+					tfoot = "";
 				} else if( idx==5 ){
 					tbody += '<div class="portfolio-item"><a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6"><div class="portfolio-hover"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></div><img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" style="width:300px; height:300px;"/></a><div class="portfolio-caption"></div></div><div class="portfolio-caption-heading">' + data.val().title + '</div><div class="portfolio-caption-subheading text-muted">'+ data.val().writer + '</div>' ;
 					$('div.title5').html(tbody);
 					tbody = "";
+					tfoot += '<div class="modal-body"><h3 class="text-uppercase">' + data.val().title + '</h3><p class="item-intro text-muted">' + data.val().game + '</p><img class="img-fluid d-block mx-auto" src="https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2F'+ data.val().imgPath +'?alt=media&token=https://firebasestorage.googleapis.com/v0/b/match-app-b8c4a.appspot.com/o/matchapp%2FpostImg%2Ffe3e9df7-8d9a-490f-8422-f1d4e3aa6d85.jpg?alt=media&token=6c73ac4e-d1f4-44d8-bd24-0b2fc4b34c16" /><p>' + data.val().content + '</p><ul class="list-inline"><li><strong>일시:&nbsp; </strong>' + data.val().time +'</li><li><strong>장소: </strong>' + data.val().place + '</li></ul><button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"><i class="fas fa-times me-1"></i>닫기</button></div>';
+					$('div.action_title5').html(tfoot);
+					tfoot = "";
 				}
 			});
 			
@@ -652,27 +671,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="resources/assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
+                                
+								<div class="action_title"></div>
+
                             </div>
                         </div>
                     </div>
@@ -687,27 +688,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="resources/assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
+                                
+								<div class="action_title1"></div>
+								
                             </div>
                         </div>
                     </div>
@@ -722,27 +705,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="resources/assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Finish
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Identity
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
+                                
+								<div class="action_title2"></div>
+								
                             </div>
                         </div>
                     </div>
@@ -757,27 +722,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="resources/assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Lines
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Branding
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
+                                
+								<div class="action_title3"></div>
+								
                             </div>
                         </div>
                     </div>
@@ -792,27 +739,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="resources/assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Southwest
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Website Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
+                                
+								<div class="action_title4"></div>
+								
                             </div>
                         </div>
                     </div>
@@ -827,27 +756,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="resources/assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
+                                
+								<div class="action_title5"></div>
+								
                             </div>
                         </div>
                     </div>

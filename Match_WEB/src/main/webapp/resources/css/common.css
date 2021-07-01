@@ -62,13 +62,21 @@ a.btn-fill, a.btn-empty {
 }
 
 a.btn-fill { 
-	background-color: #3367d6;
+	background-color: #8ceafa;
 	color: #fff;
 }
 
 a.btn-empty {
 	background-color: #fff;
 	color: #3367d6;
+}
+a.btn-fill:hover{
+	background-color: #a6f2ff;
+	color: #fff;
+}
+a.btn-fill:active{
+	background-color: #8ceafa;
+	color: #fff;
 }
 
  
