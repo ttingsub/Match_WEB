@@ -22,21 +22,21 @@
 			</ul>
 			<ul >
 				<li><a href="list.no">공지사항</a></li>
-				<li><a href="#">자주 묻는 질문</a></li>
+				<li><a href="list.qn">자주 묻는 질문</a></li>
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 			<ul >
 			</ul>
 			<!-- 임시 -->
 			<ul >
-				<li><a href="list.no">공지사항2</a></li>
-				<li><a href="#">자주 묻는 질문2</a></li>
-				<li><a href="#">Contact Us2</a></li>
+				<li><a href="#">서브메뉴1</a></li>
+				<li><a href="#">서브메뉴2</a></li>
+				<li><a href="#">서브메뉴3</a></li>
 			</ul>
 			<ul >
-				<li><a href="list.no">공지사항3</a></li>
-				<li><a href="#">자주 묻는 질문3</a></li>
-				<li><a href="#">Contact Us3</a></li>
+				<li><a href="#">서브메뉴1</a></li>
+				<li><a href="#">서브메뉴2</a></li>
+				<li><a href="#">서브메뉴3</a></li>
 			</ul>
 			<ul >
 			</ul>
@@ -94,7 +94,7 @@
 	
 </style>
 <script>
-$('.category ul li:eq(2)').hover(function(){
+$('.category ul li:eq(4)').hover(function(){
 // $('.momo-center').hover(function(){
 	$('.subMenu').css('display', 'block');
 	$('.subMenu ul').css('display', 'none');
