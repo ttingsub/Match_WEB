@@ -23,6 +23,10 @@
 
 <style type="text/css">
 
+#head{
+	display: none;
+}
+
 #foot{
 	display: none;
 }
