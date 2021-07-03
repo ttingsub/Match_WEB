@@ -48,7 +48,7 @@
 	 	삭제</a>
 
 	 </c:if>
-	  <c:if test="${! empty logininfo}">
+	  <c:if test="${logininfo.name eq '관리자'}">
 	  	<a class="btn-fill" href="reply.qn?id=${vo.id}">답글쓰기</a>
 	  </c:if>
 </div>

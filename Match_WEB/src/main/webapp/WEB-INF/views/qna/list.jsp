@@ -26,7 +26,7 @@
 					<li><a class="btn-fill" onclick="$('form').submit()">검색</a></li>
 				</ul>
 				<ul>
-					<c:if test="${logininfo.admin eq 'Y' }"><%-- 관리자인지 아닌지 테스트 --%>
+					<c:if test="${!empty logininfo }">
 						<li><a class="btn-fill" href="new.qn">글쓰기</a></li>
 					</c:if>
 				</ul>

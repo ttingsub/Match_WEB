@@ -16,19 +16,19 @@
 		<td colspan="5" class="left"> ${vo.title}</td>
 	</tr>
 		<tr>
-		<th >작성자</th>
+		<th style="background-color: #36c8f5;">작성자</th>
 		<td>${vo.writer}</td>
 		<th class="w-px120">작성일자</th>
-		<td class="w-px120">${vo.writedate}</td>
-		<th class="w-px80">조회수</th>
+		<td style="width: 120px;">${vo.writedate}</td>
+		<th >조회수</th>
 		<td class="w-px80">${vo.readcnt}</td>
 	</tr>
 	<tr>
-		<th>내용</th>
+		<th style="background-color: #36c8f5;">내용</th>
 		<td colspan="5" class="left"> ${ fn:replace (vo.content , crlf ,'<br>') }</td>
 	</tr>
 	<tr>
-		<th>첨부파일</th>
+		<th style="background-color: #36c8f5;">첨부파일</th>
 		<td colspan="5" class="left">${vo.filename}
 		<c:if test="${! empty vo.filename}">
 			<a href="download.no?id=${vo.id}">

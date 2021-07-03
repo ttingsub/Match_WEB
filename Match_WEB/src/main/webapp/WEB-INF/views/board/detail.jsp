@@ -20,17 +20,17 @@
 <tr><th class='w-px120'>제목</th>
 	<td colspan='5' class='left' style="word-break:break-all; ">${vo.title}</td>
 </tr>
-<tr><th>작성자</th>
+<tr><th style="background-color: #36c8f5;">작성자</th>
 	<td>${vo.name}</td>
 	<th class='w-px100'>작성일자</th>
-	<td class='w-px100'>${vo.writedate}</td>
+	<td style="width: 100px;">${vo.writedate}</td>
 	<th class='w-px80'>조회수</th>
-	<td class='w-px80'>${vo.readcnt}</td>
+	<td style="width: 80px;">${vo.readcnt}</td>
 </tr>
-<tr><th>내용</th>
+<tr><th style="background-color: #36c8f5;">내용</th>
 	<td colspan='5' class='left'>${fn: replace(vo.content, crlf, '<br>')}</td>
 </tr>
-<tr><th>첨부파일</th>
+<tr><th style="background-color: #36c8f5;">첨부파일</th>
 	<td colspan='5' class='left'>${vo.filename}
 		<c:if test="${!empty vo.filename}">
 		<a id='preview'></a>

@@ -39,8 +39,7 @@
 	</form>
 	<table class='tb_list'>
 		<tr>
-			<th class="w-px60">번호</th>
-			<th class="w-px100">제목</th>
+			<th class="w-px60">번호</th><th style="background-color: #36c8f5;">제목</th>
 			<th class="w-px100">작성자</th>			
 			<th class="w-px120">작성일자</th>			
 		</tr>

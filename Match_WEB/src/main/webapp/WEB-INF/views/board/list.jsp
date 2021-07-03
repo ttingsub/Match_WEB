@@ -55,7 +55,7 @@
 <div class='tb_wrap'>
 <c:if test="${page.viewType eq 'list' }">
 <table class='tb_list'>
-<tr><th class='w-px70'>번호</th><th>제목</th>
+<tr><th class='w-px70'>번호</th><th style="background-color: #36c8f5;">제목</th>
 	<th class='w-px100'>작성자</th>
 	<th class='w-px100'>작성일자</th>
 	<th class='w-px60'>첨부파일</th>
