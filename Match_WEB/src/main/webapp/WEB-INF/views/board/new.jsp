@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>방명록 글쓰기</h3>
+<h3>커뮤니티 글쓰기</h3>
 <!-- 파일업로드위한 form 설정 
    1. form 에서 데이터를 전송하는 방식은 반드시 post
    2. form 에 enctype="multipart/form-data" 을 반드시 지정

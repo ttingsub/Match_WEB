@@ -271,7 +271,7 @@
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
-                                Come
+                                Come &
                                 <br />
                                  Join
                                 <br />
@@ -322,7 +322,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">모모 팀의 개발자들입니다. 궁금한 게 있으시면 고객센터로 문의를 주시거나 개인적으로 메시지를 보내 주세요</p></div>
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">모모 팀의 개발자들입니다. 궁금한 게 있으시면 QnA 게시판으로 문의를 주시거나 개인적으로 메시지를 보내 주세요</p></div>
                 </div>
             </div>
         </section>

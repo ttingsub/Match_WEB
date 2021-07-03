@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>방명록 목록</h3>
+<h3>커뮤니티 목록</h3>
 
 <div id='list-top'>
 <form method="post" action="list.bo">

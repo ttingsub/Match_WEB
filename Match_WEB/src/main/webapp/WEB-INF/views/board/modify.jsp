@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>방명록 수정</h3>
+<h3>커뮤니티 글 수정</h3>
 <form method="post" action='update.bo' enctype="multipart/form-data">
 <input type='hidden' name='id' value='${vo.id}'/>
 <table>

@@ -6,7 +6,7 @@
 	<title>모모</title>
 </head>
 <body>
-	<h3>고객 추가</h3>
+	<h3>회원 추가</h3>
 	<form method="post" action="update.cu">
 	<table>
 		<tr>

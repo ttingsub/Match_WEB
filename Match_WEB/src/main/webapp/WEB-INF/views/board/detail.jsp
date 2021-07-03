@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-<h3>방명록 안내</h3>
+<h3>커뮤니티 글 보기</h3>
 <table>
 <tr><th class='w-px120'>제목</th>
 	<td colspan='5' class='left' style="word-break:break-all; ">${vo.title}</td>

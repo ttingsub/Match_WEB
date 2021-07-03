@@ -21,11 +21,11 @@
 			<ul>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="/match/"><img alt="x" src="imgs/momo.logo.png" style="width: 80px; height: 80px; float: left;"></a></li>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="momo.ho">모모 소개</a></li>
-				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.bo">모임</a></li>
+				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.bo">커뮤니티</a></li>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.no">공지사항</a></li>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.qn">QnA</a></li>
 				<c:if test="${logininfo.name eq '관리자' }">
-					<li style="padding:  10px 20px; line-height: 80px; " class="menu"><a href="list.cu">고객관리</a></li>
+					<li style="padding:  10px 20px; line-height: 80px; " class="menu"><a href="list.cu">회원관리</a></li>
 				</c:if>
 				
 			</ul>

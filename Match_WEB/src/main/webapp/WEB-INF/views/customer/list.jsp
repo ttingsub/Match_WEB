@@ -9,7 +9,7 @@
 	<!--Content  -->
 	<table class="tb_list">
 		<tr><th style="background-color: #36c8f5;">아이디</th>
-			<th style="background-color: #36c8f5;">고객명</th>
+			<th style="background-color: #36c8f5;">회원명</th>
 			<th style="background-color: #36c8f5;">이메일</th>
 		</tr>
 		<c:forEach items="${list}" var="vo">

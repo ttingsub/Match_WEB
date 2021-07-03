@@ -23,9 +23,6 @@
 
 <style type="text/css">
 
-#head{
-	display: none;
-}
 #foot{
 	display: none;
 }
@@ -228,7 +225,7 @@
 
                 firebase.database().ref('matchapp/UserAccount').push({
 
-                    address: " 웹에서 가져온 이름입니다.",
+                    address: " set(address)",
 
                     changed: 11,
                     
