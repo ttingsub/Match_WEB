@@ -13,7 +13,8 @@
 				<!--로그인 한 경우  -->
 				<c:if test="${!empty logininfo  }">
 					<li><strong>${logininfo.name}</strong> 님</li>
-					<li><a  href='logout'>로그아웃</a></li>
+					<li><a href='modify.cu?id=${logininfo.id}'>회원정보 수정</a></li>
+					<li><a href='logout'>로그아웃</a></li>
 				</c:if>
 			</ul>
 		</div>
