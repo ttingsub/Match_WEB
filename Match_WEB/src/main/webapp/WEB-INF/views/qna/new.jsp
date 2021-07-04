@@ -39,7 +39,7 @@
 						</td>
 		</tr>
 			<tr><th class="w-px160">제목</th>
-				<td><input type="text" name='title' title='제목' class='chk'></td>
+				<td><input type="text" name='title' title='제목' class='chk' id="title"></td>
 			</tr>
 			
 			<tr><th class="w-px160">작성자</th>
@@ -47,7 +47,7 @@
 			</tr>
 			
 			<tr><th class="w-px160">내용</th>
-				<td><textarea name='content' title='내용' class="chk"></textarea> </td>
+				<td><textarea name='content' title='내용' class="chk" id="content1"></textarea> </td>
 			</tr>
 			
 			<tr><th class="w-px160">파일첨부</th>
@@ -115,7 +115,9 @@
 
                 
 				var category = document.getElementById("bbb").value;
-			
+				var title = document.getElementById("title").value;
+				var content = document.getElementById("content1").value;
+				
 				console.log(bbb);
 				console.log(category);
 
@@ -123,7 +125,9 @@
 
                 firebase.database().ref('matchapp/qna').push({
 
-                    category: category
+                    category: category,
+                    title: title,
+                    content: content
                 	
                 	
                 	

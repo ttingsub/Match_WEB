@@ -37,16 +37,14 @@
 	</form>
 	<table class='tb_list'>
 		<tr>
-			<th class="w-px60">카테고리</th>
 			<th class="w-px60">번호</th>
-			<th class="w-px100">제목</th>
+			<th class="w-px140">제목</th>
 			<th class="w-px100">작성자</th>			
 			<th class="w-px120">작성일자</th>			
 		</tr>
 		
 		<c:forEach items="${page.list}" var="vo">
 			<tr>
-				<td>카테고리 임시</td>
 				<td>${vo.no}</td>
 				<td class="left">
 					<c:forEach var="i" begin="1" end="${vo.indent }" >

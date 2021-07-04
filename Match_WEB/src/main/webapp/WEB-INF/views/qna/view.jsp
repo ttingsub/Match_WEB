@@ -16,8 +16,8 @@ new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재",
 	<tr>
 		<th class="w-px100">제목</th>
 		<td colspan="5" class="left"> ${vo.title}</td>
-		<th class="w-px100">카테고리</th>
-		<td></td>
+		<!-- <th class="w-px100">카테고리</th> -->
+		<!-- <td></td> -->
 	</tr>
 		<tr>
 		<th class="w-px40">작성자</th>
@@ -46,7 +46,7 @@ new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재",
  	 <a class="btn-fill" href='list.qn?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 
-	 <c:if test="${logininfo.admin eq 'Y' }">
+	 <c:if test="${logininfo.name eq '관리자' }">
 	 	<a class="btn-fill" href="modify.qn?id=${vo.id}">수정</a>
 	 	<a class="btn-fill" onclick="if (confirm('정말 삭제하시겠습니까?') ){ location='delete.qn?id=${vo.id}' } ">
 	 	삭제</a>
