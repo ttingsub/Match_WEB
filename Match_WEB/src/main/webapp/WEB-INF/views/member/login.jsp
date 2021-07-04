@@ -44,7 +44,7 @@
 
 	<div style='height:80px'>
 
-		<a href='<c:url value="/"/>'><img src='imgs/hanul.logo.png'/></a>
+		<a href='<c:url value="/"/>'><img src='imgs/momo.logo.png' width='80px' height='80px'/></a>
 
 	</div>
 

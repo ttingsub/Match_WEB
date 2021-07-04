@@ -7,8 +7,8 @@
 			<ul>
 				<!--로그인 하지 않은경우  -->
 				<c:if test="${empty logininfo  }">
-					<li><a href="login">로그인</a></li>
-					<li><a href="member">회원가입</a></li>
+					<li><a href="login" class="btn-outline-info">로그인</a></li>
+					<li><a href="member" class="btn-outline-info">회원가입</a></li>
 				</c:if>
 				<!--로그인 한 경우  -->
 				<c:if test="${!empty logininfo  }">
@@ -20,7 +20,7 @@
 		</div>
 		<div style="padding-top: 20px; font-weight:bold;">
 			<ul>
-				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="/match/"><img alt="x" src="imgs/momo.logo.png" style="width: 80px; height: 80px; float: left;"></a></li>
+				<li class="menu"><a href="/match/"><img alt="x" src="imgs/momo.logo.png" style="width: 80px; height: 80px; float: left;"></a></li>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="momo.ho">모모 소개</a></li>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.bo">커뮤니티</a></li>
 				<li style="padding:  10px 20px; line-height: 80px;"class="menu"><a href="list.no">공지사항</a></li>

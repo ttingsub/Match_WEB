@@ -24,6 +24,7 @@
 
 <style type="text/css">
 
+
 #foot{
 	display: none;
 }
@@ -189,7 +190,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">실시간 모임 현황</h2>
-                    <h3 class="section-subheading text-muted">실시간 모임을 확인하고 상대방과 경기를 잡아보세요!</h3>
+                    <h3 class="section-subheading text-muted">모모에 올라온 모임을 확인하고 상대방과 경기를 잡아보세요!</h3>
                 </div>
                 
                 <div class="row">

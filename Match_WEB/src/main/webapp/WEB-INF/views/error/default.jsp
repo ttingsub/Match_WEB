@@ -17,7 +17,7 @@
 </style>
 <div id="error">
 	<div class="left" style="height: 80px">
-	<a href='<c:url value="/" />'><img alt="x" src="imgs/hanul.logo.png"> </a>
+	<a href='<c:url value="/" />'><img alt="x" src="imgs/momo.logo2.png"> </a>
 	</div><hr>
 	
 	<div class="left">
