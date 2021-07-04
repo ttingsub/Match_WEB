@@ -99,8 +99,8 @@
                 firebase.database().ref('matchapp/public_post').push({
 
                     title: title,
-
                     content : content
+                    
                     
 
                 }, (result)=>{

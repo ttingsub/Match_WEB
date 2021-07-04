@@ -11,12 +11,16 @@
 <body>
 <h3>QnA 글 보기</h3>
 <table>
+<!-- String[] category = 
+new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재", "기타", "모모 채팅", "모모 종목", "모모 매너", "모모 종목" }; -->
 	<tr>
-		<th class="w-px160">제목</th>
+		<th class="w-px100">제목</th>
 		<td colspan="5" class="left"> ${vo.title}</td>
+		<th class="w-px100">카테고리</th>
+		<td></td>
 	</tr>
 		<tr>
-		<th >작성자</th>
+		<th class="w-px40">작성자</th>
 		<td>${vo.writer}</td>
 		<th class="w-px120">작성일자</th>
 		<td class="w-px120">${vo.writedate}</td>
