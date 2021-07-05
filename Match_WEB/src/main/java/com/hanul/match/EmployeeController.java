@@ -25,7 +25,7 @@ public class EmployeeController {
 	public String list(Model model, String depts , HttpSession session) {
 		session.setAttribute("category", "hr");
 		// 부서정보를 select해서 같이 model로 넘기면 됨.
-		logger.info("list.cu");
+//		logger.info("list.cu");
 		model.addAttribute("depts", service.employee_department());
 		// 부서정보를 전체 조회해서 화면 combobox(option select)에 값을 담아서 보여주기
 		// 위한 select

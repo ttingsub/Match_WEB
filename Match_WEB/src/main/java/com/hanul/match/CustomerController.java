@@ -33,7 +33,7 @@ public class CustomerController {
 		//Select 되는지 확인 for logger 
 		
 		//3.내가 호출한 페이지에서 제대로 데이터를 받았는지 확인
-		logger.info("list.cu");
+//		logger.info("list.cu");
 		List<CustomerVO> list =	service.customer_list();
 		model.addAttribute("list", list);
 		
@@ -44,14 +44,14 @@ public class CustomerController {
 	public String detail(Model model , String id) {
 		//tile 작업이 되었을때는
 		//1번부터 작업
-		logger.info(id);
+//		logger.info(id);
 		/* 1번방식
 		 * CustomerVO vo = service.customer_detail(id); 
 		 * model.addAttribute("vo" , vo ) ;
 		 */
 		//2번 방식
 		CustomerVO vo = service.customer_detail(id);
-		logger.info(vo.getId() + "DB에서 받은값");
+//		logger.info(vo.getId() + "DB에서 받은값");
 		model.addAttribute("vo",vo);
 		return "customer/detail";
 	}
@@ -61,7 +61,7 @@ public class CustomerController {
 	}
 	@RequestMapping("insert.cu")
 	public String cuInsert(CustomerVO vo) {
-		logger.info(vo.getName());
+//		logger.info(vo.getName());
 		service.customer_insert(vo);
 		//인서트 처리
 		return "redirect:list.cu";
@@ -69,14 +69,14 @@ public class CustomerController {
 	@RequestMapping("modify.cu")
 	public String cumodify(String id , Model model) {
 		CustomerVO vo = service.customer_detail(id);
-		logger.info(vo.getGender());
+//		logger.info(vo.getGender());
 		model.addAttribute("vo",vo);
 		//인서트 처리
 		return "customer/modify";
 	}
 	@RequestMapping("update.cu")
 	public String cuUpdate(CustomerVO vo) {
-		logger.info(vo.getName());
+//		logger.info(vo.getName());
 		service.costomer_update(vo);
 		//인서트 처리
 		return "redirect:list.cu";

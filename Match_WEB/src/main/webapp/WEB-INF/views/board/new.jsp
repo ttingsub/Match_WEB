@@ -20,13 +20,13 @@
 <tr><th class='w-px120'>제목</th>
 	<td><input type='text' name='title' class='chk' title='제목' /></td>
 </tr>
-<tr><th>작성자</th>	
+<tr><th class='w-px120'>작성자</th>	
 	<td>${logininfo.name}</td>
 </tr>
-<tr><th>내용</th>
+<tr><th class='w-px120'>내용</th>
 	<td><textarea name='content' class='chk' title='내용' ></textarea></td>	
 </tr>
-<tr><th>첨부파일</th>
+<tr><th class='w-px120'>첨부파일</th>
 	<td class='left middle'>
 		<label>
 			<input type='file' name='file' id='attach-file'/>

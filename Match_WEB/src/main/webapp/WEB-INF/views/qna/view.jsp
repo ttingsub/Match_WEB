@@ -14,25 +14,25 @@
 <!-- String[] category = 
 new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재", "기타", "모모 채팅", "모모 종목", "모모 매너", "모모 종목" }; -->
 	<tr>
-		<th class="w-px100">제목</th>
+		<th class="w-px160">제목</th>
 		<td colspan="5" class="left"> ${vo.title}</td>
 		<!-- <th class="w-px100">카테고리</th> -->
 		<!-- <td></td> -->
 	</tr>
 		<tr>
-		<th class="w-px40" style="background-color: #36c8f5;">작성자</th>
+		<th class="w-px60">작성자</th>
 		<td>${vo.writer}</td>
 		<th class="w-px120">작성일자</th>
-		<td style="width: 120px;">${vo.writedate}</td>
+		<td class="w-px110">${vo.writedate}</td>
 		<th class="w-px80">조회수</th>
-		<td style="width: 80px;">${vo.readcnt}</td>
+		<td class="w-px90">${vo.readcnt}</td>
 	</tr>
 	<tr>
-		<th style="background-color: #36c8f5;">내용</th>
+		<th class="w-px80">내용</th>
 		<td colspan="5" class="left"> ${ fn:replace (vo.content , crlf ,'<br>') }</td>
 	</tr>
 	<tr>
-		<th style="background-color: #36c8f5;">첨부파일</th>
+		<th class="w-px80">첨부파일</th>
 		<td colspan="5" class="left">${vo.filename}
 		<c:if test="${! empty vo.filename}">
 			<a href="download.qn?id=${vo.id}">

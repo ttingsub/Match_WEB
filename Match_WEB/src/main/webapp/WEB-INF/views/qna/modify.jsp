@@ -13,6 +13,24 @@
 	<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
 	<form action="update.qn" method="post" enctype="multipart/form-data">
 		<table>
+			<tr>
+				<th class="w-px160">카테고리</th>
+				<td><select name="category" id="category" style="float: left; background-color: white;">
+ 						<option value="" id="none">선택</option>
+						<option value="운영정책" id="unyung">운영정책</option>
+						<option value="계정/인증" id="certify">계정/인증</option>
+						<option value="이벤트/초대" id="invite">이벤트/초대</option>
+						<option value="이용 제재" id="sanction">이용 제재</option>
+						<option value="모모 채팅" id="chat">모모 채팅</option>
+						<option value="모모 종목" id="event">모모 종목</option>
+						<option value="모모 매너" id="manner">모모 매너</option>
+						<option value="기타" id="etc">기타</option>
+					</select>
+					<!-- 변수명 bbb에서 categorySelect로 수정했습니다 -->
+					<input type="hidden" name="categorySelect" id="categorySelect" style="float: left; margin-left: 10px;"/>
+				</td>
+			</tr>
+			
 			<tr><th class="w-px160">제목</th>
 				<td><input type="text" name='title' title='제목' class='chk' value="${vo.title}"></td>
 			</tr>
@@ -35,14 +53,13 @@
 					<span id='delete-file'><i class="fas fa-times"> </i></span>
 				</td>
 			</tr>
-			<input type="hidden" name='id' value="${vo.id}">
-			<input type="hidden" name='filename' value="${vo.filename}">
 		</table>
+		<input type="hidden" name='id' value="${vo.id}" />
+		<input type="hidden" name='filename' value="${vo.filename}" />
 	</form>
 	<div class="btnset">					<!-- //boolean -->
 		<a class="btn-fill" onclick=" if( emptyCheck() ){ $('[name=filename]').val($('#file-name').text()) ;   $('form').submit(); }" >저장 </a>
 		<a class="btn-empty" href="list.qn" >취소 </a>
-		
 	</div>
 	<script type="text/javascript" src="js/file_check.js">
 
@@ -57,7 +74,56 @@
 				$('#file-name').text()
 				)
 	}
-		
+	
+	/* 카테고리 변경될 때 */
+	$(document).ready(function(){
+		var idval = $('#categorySelect')
+		$('#category').on('change', function(){
+			var element = $(this).find('option:selected');
+			var myTag = element.attr('value');
+			idval.val(myTag);
+		});
+	});
+	
+	/* 파이어베이스 */
+	var firebaseConfig = {
+		    apiKey: "AIzaSyCXREheHWnwVa7eL6I5zKGAjuRdwKp7QRc",
+		    authDomain: "match-app-b8c4a.firebaseapp.com",
+		    databaseURL: "https://match-app-b8c4a-default-rtdb.firebaseio.com",
+		    projectId: "match-app-b8c4a",
+		    storageBucket: "match-app-b8c4a.appspot.com",
+		    messagingSenderId: "217394658931",
+		    appId: "1:217394658931:web:5a5fda3f5e377b29f3f406",
+		    measurementId: "G-0NK2LLS1Z8"
+		  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+		  
+	  var database = firebase.database();
+	  var demo = document.getElementById("demo");
+	  var preObject = document.getElementById("object");
+	
+	  function myFunction() {
+		var category = document.getElementById("categorySelect").value;
+		var title = document.getElementById("title").value;
+		var content = document.getElementById("content1").value;
+
+			/* 문의 카테고리 강제 선택 */
+			if(category == "") {
+				alert('문의 카테고리를 선택해 주세요');
+				return false;
+			}
+
+            //firebase에 쓰기
+            firebase.database().ref('matchapp/qna').push({
+                category: category,
+                title: title,
+                content: content
+              }, (result)=>{
+              	$('form').submit();
+              });
+          }
 	</script>
 </body>
 </html>

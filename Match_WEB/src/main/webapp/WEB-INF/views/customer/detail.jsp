@@ -24,7 +24,9 @@
 	<a class='btn-fill' href='list.cu'>회원목록</a>
 	<a class='btn-fill' href='new.cu'>신규 회원 추가</a>
 	<a class='btn-fill' href='modify.cu?id=${vo.id }'>회원 정보 수정</a>
+	<c:if test="${vo.name ne '관리자' }">
 	<a class='btn-fill' onclick='if(confirm("정말 삭제하시겠습니까?")){href="delete.cu?id=${vo.id }"} '  >회원 정보 삭제</a>
+	</c:if>
 </div>
 </body>
 </html>

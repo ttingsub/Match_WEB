@@ -9,20 +9,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>QnA 글 목록</h3>
+	<h3>모모 고객센터입니다</h3>
 	<form action="list.qn" method="post">
 		<div id='list-top'>
 			<div>
 				<ul>
 					<li>
-						<select name="search">
+						<select name="search" class="w-px90">
 							<option value="all" ${page.search eq 'all' ? 'selected' : '' }>전체</option>
 							<option value="title" ${page.search eq 'title' ? 'selected' : '' }>제목</option>
 							<option value="content" ${page.search eq 'content' ? 'selected' : '' }>내용</option>
 							<option value="writer" ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
+							<option value="category" ${page.search eq 'category' ? 'selected' : '' }>카테고리</option>
 						</select>
 					</li>
-					<li><input type="text" name="keyword" value='${page.keyword }' class="w-px300"/></li>
+					<li><input type="text" name="keyword" value='${page.keyword }' class="w-px300" placeholder="어떤 점이 궁금하신가요?"/></li>
 					<li><a class="btn-fill" onclick="$('form').submit()">검색</a></li>
 				</ul>
 				<ul>
@@ -38,14 +39,16 @@
 	<table class='tb_list'>
 		<tr>
 			<th class="w-px60">번호</th>
-			<th style="background-color: #36c8f5;">제목</th>
-			<th class="w-px100">작성자</th>			
-			<th class="w-px120">작성일자</th>			
+			<th class="w-px60">카테고리</th>
+			<th class="w-pct60 back-fill">제목</th>
+			<th class="w-px60">작성자</th>			
+			<th class="w-px80">작성일자</th>			
 		</tr>
 		
 		<c:forEach items="${page.list}" var="vo">
 			<tr>
 				<td>${vo.no}</td>
+				<td>${vo.category}</td>
 				<td class="left">
 					<c:forEach var="i" begin="1" end="${vo.indent }" >
 						${i eq vo.indent ? "<img src='imgs/re.gif'/>" : "&nbsp&nbsp;" }

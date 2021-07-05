@@ -55,7 +55,7 @@ $('.btn-delete-cancel').on('click', function(){
 	if( $(this).text()=='취소' ){ //취소
 		display( $div, true );
 	}else{ //삭제
-		if( confirm('정말 삭제?') ){
+		if( confirm('정말 삭제하시겠습니까?') ){
 			$.ajax({
 				url: 'board/comment/delete/' + $div.data('id'),
 				success: function(){

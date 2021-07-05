@@ -3,11 +3,18 @@ package qna;
 import java.sql.Date;
 
 public class QnaVO {
-	private int id, readcnt, no, root, step, indent;
-	private String writer, title, content, filename, filepath;
+	private int id, readcnt, no, root, step, indent ;
+	private String writer, title, content, filename, filepath, category;
 	private Date writedate;
 	
 	
+	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public int getRoot() {
 		return root;
 	}

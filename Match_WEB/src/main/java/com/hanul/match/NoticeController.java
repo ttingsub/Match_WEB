@@ -144,14 +144,14 @@ public class NoticeController {
 		//화면에서 입력한 답글정보를 DB에 저장 후 목록화면으로 연결하겠다.
 		
 		if(! file.isEmpty() ) {
-			logger.info("파일이 있음");
-			logger.info(file.getOriginalFilename());
+//			logger.info("파일이 있음");
+//			logger.info(file.getOriginalFilename());
 			vo.setFilename(file.getOriginalFilename());
 			vo.setFilepath( common.fileUpload(session, file, "notice"));
 		}else {
-			logger.info("파일이 없음");
+//			logger.info("파일이 없음");
 		}
-		logger.info("디버깅 포인트");
+//		logger.info("디버깅 포인트");
 		
 		service.notice_reply_insert(vo);
 		
@@ -164,14 +164,14 @@ public class NoticeController {
 		vo.setWriter(member.getId());
 		//세션에 있는 정보는 만약에 정보가 있다면 언제든 session.getAtteribute를 통해 사용가능
 		if(! file.isEmpty() ) {
-			logger.info("파일이 있음");
-			logger.info(file.getOriginalFilename());
+//			logger.info("파일이 있음");
+//			logger.info(file.getOriginalFilename());
 			vo.setFilename(file.getOriginalFilename());
 			vo.setFilepath( common.fileUpload(session, file, "notice"));
 		}else {
-			logger.info("파일이 없음");
+//			logger.info("파일이 없음");
 		}
-		logger.info("디버깅 포인트");
+//		logger.info("디버깅 포인트");
 		
 		service.notice_insert(vo);
 		

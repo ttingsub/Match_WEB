@@ -21,11 +21,12 @@
 	<form action="insert.qn" method="post" enctype="multipart/form-data">
 		<table>
 		<tr>
-			<th>카테고리</th>
+			<th class="w-px160">카테고리</th>
 	<!-- 			String[] category =
 				 new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재", "기타"
 				 , "모모 채팅", "모모 종목", "모모 매너", "모모 종목" };-->
 	 			<td><select name="category" id="category" style="float: left; background-color: white;">
+	 						<option value="" id="none">선택</option>
 							<option value="운영정책" id="unyung">운영정책</option>
 							<option value="계정/인증" id="certify">계정/인증</option>
 							<option value="이벤트/초대" id="invite">이벤트/초대</option>
@@ -35,7 +36,8 @@
 							<option value="모모 매너" id="manner">모모 매너</option>
 							<option value="기타" id="etc">기타</option>
 						</select>
-				<input type="text" name="bbb" id="bbb" style="float: left; margin-left: 10px;"/>
+						<!-- 변수명 bbb에서 categorySelect로 수정했습니다 -->
+				<input type="hidden" name="categorySelect" id="categorySelect" style="float: left; margin-left: 10px;"/>
 						</td>
 		</tr>
 			<tr><th class="w-px160">제목</th>
@@ -65,12 +67,11 @@
 	<div class="btnset">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
 		<a class="btn-empty" href="list.qn" >취소 </a>
-		
 	</div>
 	<script type="text/javascript" src="js/file_check.js"></script>
 	<script>
 	$(document).ready(function(){
-		var idval = $('#bbb')
+		var idval = $('#categorySelect')
 		$('#category').on('change', function(){
 			var element = $(this).find('option:selected');
 			var myTag = element.attr('value');
@@ -110,16 +111,25 @@
 
 
 	<script>
-			
+	/* 		if($("#category").val() == ""){
+	alert('문의 카테고리를 선택해 주세요')
+	return false;
+} */
             function myFunction() {
 
                 
-				var category = document.getElementById("bbb").value;
+				var category = document.getElementById("categorySelect").value;
 				var title = document.getElementById("title").value;
 				var content = document.getElementById("content1").value;
 				
-				console.log(bbb);
-				console.log(category);
+// 				console.log(categorySelect);
+// 				console.log(category);
+				
+				/* 문의 카테고리 강제 선택 */
+				if(category == "") {
+					alert('문의 카테고리를 선택해 주세요');
+					return false;
+				}
 
                 //firebase에 쓰기
 
@@ -140,9 +150,9 @@
                 
 
             }
+            
+            
 
-            
-            
         </script>
 </body>
 </html>

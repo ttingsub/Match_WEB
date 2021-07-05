@@ -3,19 +3,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="qna.mapper">
 	<update id="update">
-		update qna set title = #{title} , content = #{content}
+		update qna set title = #{title} , content = #{content},
 			,	filename = #{filename , jdbcType=VARCHAR}
 			,	filepath = #{filepath , jdbcType=VARCHAR}
-			where id =#{id}
+			,	category = #{category}
+			where id =#{id} 
 	</update>
 	<insert id="reply_insert">
 	
 	
-		insert into qna (id , root , title , content , writer , filename , filepath , step , indent)
-		values ( seq_qna.nextval , #{root} , #{title} , #{content} , #{writer} 
+		insert into qna (id , root , title , content , writer , filename , filepath , step , indent, category)
+		values ( seq_qna.nextval , #{root} , #{title} , #{content} , #{writer},
 				, #{filename , jdbcType=VARCHAR}
 				, #{filepath , jdbcType=VARCHAR}
-				, #{step} + 1 , #{indent} + 1
+				, #{step} + 1 , #{indent} + 1, #{category}
 				
 		)
 	
@@ -46,11 +47,11 @@
 		where qna.id = #{id}
 	</select>
 	<insert id="insert">
-		insert into qna (id , root , title , content , writer , filename , filepath)
+		insert into qna (id , root , title , content , writer , filename , filepath, category)
 		values ( seq_qna.nextval , seq_qna.currval , #{title} , #{content} , #{writer} 
 				, #{filename , jdbcType=VARCHAR}
 				, #{filepath , jdbcType=VARCHAR}
-				
+				, #{category}
 		)
 	</insert>
 	

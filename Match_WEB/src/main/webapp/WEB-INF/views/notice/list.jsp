@@ -17,11 +17,11 @@
 			<div>
 				<ul>
 					<li>
-						<select name="search">
+						<select name="search" class="w-px90">
 							<option value="all" ${page.search eq 'all' ? 'selected' : '' }>전체</option>
 							<option value="title" ${page.search eq 'title' ? 'selected' : '' }>제목</option>
 							<option value="content" ${page.search eq 'content' ? 'selected' : '' }>내용</option>
-							<option value="writer" ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
+							<%-- <option value="writer" ${page.search eq 'writer' ? 'selected' : '' }>작성자</option> --%>
 						</select>
 					</li>
 					<li><input type="text" name="keyword" value='${page.keyword }' class="w-px300"/></li>
@@ -29,7 +29,7 @@
 				</ul>
 				<ul>
 					<c:if test="${logininfo.name eq '관리자' }"><%-- 관리자인지 아닌지 테스트 --%>
-						<li><a class="btn-fill" href="new.no">글쓰기</a></li>
+						<li><a class="btn-fill" href="new.no">공지사항 등록</a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -39,22 +39,23 @@
 	</form>
 	<table class='tb_list'>
 		<tr>
-			<th class="w-px60">번호</th><th style="background-color: #36c8f5;">제목</th>
-			<th class="w-px100">작성자</th>			
-			<th class="w-px120">작성일자</th>			
+			<th style="background-color: #55C4F6; width: 1px;">작성일자</th>
+			<!-- <th class="w-px60">번호</th> -->
+			<th class="w-px160">제목</th>
+			<!-- <th class="w-px100">작성자</th> -->
 		</tr>
 		
 		<c:forEach items="${page.list}" var="vo">
 			<tr>
-				<td>${vo.no}</td>
+				<td>${vo.writedate}</td>
+				<%-- <td>${vo.no}</td> --%>
 				<td class="left">
 					<c:forEach var="i" begin="1" end="${vo.indent }" >
 						${i eq vo.indent ? "<img src='imgs/re.gif'/>" : "&nbsp&nbsp;" }
 					</c:forEach>
 					<a href="view.no?id=${vo.id}">${vo.title}</a>
 				</td>
-					<td>${vo.name}</td>
-					<td>${vo.writedate}</td>
+					<%-- <td>${vo.name}</td> --%>
 			</tr>
 		</c:forEach>
 		
