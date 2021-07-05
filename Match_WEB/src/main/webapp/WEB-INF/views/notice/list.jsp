@@ -17,7 +17,7 @@
 			<div>
 				<ul>
 					<li>
-						<select name="search" class="w-px80">
+						<select name="search">
 							<option value="all" ${page.search eq 'all' ? 'selected' : '' }>전체</option>
 							<option value="title" ${page.search eq 'title' ? 'selected' : '' }>제목</option>
 							<option value="content" ${page.search eq 'content' ? 'selected' : '' }>내용</option>

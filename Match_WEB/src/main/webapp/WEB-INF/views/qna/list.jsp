@@ -15,7 +15,7 @@
 			<div>
 				<ul>
 					<li>
-						<select name="search" class="w-px80">
+						<select name="search">
 							<option value="all" ${page.search eq 'all' ? 'selected' : '' }>전체</option>
 							<option value="title" ${page.search eq 'title' ? 'selected' : '' }>제목</option>
 							<option value="content" ${page.search eq 'content' ? 'selected' : '' }>내용</option>
@@ -38,7 +38,7 @@
 	<table class='tb_list'>
 		<tr>
 			<th class="w-px60">번호</th>
-			<th class="w-px140">제목</th>
+			<th style="background-color: #36c8f5;">제목</th>
 			<th class="w-px100">작성자</th>			
 			<th class="w-px120">작성일자</th>			
 		</tr>
