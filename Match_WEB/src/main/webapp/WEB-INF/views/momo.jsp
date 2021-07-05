@@ -765,11 +765,6 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         
-       <script>
-        function no_image(String path){        	
-        	$(".img-fluid").attr("src","imgs/momo.logo2.png");
-        }
-        </script> 
        
 </body>
 </html>

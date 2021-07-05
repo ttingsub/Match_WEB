@@ -25,8 +25,10 @@
 				<td><input type="text" name='title' title='제목' class='chk' id="title"></td>
 			</tr>
 			
-			<tr><th class="w-px160">작성자</th>
-				<td>${logininfo.name}</td>
+			<th class="w-px80" colspan="1">작성자</th>
+				<td >${logininfo.name}</td>
+				<th>작성일자</th>
+				<td><input type="text" name="year" id="year"></td>
 			</tr>
 			
 			<tr><th class="w-px160">내용</th>
@@ -77,11 +79,13 @@
 
   var preObject = document.getElementById("object");
 
-
  
 
 </script>
-
+<script type="text/javascript">
+	var year = new Date();
+	document.getElementById("year").value=(year.getFullMonth());
+</script>
 
 
 	<script>
@@ -91,15 +95,17 @@
                 
 				var title = document.getElementById("title").value;
 				var content= document.getElementById("content1").value;
-				
-                
+				var writedate= document.getElementById("writedate").value;
+                var now = new Date();
+                //console.log("현재 : ", now);
 
                 //firebase에 쓰기
 
                 firebase.database().ref('matchapp/public_post').push({
 
                     title: title,
-                    content : content
+                    content : content,
+                    writedate : now
                     
                     
 
