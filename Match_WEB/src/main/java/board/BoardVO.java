@@ -4,10 +4,16 @@ import java.sql.Date;
 
 public class BoardVO {
 	
-	private int id, readcnt, no;
+	private int id, readcnt, no, comment_cnt;
 	private String writer, title, content, filename, filepath, name;
 	private Date writedate;
 	
+	public int getComment_cnt() {
+		return comment_cnt;
+	}
+	public void setComment_cnt(int comment_cnt) {
+		this.comment_cnt = comment_cnt;
+	}
 	public String getName() {
 		return name;
 	}

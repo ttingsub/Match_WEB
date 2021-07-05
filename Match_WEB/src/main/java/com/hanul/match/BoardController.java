@@ -168,6 +168,9 @@ public class BoardController {
 		return "board/comment/comment_list";
 	}
 	
+	//방명록 댓글 갯수 요청
+	
+	
 	//방명록 댓글 저장처리 요청
 	@ResponseBody @RequestMapping("/board/comment/insert")
 	public boolean comment_regist(BoardCommentVO vo, HttpSession session) {

@@ -2,7 +2,15 @@ package customer;
 
 public class CustomerVO {
 //DTO <-> DB간에는 상호 작용
-	private String id , name , gender , email , tel;
+	private String id , name , gender , email , tel, pw;
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
 
 	public String getId() {
 		return id;

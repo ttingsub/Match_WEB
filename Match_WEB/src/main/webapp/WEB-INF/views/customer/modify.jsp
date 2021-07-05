@@ -6,7 +6,7 @@
 	<title>모모</title>
 </head>
 <body>
-	<h3>회원 추가</h3>
+	<h3>회원 정보</h3>
 	<form method="post" action="update.cu">
 	<table>
 		<tr>
@@ -17,11 +17,15 @@
 			<th>성명</th>
 			<td><input type='text' name='name' value="${vo.name}"/></td>
 		</tr>
+		<tr>
+			<th>비밀번호</th>
+			<td><input type='text' name='pw' value="${vo.pw}"/></td>
+		</tr>
 	
 		<tr>
 			<th>성별</th>
 			<td>
-				<label><input type="radio" ${vo.gender eq '남' ? 'checked': '' } name='gender' value='남' />남</label>
+				<label><input type="radio" ${vo.gender eq '남' ? 'checked': '' } name='gender' value='남' checked="checked"/>남</label>
 				<label><input type="radio" ${vo.gender eq '남' ? 'checked': '' } name='gender' value='여' />여</label>
 			</td>
 		</tr>

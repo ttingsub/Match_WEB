@@ -2,6 +2,11 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board.mapper">
+<select id="comment_cnt">
+	select count(pid) from board_comment
+	where pid = #{pid}
+</select>
+
 
 <delete id="comment_delete">
 	delete from board_comment where id = #{id}
@@ -69,7 +74,8 @@
 </select>
 
 <select id="list" resultType="board.BoardVO">
-	select b.*, (select name from member m where m.id=writer) name 
+	select (select count(pid) from board_comment where pid = b.id) comment_cnt
+			, b.*, (select name from member m where m.id=writer) name 
 	from (select b.*, rownum no 
 		  from (select * from board <include refid="search_where"/> order by id) b
 		  order by no desc) b

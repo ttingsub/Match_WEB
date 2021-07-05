@@ -63,7 +63,7 @@
 </tr>
 <c:forEach items="${page.list}" var="vo">
 <tr><td>${vo.no}</td>
-	<td class='left'><a onclick="go_detail(${vo.id})">${vo.title}</a></td>
+	<td class='left'><a onclick="go_detail(${vo.id})">${vo.title} [${vo.comment_cnt}]</a></td>
 	<td>${vo.name}</td>
 	<td>${vo.writedate}</td>
 	<td>${empty vo.filename ? '' : '<img src="imgs/attach.png" class="file-img" />'}</td>
@@ -76,7 +76,7 @@
 <c:if test="${page.viewType eq 'grid'}">
 <ul class='grid'>
 	<c:forEach items="${page.list}" var="vo">
-	<li><div><a onclick="go_detail(${vo.id})">${vo.title}</a></div>
+	<li><div><a onclick="go_detail(${vo.id})">${vo.title} [${vo.comment_cnt}]</a></div>
 		<div>${vo.name}</div>
 		<div>${vo.writedate}<span style="float:right;">${empty vo.filename ? '' : '<img src="imgs/attach.png" class="file-img" />' }</span></div>
 	</li>

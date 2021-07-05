@@ -59,4 +59,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.board_comment_list(pid);
 	}
 
+	@Override
+	public int board_comment_cnt(int pid) {
+		// TODO Auto-generated method stub
+		return dao.board_comment_cnt(pid);
+	}
+
 }

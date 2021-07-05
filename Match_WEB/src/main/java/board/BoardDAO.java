@@ -68,6 +68,12 @@ public class BoardDAO implements BoardService {
 		return sql.selectList("board.mapper.comment_list", pid);
 	}
 
+	@Override
+	public int board_comment_cnt(int pid) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("board.mapper.comment_cnt", pid);
+	}
+
 }
 
 

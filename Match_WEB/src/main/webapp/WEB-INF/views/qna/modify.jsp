@@ -7,8 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
+
 </head>
 <body>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+	<script
+		src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+	<script
+		src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
 	<h3>QnA 글 수정</h3>
 	<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
 	<form action="update.qn" method="post" enctype="multipart/form-data">
@@ -32,7 +40,7 @@
 			</tr>
 			
 			<tr><th class="w-px160">제목</th>
-				<td><input type="text" name='title' title='제목' class='chk' value="${vo.title}"></td>
+				<td><input type="text" name='title' title='제목' class='chk' value="${vo.title}" id="title"></td>
 			</tr>
 			
 			<tr><th class="w-px160">작성자</th>
@@ -40,7 +48,7 @@
 			</tr>
 			
 			<tr><th class="w-px160">내용</th>
-				<td><textarea name='content' title='내용' class="chk" >${vo.content }</textarea> </td>
+				<td><textarea name='content' title='내용' class="chk" id="content1">${vo.content }</textarea> </td>
 			</tr>
 			
 			<tr><th class="w-px160">첨부파일</th>
@@ -58,7 +66,7 @@
 		<input type="hidden" name='filename' value="${vo.filename}" />
 	</form>
 	<div class="btnset">					<!-- //boolean -->
-		<a class="btn-fill" onclick=" if( emptyCheck() ){ $('[name=filename]').val($('#file-name').text()) ;   $('form').submit(); }" >저장 </a>
+		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
 		<a class="btn-empty" href="list.qn" >취소 </a>
 	</div>
 	<script type="text/javascript" src="js/file_check.js">
@@ -116,7 +124,7 @@
 			}
 
             //firebase에 쓰기
-            firebase.database().ref('matchapp/qna').push({
+            firebase.database().ref('matchapp/qna'+title).set({
                 category: category,
                 title: title,
                 content: content

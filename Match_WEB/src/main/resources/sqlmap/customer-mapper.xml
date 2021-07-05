@@ -11,8 +11,8 @@
 </select>
 
 <insert id="insert">
-	insert into member(id ,name , gender , email , tel)
-	values (seq_board.nextval, #{name}, #{gender}, #{email}, #{tel} )
+	insert into member(id ,name , gender , email , tel, pw)
+	values (seq_board.nextval, #{name}, #{gender}, #{email}, #{tel}, #{pw} )
 </insert>
 
 <update id="update">
@@ -20,7 +20,8 @@
 	name=#{name} , 
 	gender=#{gender} , 
 	email=#{email} , 
-	tel = #{tel}
+	tel = #{tel},
+	pw = #{pw}
 	where id = #{id}
 </update>
 

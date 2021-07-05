@@ -11,6 +11,7 @@ public interface BoardService {
 	int board_update(BoardVO vo); //수정
 	int board_delete(int id); //삭제
 
+	int board_comment_cnt(int pid);//댓글갯수
 	int board_comment_insert(BoardCommentVO vo); //댓글 저장
 	int board_comment_update(BoardCommentVO vo);//댓글수정
 	int board_comment_delete(int id) ;//댓글 삭제
