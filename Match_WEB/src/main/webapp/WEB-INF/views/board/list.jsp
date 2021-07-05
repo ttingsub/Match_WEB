@@ -59,6 +59,7 @@
 	<th class='w-px100'>작성자</th>
 	<th class='w-px100'>작성일자</th>
 	<th class='w-px60'>첨부파일</th>
+	<th class='w-px60'>조회수</th>
 </tr>
 <c:forEach items="${page.list}" var="vo">
 <tr><td>${vo.no}</td>
@@ -66,6 +67,7 @@
 	<td>${vo.name}</td>
 	<td>${vo.writedate}</td>
 	<td>${empty vo.filename ? '' : '<img src="imgs/attach.png" class="file-img" />'}</td>
+	<td>${vo.readcnt}</td>
 </tr>
 </c:forEach>
 </table>

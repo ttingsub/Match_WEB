@@ -22,21 +22,21 @@
 	<form action="insert.no" method="post" enctype="multipart/form-data">
 		<table>
 			<tr><th class="w-px160" >제목</th>
-				<td><input type="text" name='title' title='제목' class='chk' id="title"></td>
+				<td colspan="3"><input type="text" name='title' title='제목' class='chk' id="title"></td>
 			</tr>
-			
+			<tr>
 			<th class="w-px80" colspan="1">작성자</th>
-				<td >${logininfo.name}</td>
-				<th>작성일자</th>
-				<td><input type="text" name="year" id="year"></td>
+				<td style="width: 500px;">${logininfo.name}</td>
+				<th style="background-color: #55C4F6;">작성일자</th>
+				<td><input type="text" name="date" id="date"></td>
 			</tr>
 			
 			<tr><th class="w-px160">내용</th>
-				<td><textarea name='content' title='내용' class="chk" id="content1"></textarea> </td>
+				<td colspan="3"><textarea name='content' title='내용' class="chk" id="content1"></textarea> </td>
 			</tr>
 			
 			<tr><th class="w-px160">파일첨부</th>
-				<td class="left">
+				<td class="left"  colspan="3">
 					<label>
 						<input type="file" name='file' id='attach-file' />
 						<img alt="x" src="imgs/select.png" class="file-img" />
@@ -83,8 +83,17 @@
 
 </script>
 <script type="text/javascript">
-	var year = new Date();
-	document.getElementById("year").value=(year.getFullMonth());
+$(function(){
+	var date = new Date();
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	$('#date').val( year + '-' + month + '-' + day + ' / ' + hours + ':' + minutes);
+});
+
+	
 </script>
 
 
@@ -95,17 +104,19 @@
                 
 				var title = document.getElementById("title").value;
 				var content= document.getElementById("content1").value;
-				var writedate= document.getElementById("writedate").value;
-                var now = new Date();
+				var date= document.getElementById("date").value;
+				
+				
+				
                 //console.log("현재 : ", now);
 
                 //firebase에 쓰기
 
-                firebase.database().ref('matchapp/public_post').push({
+                firebase.database().ref('matchapp/public_post/'+ title).set({
 
                     title: title,
                     content : content,
-                    writedate : now
+                    date : date
                     
                     
 
