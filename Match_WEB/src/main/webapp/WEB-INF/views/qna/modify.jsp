@@ -23,18 +23,17 @@
 		<table>
 			<tr>
 				<th class="w-px160">카테고리</th>
-				<td><select name="category" id="category" style="float: left; background-color: white;">
- 						<option value="" id="none">선택</option>
-						<option value="운영정책" id="unyung">운영정책</option>
-						<option value="계정/인증" id="certify">계정/인증</option>
-						<option value="이벤트/초대" id="invite">이벤트/초대</option>
-						<option value="이용 제재" id="sanction">이용 제재</option>
-						<option value="모모 채팅" id="chat">모모 채팅</option>
-						<option value="모모 종목" id="event">모모 종목</option>
-						<option value="모모 매너" id="manner">모모 매너</option>
-						<option value="기타" id="etc">기타</option>
-					</select>
-					<!-- 변수명 bbb에서 categorySelect로 수정했습니다 -->
+	 			<td><select name="category" id="category" style="float: left;">
+	 						<option value="">선택</option>
+							<option value="운영정책" ${vo.category eq '운영정책' ? 'selected' : ''}>운영정책</option>
+							<option value="계정/인증" ${vo.category eq '계정/인증' ? 'selected' : ''}>계정/인증</option>
+							<option value="이벤트/초대" ${vo.category eq '이벤트/초대' ? 'selected' : ''}>이벤트/초대</option>
+							<option value="이용 제재" ${vo.category eq '이용 제재' ? 'selected' : ''}>이용 제재</option>
+							<option value="모모 채팅" ${vo.category eq '모모 채팅' ? 'selected' : ''}>모모 채팅</option>
+							<option value="모모 종목" ${vo.category eq '모모 종목' ? 'selected' : ''}>모모 종목</option>
+							<option value="모모 매너" ${vo.category eq '모모 매너' ? 'selected' : ''}>모모 매너</option>
+							<option value="기타" ${vo.category eq '기타' ? 'selected' : ''}>기타</option>
+						</select>
 					<input type="hidden" name="categorySelect" id="categorySelect" style="float: left; margin-left: 10px;"/>
 				</td>
 			</tr>

@@ -7,21 +7,16 @@
 </select>
 
 <select id="detail" resultType="customer.CustomerVO">
-	select * from member where id = #{id}
+	select to_char(birth, 'yyyy-mm-dd') birth, member.* from member where id = #{id}
 </select>
 
-<insert id="insert">
-	insert into member(id ,name , gender , email , tel, pw)
-	values (seq_board.nextval, #{name}, #{gender}, #{email}, #{tel}, #{pw} )
-</insert>
-
 <update id="update">
-	update member set  
-	name=#{name} , 
-	gender=#{gender} , 
-	email=#{email} , 
-	tel = #{tel},
-	pw = #{pw}
+	update member
+	set	email=#{email} ,
+		birth=#{birth},
+		tel= #{tel},
+		post=#{post},
+		addr=#{addr}
 	where id = #{id}
 </update>
 

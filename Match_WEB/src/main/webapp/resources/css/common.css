@@ -219,6 +219,7 @@ textarea[name=content] { width:calc(100% - 24px); resize:none; height:150px; }
 
 .w-px10 { width:10px; }
 .w-px40 { width:40px; }
+.w-px50 { width:50px; }
 .w-px60 { width:60px; background-color: #55C4F6;}
 .w-px70 { width:70px; background-color: #55C4F6;}
 .w-px80 { width:80px; background-color: #55C4F6;}
@@ -235,6 +236,7 @@ textarea[name=content] { width:calc(100% - 24px); resize:none; height:150px; }
 
 
 .back-fill{background-color: #55C4F6;}
+.back-trans{background-color: transparent;}
 
 .menu:hover{
 	background-color: #fff;
@@ -245,6 +247,8 @@ textarea[name=content] { width:calc(100% - 24px); resize:none; height:150px; }
 	background-color: #9dbfc4;
 	cursor: pointer;
 }
+
+
 
 
 /* 여기부터 외부 링크 */

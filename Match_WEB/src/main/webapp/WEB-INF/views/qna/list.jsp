@@ -20,6 +20,8 @@
 							<option value="title" ${page.search eq 'title' ? 'selected' : '' }>제목</option>
 							<option value="content" ${page.search eq 'content' ? 'selected' : '' }>내용</option>
 							<option value="writer" ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
+							
+							<!-- todo 카테고리 누르면 선택할 수 있게 수정 필요 -->
 							<option value="category" ${page.search eq 'category' ? 'selected' : '' }>카테고리</option>
 						</select>
 					</li>

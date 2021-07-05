@@ -79,7 +79,7 @@ public class CustomerController {
 //		logger.info(vo.getName());
 		service.costomer_update(vo);
 		//인서트 처리
-		return "redirect:list.cu";
+		return "redirect:momo.ho";
 	}
 	@RequestMapping("delete.cu")
 	public String cuDelete(String id) {

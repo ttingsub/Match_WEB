@@ -25,7 +25,7 @@
 	<!-- 			String[] category =
 				 new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재", "기타"
 				 , "모모 채팅", "모모 종목", "모모 매너", "모모 종목" };-->
-	 			<td><select name="category" id="category" style="float: left; background-color: white;">
+	 			<td><select name="category" id="category" style="float: left;">
 	 						<option value="" id="none">선택</option>
 							<option value="운영정책" id="unyung">운영정책</option>
 							<option value="계정/인증" id="certify">계정/인증</option>

@@ -24,15 +24,15 @@
 <tr><th class='w-px120'>제목</th>
 	<td colspan="3"><input type='text' name='title' class='chk' title='제목' value='${vo.title}' id="title"/></td>
 </tr>
-<tr><th>작성자</th>
+<tr><th class='w-px120'>작성자</th>
 	<td>${vo.name}</td>
 	<th style="background-color: #55C4F6;">수정일자</th>
 	<td><input type="text" name="date" id="date"></td>
 </tr>
-<tr><th>내용</th>
+<tr><th class='w-px120'>내용</th>
 	<td colspan="3"><textarea class='chk' title='내용' name='content' id="content1">${vo.content}</textarea></td>
 </tr>
-<tr><th>첨부파일</th>
+<tr><th class='w-px120'>첨부파일</th>
 	<td class='left middle' colspan="3">
 		<label>
 			<input type='file' name='file' id='attach-file'/>
