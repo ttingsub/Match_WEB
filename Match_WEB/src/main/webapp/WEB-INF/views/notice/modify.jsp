@@ -21,7 +21,7 @@
 	<form action="update.no" method="post" enctype="multipart/form-data">
 		<table>
 			<tr><th class="w-px160">제목</th>
-				<td colspan="3"><input type="text" name='title' title='제목' class='chk' value="${vo.title}" id="title"></td>
+				<td colspan="3"><input type="text" name='title' title='제목' class='chk' value="(수정)${vo.title}" id="title"></td>
 			</tr>
 			
 			<tr><th class="w-px160">작성자</th>
