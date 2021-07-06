@@ -31,11 +31,11 @@ input[name=addr] { width:calc(100% - 24px); }
 	<tr>
 		<th class="w-px160">* 아이디</th>
 	<td>${vo.id}</td>
-</tr>
-	
+	</tr>
+
 	<tr>
 		<th class="w-px160">* 비밀번호</th>
-		<td><a class='btn-fill-s' id='btn-pass'>비밀번호 변경</a></td>
+		<td><a class='btn-fill-s' id='btn-pass' href='password.cu?id=${logininfo.id}'>비밀번호 변경</a></td>
 	</tr>
 	
 	<tr>
@@ -85,7 +85,7 @@ input[name=addr] { width:calc(100% - 24px); }
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="js/join_check.js"></script>
 
-
+<!-- DB에 있는 주소 나눠 삽입 -->
    <script>
    $(function(){
 	   var oldString = '${vo.addr}';
@@ -213,7 +213,8 @@ function go_update(){
 			}
 		}
 		
-		$("form").submit();
+		if( confirm("정말 수정하시겠습니까?") ) {$("form").submit();};
+		
 	}
 	
 	function item_check( tag ){

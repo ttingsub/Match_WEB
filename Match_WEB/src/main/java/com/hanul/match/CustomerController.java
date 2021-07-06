@@ -38,8 +38,8 @@ public class CustomerController {
 		model.addAttribute("list", list);
 		
 		return "customer/list";
-		
 	}
+	
 	@RequestMapping("detail.cu")
 	public String detail(Model model , String id) {
 		//tile 작업이 되었을때는
@@ -55,10 +55,12 @@ public class CustomerController {
 		model.addAttribute("vo",vo);
 		return "customer/detail";
 	}
+	
 	@RequestMapping("new.cu")
 	public String cuNew() {
 		return "customer/new"; 
 	}
+	
 	@RequestMapping("insert.cu")
 	public String cuInsert(CustomerVO vo) {
 //		logger.info(vo.getName());
@@ -66,6 +68,7 @@ public class CustomerController {
 		//인서트 처리
 		return "redirect:list.cu";
 	}
+	
 	@RequestMapping("modify.cu")
 	public String cumodify(String id , Model model) {
 		CustomerVO vo = service.customer_detail(id);
@@ -74,6 +77,7 @@ public class CustomerController {
 		//인서트 처리
 		return "customer/modify";
 	}
+	
 	@RequestMapping("update.cu")
 	public String cuUpdate(CustomerVO vo) {
 //		logger.info(vo.getName());
@@ -81,10 +85,20 @@ public class CustomerController {
 		//인서트 처리
 		return "redirect:momo.ho";
 	}
+	
 	@RequestMapping("delete.cu")
 	public String cuDelete(String id) {
 		service.customer_delete(id);
 		return "redirect:list.cu";
+	}
+	
+	@RequestMapping("password.cu")
+	public String cuPassword(String id , Model model) {
+		CustomerVO vo = service.customer_detail(id);
+//		logger.info(vo.getGender());
+		model.addAttribute("vo",vo);
+		//인서트 처리
+		return "customer/password";
 	}
 	
 	

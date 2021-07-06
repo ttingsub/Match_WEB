@@ -133,7 +133,7 @@ $(function(){
                 //console.log("현재 : ", now);
 
                 //firebase에 쓰기
-
+/* 
                 firebase.database().ref('matchapp/Board/'+ title).set({
 
                     title: title,
@@ -144,7 +144,7 @@ $(function(){
 
                 }, (result)=>{
                 	$('form').submit();
-                });
+                }); */
                 
                 
 

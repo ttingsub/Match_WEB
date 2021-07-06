@@ -18,7 +18,6 @@ public interface CustomerService {
 	//DTO를 이용해서 수정할 예정
 	void costomer_update(CustomerVO vo);
 	
-	
 	//삭제를 하는데 id값을 이용하여 삭제 할 예정 2021-05-11 
 	//2021-05-12 : String 확정했다. 
 	void customer_delete(String id);
