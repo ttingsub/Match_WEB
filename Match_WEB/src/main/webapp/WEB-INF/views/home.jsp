@@ -158,8 +158,8 @@
 
 	<header class="masthead">
 		<div class="container">
-			<div class="masthead-subheading">Welcome To MoMo!</div>
-			<div class="masthead-heading text-uppercase">우리 모두의 모임</div>
+			<div class="masthead-subheading">　</div>
+			<div class="masthead-heading text-uppercase">　</div>
 			<a class="btn btn-info btn-xl text-uppercase" href="momo.ho">모모
 				시작하기!</a>
 		</div>

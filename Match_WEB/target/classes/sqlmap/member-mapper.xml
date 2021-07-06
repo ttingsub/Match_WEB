@@ -4,7 +4,7 @@
 <mapper namespace="member.mapper">
 <insert id="join" >
 insert into member(name , id, pw , gender , birth , tel ,addr , post , email)
-values(#{name} , #{id} , #{pw} , #{gender}, #{birth} , replace(#{tel}, ',', ''), #{addr}, #{post},#{email})
+values(#{name} , #{id} , #{pw} , #{gender}, #{birth} , replace(#{tel}, ',', ''), #{post},#{email})
 
 </insert>
 <select id="login" resultType="member.MemberVO">
