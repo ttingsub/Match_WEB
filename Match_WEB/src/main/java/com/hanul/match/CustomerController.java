@@ -95,12 +95,14 @@ public class CustomerController {
 	@RequestMapping("password.cu")
 	public String cuPassword(String id , Model model) {
 		CustomerVO vo = service.customer_detail(id);
-//		logger.info(vo.getGender());
 		model.addAttribute("vo",vo);
-		//인서트 처리
 		return "customer/password";
 	}
 	
-	
+	@RequestMapping("passwordmod.cu")
+	public String cuPasswordMod(CustomerVO vo) {
+		service.customer_update_password(vo);
+		return "redirect:momo.ho";
+	}
 	
 }

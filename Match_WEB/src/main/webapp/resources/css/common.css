@@ -271,7 +271,12 @@ textarea[name=content] { width:calc(100% - 24px); resize:none; height:150px; }
 	cursor: pointer;
 }
 
-
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], textarea, select{
+	background: none;
+	border: 1px solid #A9B3C4;
+	border-radius: 10px;
+	color: #000040;
+}
 
 
 /* 여기부터 외부 링크 */

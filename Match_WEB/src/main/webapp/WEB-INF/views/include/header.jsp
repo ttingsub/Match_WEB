@@ -2,19 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <header style="border-bottom: 1px solid #ccc; padding-bottom: 0px; text-align: center;" id="head">
-		<div class="category" style="margin-left: 100px; ">
+	<div class="category" style="margin-left: 100px; ">
 		<div style="float: right; margin-right: 20px; margin-top: 0px; font-size: 0.6em;">
 			<ul>
 				<!--로그인 하지 않은경우  -->
 				<c:if test="${empty logininfo  }">
-					<li><a href="login" class="btn-outline-info">로그인</a></li>
-					<li><a href="member" class="btn-outline-info">회원가입</a></li>
+					<li><a href="login" class="btn-outline-info btn-fill">로그인</a></li>
+					<li><a href="member" class="btn-outline-info btn-fill">회원가입</a></li>
 				</c:if>
 				<!--로그인 한 경우  -->
 				<c:if test="${!empty logininfo  }">
 					<li><strong>${logininfo.name}</strong> 님</li>
-					<li><a href='modify.cu?id=${logininfo.id}'>회원정보 수정</a></li>
-					<li><a href='logout'>로그아웃</a></li>
+					<li><a href='modify.cu?id=${logininfo.id}' class="btn-outline-info btn-fill">회원정보 수정</a></li>
+					<li><a href='logout' class="btn-outline-info btn-fill">로그아웃</a></li>
 				</c:if>
 			</ul>
 		</div>
@@ -31,37 +31,14 @@
 				
 			</ul>
 		</div>
-		</div>
-		<div class="subMenu">
-			<ul>
-			</ul>
-			<ul>
-			</ul>
-			
-			<ul>
-			</ul>
-			<!-- 임시 -->
-			<ul>
-				<li><a href="#">서브메뉴1</a></li>
-				<li><a href="#">서브메뉴2</a></li>
-				<li><a href="#">서브메뉴3</a></li>
-			</ul>
-			<ul>
-				<li><a href="#">서브메뉴1</a></li>
-				<li><a href="#">서브메뉴2</a></li>
-				<li><a href="#">서브메뉴3</a></li>
-			</ul>
-			<ul>
-			</ul>
+	</div>
 		
-		</div>
 		
 </header>
 <style>
 	header ul , header ul  li {
 	margin: 0; padding: 0; display: inline; }
 	.category{font-size: 18px;}
-	.category li:not(:first-child){padding-left: 30px}
 	.category li a:hover,
 	.category li a.active{ font-weight: bold; color: #0000cd;}
 	.category ul li {

@@ -24,7 +24,7 @@
 
 }
 
-#login { width:100%; border:1px solid #ccc; }
+#login { width:100%; border:1px solid #ccc; background-color: #EDF2F9; border-radius: 10px; }
 
 #userid, #userpw { width:48%; height:25px; 
 

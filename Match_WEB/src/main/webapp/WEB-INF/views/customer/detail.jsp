@@ -8,21 +8,20 @@
 <body>
 <h3>[ ${vo.name } 회원정보 ]</h3>
 <table>
-	<tr><th>성별</th>
-		<th>성명</th>	
-		<th>이메일</th>
-		<th>전화번호</th></tr>
 	<tr>
-		<td>${vo.gender }</td>
+		<th class="w-px100">성명</th>	
+		<th class="w-px100">성별</th>
+		<th class="w-px100">이메일</th>
+		<th class="w-px100">전화번호</th></tr>
+	<tr>
 		<td>${vo.name}</td>
+		<td>${vo.gender }</td>
 		<td>${vo.email }</td>
 		<td>${vo.tel }</td>
 	</tr>
 </table>
-<!--2021-05-13 class css줄라고했는데 아직 이름생각못함  -->
 <div class="imsi" style="margin-top: 30px; ">
 	<a class='btn-fill' href='list.cu'>회원목록</a>
-	<a class='btn-fill' href='new.cu'>신규 회원 추가</a>
 	<a class='btn-fill' href='modify.cu?id=${vo.id }'>회원 정보 수정</a>
 	<c:if test="${vo.name ne '관리자' }">
 	<a class='btn-fill' onclick='if(confirm("정말 삭제하시겠습니까?")){href="delete.cu?id=${vo.id }"} '  >회원 정보 삭제</a>

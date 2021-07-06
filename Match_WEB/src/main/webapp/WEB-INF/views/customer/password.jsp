@@ -23,14 +23,14 @@ input[name=addr] { width:calc(100% - 24px); }
 </head>
 <body>
 <h3>비밀번호 변경</h3>
-<form method="post" action="update.cu">
+<form method="post" action="passwordmod.cu">
 	<table class='w-pct50'>
 		<tr>
-			<th class='w-px160'>기존 비밀번호</th>
+			<th class='w-px160'>현재 비밀번호</th>
 			<td><input type="password" name='old_pw'/>
 			</td>
 		</tr>
-		<tr><th class='w-px160'>비밀번호</th>
+		<tr><th class='w-px160'>새 비밀번호</th>
 			<td><input type='password' name='pw' class='chk' /><br>
 				<div class='valid'>비밀번호를 입력하세요(영문대/소문자, 숫자를 모두 포함)</div>
 			</td>
@@ -48,28 +48,43 @@ input[name=addr] { width:calc(100% - 24px); }
 	<a class='btn-fill' href='list.cu'>취소</a>
 </div>
 
+<script type="text/javascript" src="js/join_check.js"></script>
 <script type="text/javascript">
-/* 하는 중임 */
+
+/* 하는 중 */
 function goPassUpdate() {
+// 공백체크
 	if( $('[name=old_pw]').val()=='' ){
-		alert('기존 비밀번호를 입력하세요!');
+		alert('현재 비밀번호를 입력하세요!');
 		$('[name=old_pw]').focus();
+		return;
+	}else if( ( $('[name=pw]').val()=='' ) ){
+		alert('비밀번호를 입력하세요!');
+		$('[name=pw]').focus();
+		return;
+	}else if( ( $('[name=pw_ck]').val()=='' )){
+		alert('비밀번호를 입력하세요!');
+		$('[name=pw_ck]').focus();
 		return;
 	}
 	
 // 	alert($('[name=old_pw]').val());
-	alert(${vo.pw});
-// 	alert($('[name=old_pw]').val() != ${vo.pw});
+// 	alert('${vo.pw}');
+// 	alert($('[name=old_pw]').val() != '${vo.pw}');
 
-	if( $('[name=old_pw]').val() != ${vo.pw} ){
-		alert('기존 비밀번호가 일치하지 않습니다');
+
+// 비밀번호 동일한지 확인
+	if( $('[name=old_pw]').val() != '${vo.pw}' ){
+		alert('현재 비밀번호가 일치하지 않습니다');
 		$('[name=old_pw]').focus();
 		return;
 	}
 	
+// 새 비밀번호, 비밀번호 체크 유효성 검사
 	if( ! item_check( $('[name=pw]') ) ) return;
 	if( ! item_check( $('[name=pw_ck]') ) ) return;	
 	
+// 폼 전송
 	$('form').submit();
 
 }
@@ -86,6 +101,19 @@ function item_check( tag ){
 	}else return true;
 
 }
+
+$('.chk').on('keyup', function(e){
+
+	if( $(this).attr('name')=='id' ){
+		if( e.keyCode==13 ){
+			id_check();
+			return;
+		}else
+			$(this).removeClass('chked');
+	} 
+
+	validate( $(this) );
+});
 </script>
 
 	

@@ -16,38 +16,36 @@ public class CustomerDAO implements CustomerService{
 	@Override
 	public void customer_insert(CustomerVO vo) {
 		//sql.insert(mapper);
-		// TODO Auto-generated method stub
-		System.out.println(vo.getId());
 		sql.insert("cu.mapper.insert" , vo);
 		//jsp - > controller(mapping)
 		//service(작업지시서) -> serviceimpl(service)"--" -> dao 
 		
 		//리턴을 꼭 주고싶다 int형으로 왜 리턴안하나..
-		
 	}
 
 	@Override
 	public List<CustomerVO> customer_list() {
-		// TODO Auto-generated method stub
 		return sql.selectList("cu.mapper.list");
 	}
 
 	@Override
 	public CustomerVO customer_detail(String id) {
-		// TODO Auto-generated method stub
 		return sql.selectOne("cu.mapper.detail" , id);
 	}
 
 	@Override
 	public void costomer_update(CustomerVO vo) {
-		// TODO Auto-generated method stub
 		sql.update("cu.mapper.update" , vo);
 	}
 
 	@Override
 	public void customer_delete(String id) {
 		sql.delete("cu.mapper.delete", id);
-		
+	}
+
+	@Override
+	public void customer_update_password(CustomerVO vo) {
+		sql.update("cu.mapper.update_pass", vo);
 	}
 
 }

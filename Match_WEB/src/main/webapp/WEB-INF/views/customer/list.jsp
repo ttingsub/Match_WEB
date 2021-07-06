@@ -3,10 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-	<title>AI</title>
+	<title></title>
 </head>
 <body>
 	<!--Content  -->
+	<h3>회원관리</h3>
 	<table class="tb_list">
 		<tr><th class='w-px100'>아이디</th>
 			<th class='w-px100'>회원명</th>

@@ -154,7 +154,6 @@ function go_join(){
 		if(userTel != "") {
 			while (true) {
 				if (!regUserTel.test(userTel)) {
-					alert(userTel);
 					alert("전화번호 형식이 잘못되었습니다.");
 					
 					userTel.focus();

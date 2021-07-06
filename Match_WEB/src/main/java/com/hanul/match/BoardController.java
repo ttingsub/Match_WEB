@@ -153,7 +153,7 @@ public class BoardController {
 //			out.print("</html>");
 //		}catch(Exception e) {}
 		
-		return service.board_comment_update(vo) == 1 ? "댓글 저장 성공^^" : "댓글 저장 실패ㅠㅠ";
+		return service.board_comment_update(vo) == 1 ? "댓글 저장 성공" : "댓글 저장 실패";
 	}
 	
 	
