@@ -267,6 +267,10 @@ textarea[name=content] { width:calc(100% - 24px); resize:none; height:150px; }
 .back-fill{background-color: #55C4F6;}
 .back-trans{background-color: transparent;}
 
+.disNone {
+	width: 0px;
+}
+
 .menu:hover{
 	background-color: #fff;
 	cursor: pointer;

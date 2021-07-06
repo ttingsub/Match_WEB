@@ -26,15 +26,13 @@ input[name=addr] { width:calc(100% - 24px); }
 
 .invalid { color:red; }
 
+
 </style>
 
 </head>
 
 <body>
 <div class="wrap_content">
-
-<h3>회원가입</h3>
-
 <p class='w-pct50 right' style='margin:0 auto; padding-bottom:10px'>* 는 필수입력항목입니다</p>
 <form method="post" action="join">
 <table class='w-pct50'>

@@ -5,11 +5,12 @@
     <div>
         	<a href="https://play.google.com/store/apps"><img alt="" src="imgs/momo-app.png2.png" style="width: 400px; height: 150px; float: right; margin-top: -20px;"></a>
         </div>
+        <div style="margin-left:400px;">
 		<div>우리 모두의 모임</div>
 		<div>대표번호 : 010 - 1111 - 2222</div>
 		<div>팩스 : 02-1111-2222</div>
 		<div>Copyright 2021</div>
-		
+		</div>
 </footer>
 
 <!-- <footer>

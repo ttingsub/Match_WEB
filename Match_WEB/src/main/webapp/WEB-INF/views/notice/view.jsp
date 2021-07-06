@@ -18,7 +18,7 @@
 	</tr>
 		<tr>
 		<th class="w-px160">작성자</th>
-		<td>${vo.writer}</td>
+		<td>${vo.name}</td>
 		<th class="w-px160">작성일자</th>
 		<td class="w-px110">${vo.writedate}</td>
 		<th class="w-px160">조회수</th>
