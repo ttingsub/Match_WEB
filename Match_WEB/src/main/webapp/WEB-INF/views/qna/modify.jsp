@@ -21,7 +21,7 @@
 	<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
 	<form action="update.qn" method="post" enctype="multipart/form-data">
 		<table>
-			<tr>
+			<%-- <tr>
 				<th class="w-px160">카테고리</th>
 	 			<td><select name="category" id="category" style="float: left;">
 	 						<option value="">선택</option>
@@ -36,7 +36,7 @@
 						</select>
 					<input type="hidden" name="categorySelect" id="categorySelect" style="float: left; margin-left: 10px;"/>
 				</td>
-			</tr>
+			</tr> --%>
 			
 			<tr><th class="w-px160">제목</th>
 				<td><input type="text" name='title' title='제목' class='chk' value="${vo.title}" id="title"></td>

@@ -22,7 +22,7 @@
 							<option value="writer" ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
 							
 							<!-- todo 카테고리 누르면 선택할 수 있게 수정 필요 -->
-							<option value="category" ${page.search eq 'category' ? 'selected' : '' }>카테고리</option>
+							<%-- <option value="category" ${page.search eq 'category' ? 'selected' : '' }>카테고리</option> --%>
 						</select>
 					</li>
 					<li><input type="text" name="keyword" value='${page.keyword }' class="w-px300" placeholder="어떤 점이 궁금하신가요?"/></li>
