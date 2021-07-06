@@ -10,14 +10,11 @@
 			where id =#{id} 
 	</update>
 	<insert id="reply_insert">
-	
-	
-		insert into qna (id , root , title , content , writer , filename , filepath , step , indent, category)
+		insert into qna (id , root , title , content , writer , filename , filepath , step , indent)
 		values ( seq_qna.nextval , #{root} , #{title} , #{content} , #{writer}
 				, #{filename , jdbcType=VARCHAR}
 				, #{filepath , jdbcType=VARCHAR}
-				, #{step} + 1 , #{indent} + 1, #{category}
-				
+				, #{step} + 1 , #{indent} + 1
 		)
 	
 	</insert>

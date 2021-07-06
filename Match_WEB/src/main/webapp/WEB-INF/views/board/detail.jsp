@@ -18,20 +18,20 @@
 <h3>커뮤니티 글 보기</h3>
 <table>
 <tr><th class='w-px120'>제목</th>
-	<td colspan='5' class='left' style="word-break:break-all; ">${vo.title}</td>
+	<td class='left' style="word-break:break-all; ">${vo.title}</td>
+	<th class='w-px80'>작성일자</th>
+	<td>${vo.writedate}</td>
 </tr>
-<tr><th style="background-color: #36c8f5;">작성자</th>
+<tr><th class='w-px80'>작성자</th>
 	<td>${vo.name}</td>
-	<th class='w-px100'>작성일자</th>
-	<td style="width: 100px;">${vo.writedate}</td>
 	<th class='w-px80'>조회수</th>
-	<td style="width: 80px;">${vo.readcnt}</td>
+	<td>${vo.readcnt}</td>
 </tr>
-<tr><th style="background-color: #36c8f5;">내용</th>
-	<td colspan='5' class='left'>${fn: replace(vo.content, crlf, '<br>')}</td>
+<tr><th class='w-px120'>내용</th>
+	<td colspan='3' class='left'>${fn: replace(vo.content, crlf, '<br>')}</td>
 </tr>
-<tr><th style="background-color: #36c8f5;">첨부파일</th>
-	<td colspan='5' class='left'>${vo.filename}
+<tr><th class='w-px120'>첨부파일</th>
+	<td colspan='3' class='left'>${vo.filename}
 		<c:if test="${!empty vo.filename}">
 		<a id='preview'></a>
 		<a href='download.bo?id=${vo.id}'><i class='fas fa-download font-img'></i></a>
@@ -65,7 +65,7 @@
 <div style='margin:0 auto; padding-top:20px; width:500px;' class='comment'>
 	<div id='comment_regist'>
 		<span class='left'><strong>댓글작성</strong></span>
-		<span class='right'><a class='btn-fill-s' onclick="comment_regist()">댓글등록</a></span>
+		<span class='right'><a class='btn-fill-s' onclick="comment_regist()">댓글 등록</a></span>
 		<textarea id='comment' style='width:96%; height:60px; margin-top:5px; resize:none; '></textarea>
 	</div>
 	<div id='comment_list' class='left'></div>
@@ -94,7 +94,7 @@ function comment_regist(){
 				$('#comment').val('');
 				comment_list();
 			}else
-				alert('댓글 저장 실패 ㅠㅠ');
+				alert('댓글 저장 실패');
 			
 		},error: function(req, text){
 			alert(text+':'+req.status);

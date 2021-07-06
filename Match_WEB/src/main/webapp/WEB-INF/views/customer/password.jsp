@@ -27,7 +27,7 @@ input[name=addr] { width:calc(100% - 24px); }
 	<table class='w-pct50'>
 		<tr>
 			<th class='w-px160'>기존 비밀번호</th>
-			<td><input type="password" name='old_pw' />
+			<td><input type="password" name='old_pw'/>
 			</td>
 		</tr>
 		<tr><th class='w-px160'>비밀번호</th>
