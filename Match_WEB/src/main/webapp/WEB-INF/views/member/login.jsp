@@ -18,13 +18,13 @@
 
 	position: absolute; left:50%;  top:50%;
 
-	width: 400px; height:340px;
+	width: 400px; height:300px;
 
-	margin-left: -200px; margin-top:-170px;   
+	margin-left: -200px; margin-top:-100px;    
 
 }
 
-#login { width:100%; border:1px solid #ccc; background-color: #EDF2F9; border-radius: 10px; }
+#login { width:100%; border:1px solid #ccc; }
 
 #userid, #userpw { width:48%; height:25px; 
 

@@ -102,22 +102,6 @@ input[name=addr] { width:calc(100% - 24px); }
    </script>
 <script type="text/javascript">
 
-// var tel = "${vo.tel}";
-// alert(tel);
-
-// var tel1 = document.getElementById('tel1').value(); 
-// var tel2 = document.getElementById('tel2').value(); 
-// var tel3 = document.getElementById('tel3').value();
-
-// tel1 = tel.substr(0,3);
-// tel2 = tel.substr(3,4);
-// tel3 = tel.substr(7,4);
-
-// alert(tel1);
-// alert(tel2);
-// alert(tel3);
-
-
 $(function(){
 	var today = new Date();
 	var endDay = 
@@ -228,6 +212,8 @@ function go_update(){
 		}else return true;
 
 	}
+	
+	
 	
 }
 
