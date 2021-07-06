@@ -11,6 +11,7 @@
 
 </head>
 <body>
+<div class="wrap_content">
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
 	<script
@@ -21,9 +22,10 @@
 	<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
 	<form action="update.qn" method="post" enctype="multipart/form-data">
 		<table>
-			<%-- <tr>
+			<tr>
 				<th class="w-px160">카테고리</th>
-	 			<td><select name="category" id="category" style="float: left;">
+	 			<td>${vo.category}
+	 				<%-- <select name="category" id="category" style="float: left;">
 	 						<option value="">선택</option>
 							<option value="운영정책" ${vo.category eq '운영정책' ? 'selected' : ''}>운영정책</option>
 							<option value="계정/인증" ${vo.category eq '계정/인증' ? 'selected' : ''}>계정/인증</option>
@@ -34,9 +36,9 @@
 							<option value="모모 매너" ${vo.category eq '모모 매너' ? 'selected' : ''}>모모 매너</option>
 							<option value="기타" ${vo.category eq '기타' ? 'selected' : ''}>기타</option>
 						</select>
-					<input type="hidden" name="categorySelect" id="categorySelect" style="float: left; margin-left: 10px;"/>
+					<input type="hidden" name="categorySelect" id="categorySelect" style="float: left; margin-left: 10px;"/> --%>
 				</td>
-			</tr> --%>
+			</tr>
 			
 			<tr><th class="w-px160">제목</th>
 				<td><input type="text" name='title' title='제목' class='chk' value="${vo.title}" id="title"></td>
@@ -66,8 +68,11 @@
 	</form>
 	<div class="btnset">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
-		<a class="btn-empty" href="list.qn" >취소 </a>
+		<a class="btn-fill" href="list.qn" >취소 </a>
 	</div>
+	</div>
+	
+	
 	<script type="text/javascript" src="js/file_check.js">
 
 
@@ -83,14 +88,14 @@
 	}
 	
 	/* 카테고리 변경될 때 */
-	$(document).ready(function(){
+/* 	$(document).ready(function(){
 		var idval = $('#categorySelect')
 		$('#category').on('change', function(){
 			var element = $(this).find('option:selected');
 			var myTag = element.attr('value');
 			idval.val(myTag);
 		});
-	});
+	}); */
 	
 	/* 파이어베이스 */
 	var firebaseConfig = {
@@ -112,19 +117,19 @@
 	  var preObject = document.getElementById("object");
 	
 	  function myFunction() {
-		var category = document.getElementById("categorySelect").value;
+		/* var category = document.getElementById("categorySelect").value; */
 		var title = document.getElementById("title").value;
 		var content = document.getElementById("content1").value;
 
 			/* 문의 카테고리 강제 선택 */
-			if(category == "") {
+/* 			if(category == "") {
 				alert('문의 카테고리를 선택해 주세요');
 				return false;
-			}
+			} */
 
             //firebase에 쓰기
             firebase.database().ref('matchapp/qna'+title).set({
-                category: category,
+//                 category: category,
                 title: title,
                 content: content
               }, (result)=>{

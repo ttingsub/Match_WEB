@@ -10,11 +10,14 @@
 <head>
 <meta charset="UTF-8">
 <c:choose>
+<c:when test="${category eq 'bo' }">
+	<c:set var="title" value="커뮤니티 :"/>
+</c:when>
 <c:when test="${category eq 'no' }">
 	<c:set var="title" value="공지사항 :"/>
 </c:when>
-<c:when test="${category eq 'bo' }">
-	<c:set var="title" value="커뮤니티 :"/>
+<c:when test="${category eq 'qna' }">
+	<c:set var="title" value="QnA :"/>
 </c:when>
 <c:when test="${category eq 'cu' }">
 	<c:set var="title" value="회원관리 :"/>

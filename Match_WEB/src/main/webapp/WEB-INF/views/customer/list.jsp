@@ -6,6 +6,7 @@
 	<title></title>
 </head>
 <body>
+<div class="wrap_content">
 	<!--Content  -->
 	<h3>회원관리</h3>
 	<table class="tb_list">
@@ -21,6 +22,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-
+</div>
 </body>
 </html>

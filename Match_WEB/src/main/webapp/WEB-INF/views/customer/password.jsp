@@ -22,6 +22,7 @@ input[name=addr] { width:calc(100% - 24px); }
 </style>
 </head>
 <body>
+<div class="wrap_content">
 <h3>비밀번호 변경</h3>
 <form method="post" action="passwordmod.cu">
 	<table class='w-pct50'>
@@ -48,6 +49,7 @@ input[name=addr] { width:calc(100% - 24px); }
 	<a class='btn-fill' href='list.cu'>취소</a>
 </div>
 
+</div>
 <script type="text/javascript" src="js/join_check.js"></script>
 <script type="text/javascript">
 

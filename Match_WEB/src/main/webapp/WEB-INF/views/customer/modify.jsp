@@ -23,6 +23,7 @@ input[name=addr] { width:calc(100% - 24px); }
 
 </head>
 <body>
+<div class="wrap_content">
 <h3>회원정보 수정</h3>
 <p class='w-pct50 right' style='margin:0 auto; padding-bottom:10px'>* 는 필수입력항목입니다</p>
 <form method="post" action="update.cu">
@@ -79,6 +80,7 @@ input[name=addr] { width:calc(100% - 24px); }
 <!-- 	<a class='btn-fill' onclick='$("form").submit()'>저장</a> -->
 	<a class='btn-fill' onclick='go_update()'>저장</a>
 	<a class='btn-fill' href='<c:url value="/"/>'>취소</a>
+</div>
 </div>
 	
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

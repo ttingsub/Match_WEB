@@ -10,6 +10,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 </head>
 <body>
+<div class="wrap_content">
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
 	<script
@@ -66,7 +67,8 @@
 	</form>
 	<div class="btnset">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
-		<a class="btn-empty" href="list.qn" >취소 </a>
+		<a class="btn-fill" href="list.qn" >취소 </a>
+	</div>
 	</div>
 	<script type="text/javascript" src="js/file_check.js"></script>
 	<script>

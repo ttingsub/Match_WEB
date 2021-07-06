@@ -8,14 +8,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
-</head>
-<body>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
 	<script
 		src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
 	<script
 		src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+</head>
+<body>
+<div class="wrap_content">
+
 <h3>커뮤니티 글쓰기</h3>
 <!-- 파일업로드위한 form 설정 
    1. form 에서 데이터를 전송하는 방식은 반드시 post
@@ -29,7 +31,7 @@
 </tr>
 <tr><th class='w-px120'>작성자</th>	
 	<td>${logininfo.name}</td>
-	<th style="background-color: #55C4F6;">작성일자</th>
+	<th class='w-px120'>작성일자</th>
 	<td><input type="text" name="date" id="date"></td>
 </tr>
 <tr><th class='w-px120'>내용</th>
@@ -50,7 +52,8 @@
 </form>
 <div class='btnSet'>
 	<a class='btn-fill' onclick="if( emptyCheck() ){ myFunction();}">저장</a>
-	<a class='btn-empty' href='list.bo'>취소</a>
+	<a class='btn-fill' href='list.bo'>취소</a>
+</div>
 </div>
 
 <script type="text/javascript" src="js/file_check.js"></script>

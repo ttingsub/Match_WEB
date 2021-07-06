@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>공지글 안내</h3>
+<div class="wrap_content">
+<h3>공지사항</h3>
 <table>
 	<tr>
 		<th class="w-px160">제목</th>
@@ -48,6 +49,7 @@
 	 	삭제</a>
 	  	<a class="btn-fill" href="reply.no?id=${vo.id}">답글쓰기</a>
 	  </c:if>
+</div>
 </div>
 </body>
 </html>

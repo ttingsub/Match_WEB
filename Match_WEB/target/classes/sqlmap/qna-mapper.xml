@@ -6,7 +6,6 @@
 		update qna set title = #{title} , content = #{content}
 			,	filename = #{filename , jdbcType=VARCHAR}
 			,	filepath = #{filepath , jdbcType=VARCHAR}
-			,	category = #{category}
 			where id =#{id} 
 	</update>
 	<insert id="reply_insert">

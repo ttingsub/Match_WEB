@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="wrap_content">
 <h3>QnA 글 보기</h3>
 <table>
 <!-- String[] category = 
@@ -56,6 +57,7 @@ new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재",
 	  <c:if test="${logininfo.name eq '관리자'}">
 	  	<a class="btn-fill" href="reply.qn?id=${vo.id}">답변 작성</a>
 	  </c:if>
+</div>
 </div>
 </body>
 </html>

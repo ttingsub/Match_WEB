@@ -1,62 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+</style>
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 
 </head>
 <body>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<div class="wrap_content">
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-	<script
-		src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
-	<script
-		src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-	<h3>new</h3>
-	<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
-	<form action="insert.no" method="post" enctype="multipart/form-data">
-		<table>
-			<tr><th class="w-px160" >제목</th>
-				<td colspan="3"><input type="text" name='title' title='제목' class='chk' id="title"></td>
-			</tr>
-			<tr>
-			<th class="w-px80" colspan="1">작성자</th>
-				<td style="width: 500px;">${logininfo.name}</td>
-				<th style="background-color: #55C4F6;">작성일자</th>
-				<td><input type="text" name="date" id="date"></td>
-			</tr>
-			
-			<tr><th class="w-px160">내용</th>
-				<td colspan="3"><textarea name='content' title='내용' class="chk" id="content1"></textarea> </td>
-			</tr>
-			
-			<tr><th class="w-px160">파일첨부</th>
-				<td class="left"  colspan="3">
-					<label>
-						<input type="file" name='file' id='attach-file' />
-						<img alt="x" src="imgs/select.png" class="file-img" />
-					</label>
-					<span id='file-name'></span>
-					<span id='delete-file'><i class="fas fa-times"> </i></span>
-				</td>
-			</tr>
-		</table>
-	</form>
-	<div class="btnset">					<!-- //boolean -->
-		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
-		<a class="btn-empty" href="list.no" >취소 </a>
-		
+		<script
+			src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+		<script
+			src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+		<h3>공지사항 등록</h3>
+		<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
+		<form action="insert.no" method="post" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<th class="w-px160">제목</th>
+					<td colspan="3"><input type="text" name='title' title='제목'
+						class='chk' id="title"></td>
+				</tr>
+				<tr>
+					<th class="w-px80" colspan="1">작성자</th>
+					<td style="width: 500px;">${logininfo.name}</td>
+					<th class="back-fill">작성일자</th>
+					<td><input type="text" name="date" id="date"></td>
+				</tr>
+
+				<tr>
+					<th class="w-px160">내용</th>
+					<td colspan="3"><textarea name='content' title='내용'
+							class="chk" id="content1"></textarea></td>
+				</tr>
+
+				<tr>
+					<th class="w-px160">파일첨부</th>
+					<td class="left" colspan="3"><label> <input
+							type="file" name='file' id='attach-file' /> <img alt="x"
+							src="imgs/select.png" class="file-img" />
+					</label> <span id='file-name'></span> <span id='delete-file'><i
+							class="fas fa-times"> </i></span></td>
+				</tr>
+			</table>
+		</form>
+		<div class="btnset">
+			<!-- //boolean -->
+			<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}">저장
+			</a> <a class="btn-fill" href="list.no">취소 </a>
+
+		</div>
+		<script type="text/javascript" src="js/file_check.js"></script>
 	</div>
-	<script type="text/javascript" src="js/file_check.js"></script>
-	
-	
-	
-		<script>
+
+
+	<script>
 		
   
  var firebaseConfig = {
@@ -82,7 +88,7 @@
  
 
 </script>
-<script type="text/javascript">
+	<script type="text/javascript">
 $(function(){
 	var date = new Date();
 	var year = date.getFullYear();

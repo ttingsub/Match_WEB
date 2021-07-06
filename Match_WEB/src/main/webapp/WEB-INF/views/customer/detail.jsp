@@ -6,6 +6,7 @@
 	<title>모모</title>
 </head>
 <body>
+<div class="wrap_content">
 <h3>[ ${vo.name } 회원정보 ]</h3>
 <table>
 	<tr>
@@ -26,6 +27,7 @@
 	<c:if test="${vo.name ne '관리자' }">
 	<a class='btn-fill' onclick='if(confirm("정말 삭제하시겠습니까?")){href="delete.cu?id=${vo.id }"} '  >회원 정보 삭제</a>
 	</c:if>
+</div>
 </div>
 </body>
 </html>

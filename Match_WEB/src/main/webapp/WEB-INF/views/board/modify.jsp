@@ -8,15 +8,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
-
-</head>
-<body>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
 	<script
 		src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
 	<script
 		src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+</head>
+<body>
+<div class="wrap_content">
 <h3>커뮤니티 글 수정</h3>
 <form method="post" action='update.bo' enctype="multipart/form-data">
 <input type='hidden' name='id' value='${vo.id}'/>
@@ -49,9 +48,10 @@
 <div class='btnSet'>
 	<a class='btn-fill' 
 	onclick="if( emptyCheck() ){ myFunction();}">저장</a>
-	<a class='btn-empty' onclick='history.go(-1)'>취소</a>
+	<a class='btn-fill' onclick='history.go(-1)'>취소</a>
 </div>
 
+</div>
 
 <script type="text/javascript" src='js/file_check.js'></script>
 <script type="text/javascript">

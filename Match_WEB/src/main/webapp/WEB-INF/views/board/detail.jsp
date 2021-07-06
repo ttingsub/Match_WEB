@@ -15,6 +15,7 @@
 </style>
 </head>
 <body>
+<div class="wrap_content">
 <h3>커뮤니티 글 보기</h3>
 <table>
 <tr><th class='w-px120'>제목</th>
@@ -69,6 +70,8 @@
 		<textarea id='comment' style='width:96%; height:60px; margin-top:5px; resize:none; '></textarea>
 	</div>
 	<div id='comment_list' class='left'></div>
+</div>
+
 </div>
 
 

@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>커뮤니티 목록</h3>
+<div class="wrap_content">
+<h1>모두 모이는 커뮤니티</h1>
 
 <div id='list-top'>
 <form method="post" action="list.bo">
@@ -89,6 +90,8 @@
 
 <div class='btnSet'>
 	<jsp:include page="/WEB-INF/views/include/page.jsp"/>
+</div>
+
 </div>
 <script type="text/javascript">
 function go_detail(id){

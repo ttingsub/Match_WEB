@@ -10,13 +10,14 @@
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 </head>
 <body>
+<div class="wrap_content">
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
 	<script
 		src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
 	<script
 		src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-	<h3>공지글 수정</h3>
+	<h3>공지사항 수정</h3>
 	<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
 	<form action="update.no" method="post" enctype="multipart/form-data">
 		<table>
@@ -26,7 +27,7 @@
 			
 			<tr><th class="w-px160">작성자</th>
 				<td>${logininfo.name}</td>
-				<th style="background-color: #55C4F6;">수정일자</th>
+				<th class="w-px160">수정일자</th>
 				<td><input type="text" name="date" id="date"></td>
 			</tr>
 			
@@ -50,11 +51,11 @@
 	</form>
 	<div class="btnset">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
-		<a class="btn-empty" href="list.no" >취소 </a>
+		<a class="btn-fill" href="list.no" >취소 </a>
 		
 	</div>
 	
-	
+	</div>
 	
 	<script type="text/javascript">
 	if( ${!empty vo.filename}){

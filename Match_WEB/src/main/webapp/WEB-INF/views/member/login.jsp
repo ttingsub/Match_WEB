@@ -39,7 +39,7 @@
 <body>
 
  
-
+<div class="wrap_content">
 <div class='container'>
 
 	<div style='height:80px'>
@@ -67,6 +67,7 @@
 
 	</div>
 
+</div>
 </div>
 <script type="text/javascript">
 	function go_login() {

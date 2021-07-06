@@ -31,6 +31,7 @@ input[name=addr] { width:calc(100% - 24px); }
 </head>
 
 <body>
+<div class="wrap_content">
 
 <h3>회원가입</h3>
 
@@ -101,7 +102,7 @@ input[name=addr] { width:calc(100% - 24px); }
 <a class='btn-fill' onclick="go_join()">회원가입</a>
 <a class='btn-fill' href='<c:url value="/"/>'>취소</a>
 </div>
-
+</div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="js/join_check.js"></script>
