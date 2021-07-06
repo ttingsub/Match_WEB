@@ -752,7 +752,7 @@
         </div>
         
         
-        
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Portfolio about team -->
         <a href="#"><img alt="" src="imgs/TOP3.png" style="position: fixed; right: 120px; bottom: 300px; width: 100px; height: 100px;"></a>
 		<a href="#portfolio"><div style="position: fixed; right: 150px; bottom: 290px; float: left;">Portfolio</div></a>   			
