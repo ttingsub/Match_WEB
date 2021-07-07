@@ -43,6 +43,7 @@ input[name=addr] { width:calc(100% - 24px); }
 			</td>
 		</tr>
 	</table>
+	<input type='hidden' name='id' value='${vo.id}' />
 </form>
 <div class='imsi'>
 	<a class='btn-fill' onclick='goPassUpdate()'>저장</a>
@@ -86,8 +87,19 @@ function goPassUpdate() {
 	if( ! item_check( $('[name=pw]') ) ) return;
 	if( ! item_check( $('[name=pw_ck]') ) ) return;	
 	
+// 현재 비밀번호와 새 비밀번호 달라야 함
+	if( $('[name=old_pw]').val() == $('[name=pw]').val()){
+		alert("현재 비밀번호와 다른 비밀번호를 설정해 주세요");
+		$('[name=pw_ck]').focus();
+		return;
+	}
+
+	
 // 폼 전송
-	$('form').submit();
+	if( confirm('정말 수정하시겠습니까?') ){
+		$('form').submit();
+	}
+	
 
 }
 
@@ -116,6 +128,15 @@ $('.chk').on('keyup', function(e){
 
 	validate( $(this) );
 });
+
+function validate( tag ){
+
+	var data = join.tag_status( tag );
+	tag.siblings('div').text( data.desc );	
+	tag.siblings('div').removeClass();
+	tag.siblings('div').addClass( data.code );
+
+}
 </script>
 
 	

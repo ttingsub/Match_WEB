@@ -79,7 +79,8 @@ input[name=addr] { width:calc(100% - 24px); }
 <div class='btnSet'>
 <!-- 	<a class='btn-fill' onclick='$("form").submit()'>저장</a> -->
 	<a class='btn-fill' onclick='go_update()'>저장</a>
-	<a class='btn-fill' href='<c:url value="/"/>'>취소</a>
+	<a class='btn-fill' onclick="history.back();">취소</a> <!-- 취소 누르면 뒤로가기 -->
+	<a class='btn-fill' onclick='drop_out()'>회원 탈퇴</a>
 </div>
 </div>
 	
@@ -90,17 +91,28 @@ input[name=addr] { width:calc(100% - 24px); }
 <!-- DB에 있는 주소 나눠 삽입 -->
    <script>
    $(function(){
-	   var oldString = '${vo.addr}';
+		var oldString = '${vo.addr}';
 		var splitstr = oldString.split(',');
-
-	
-
-	$('[id=addr1]').val(splitstr[0]);
-	$('[id=addr2]').val(splitstr[1]);
-   
-   
+		$('[id=addr1]').val(splitstr[0]);
+		$('[id=addr2]').val(splitstr[1]);
    })
    
+   
+   function drop_out() {
+	alert("drop_out() 진입");
+	var pw_check() = prompt('탈퇴하시려면 현재 비밀번호를 입력하세요');
+	alert("pw_check() : " + pw_check())
+	
+	if(pw_check() == '${vo.pw}') {
+		alert('비밀번호가 일치합니다.');
+		return true;
+	}else{
+		alert('비밀번호가 일치하지 않습니다.');
+		return false;
+	}
+	href="delete.cu?id=${vo.id }";
+	alert("정상적으로 탈퇴되었습니다.");
+}
    </script>
 <script type="text/javascript">
 
@@ -148,17 +160,12 @@ function validate( tag ){
 }
 
 $('[name=birth]').change(function(){
-
 	$('#delete').css('display', 'inline');
-
 });
 
 $('#delete').click(function(){
-
 	$('[name=birth]').val('');
-
 	$('#delete').css('display', 'none');
-
 });
 	
 
@@ -171,7 +178,6 @@ function daum_post(){
 							? data.roadAddress : data.jibunAddress;
 			if( data.buildingName !='' ) address += ' (' + data.buildingName + ')';						
 			$('[name=addr]').eq(0).val( address );
-
 		}
 	}).open();
 }
@@ -189,22 +195,17 @@ function go_update(){
 			while (true) {
 				if (!regUserTel.test(userTel)) {
 					alert("전화번호 형식이 잘못되었습니다.");
-					
 					userTel.focus();
-					
 					return false;
 				} else {
 					break;
 				}
 			}
 		}
-		
-		if( confirm("정말 수정하시겠습니까?") ) {$("form").submit();};
-		
+		if( confirm("정말 수정하시겠습니까?") ) {$("form").submit();};	
 	}
 	
 	function item_check( tag ){
-
 		var result = join.tag_status( tag );
 
 		if( result.code =='invalid' ){
@@ -212,14 +213,8 @@ function go_update(){
 			tag.focus();
 			return false;
 		}else return true;
-
 	}
-	
-	
-	
 }
-
-	
 </script>
 </body>
 </html>

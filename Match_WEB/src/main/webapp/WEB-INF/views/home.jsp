@@ -27,9 +27,6 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <style type="text/css">
-#head {
-	display: none;
-}
 
 #foot {
 	display: none;

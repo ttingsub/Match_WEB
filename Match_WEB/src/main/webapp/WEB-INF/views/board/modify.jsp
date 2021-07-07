@@ -25,7 +25,7 @@
 </tr>
 <tr><th class='w-px120'>작성자</th>
 	<td class='w-pct40'>${vo.name}</td>
-	<th class='rw-px120'>수정일자</th>
+	<th class='w-px120'>수정일자</th>
 	<td class='w-pct40'><input type="text" name="date" id="date"></td>
 </tr>
 <tr><th class='w-px120'>내용</th>
