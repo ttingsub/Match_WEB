@@ -107,6 +107,8 @@ input[name=addr] { width:calc(100% - 24px); }
 	if(pw_check == '${vo.pw}') {
 		alert('비밀번호가 일치합니다.');
 	location.href="delete.cu?id=${vo.id }";
+	location.href="logout";
+	
 	alert("정상적으로 탈퇴되었습니다.");
 		return true;
 	}else{
