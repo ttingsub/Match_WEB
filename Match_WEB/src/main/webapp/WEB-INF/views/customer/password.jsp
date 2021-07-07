@@ -28,7 +28,11 @@ input[name=addr] { width:calc(100% - 24px); }
 	<table class='w-pct50'>
 		<tr>
 			<th class='w-px160'>현재 비밀번호</th>
-			<td><input type="password" name='old_pw'/>
+			<td>
+<%-- 			<c:if test="${logininfo.name eq '관리자'}"> --%>
+<!-- 				관리자한테는 비번 뜨게 하고 싶어... -->
+<%-- 			</c:if> --%>
+			<input type="password" name='old_pw'/>
 			</td>
 		</tr>
 		<tr><th class='w-px160'>새 비밀번호</th>
