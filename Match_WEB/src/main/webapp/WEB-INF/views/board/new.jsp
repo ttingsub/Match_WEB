@@ -35,13 +35,15 @@
 	<td><input type="text" name="date" id="date"></td>
 </tr>
 <tr><th class='w-px120'>내용</th>
-	<td colspan="3"><textarea name='content' class='chk' title='내용' id="content1"></textarea></td>	
+	<td colspan="3"><textarea name='content' class='chk' title='내용' id="content1">
+		
+	</textarea></td>	
 </tr>
 <tr><th class='w-px120'>첨부파일</th>
 	<td class='left middle' colspan="3">
 		<label>
 			<input type='file' name='file' id='attach-file'/>
-			<a><img src='imgs/select.png' class='file-img'/></a>
+			<a><img src='imgs/select.png' class='file-img' /></a>
 		</label>
 		<span id='file-name'></span>
 		<span id='preview'></span>
