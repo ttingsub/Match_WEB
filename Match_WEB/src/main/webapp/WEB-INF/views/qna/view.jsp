@@ -56,6 +56,9 @@ new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재",
 	 
 	  <c:if test="${logininfo.name eq '관리자'}">
 	  	<a class="btn-fill" href="reply.qn?id=${vo.id}">답변 작성</a>
+	  		 	<a class="btn-fill" href="modify.qn?id=${vo.id}">수정</a>
+	 	<a class="btn-fill" onclick="if (confirm('정말 삭제하시겠습니까?') ){ location='delete.qn?id=${vo.id}' } ">
+	 	삭제</a>
 	  </c:if>
 </div>
 </div>

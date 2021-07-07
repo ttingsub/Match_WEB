@@ -16,7 +16,7 @@
 
 .container {
 
-	position: absolute; left:50%;  top:50%;
+	position: absolute; left:50%;  top:35%;
 
 	width: 400px; height:300px;
 

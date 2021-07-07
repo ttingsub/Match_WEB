@@ -50,6 +50,13 @@
 		onclick="if( confirm('정말 삭제하시겠습니까?') ){ href='delete.bo?id=${vo.id}' } ">삭제</a>
 	</c:if>
 	
+	<c:if test="${logininfo.name eq '관리자' }">
+	<a class='btn-fill' 
+		onclick="$('form').attr('action', 'modify.bo');   $('form').submit()">수정</a>
+	<a class='btn-fill' 
+		onclick="if( confirm('정말 삭제하시겠습니까?') ){ href='delete.bo?id=${vo.id}' } ">삭제</a>
+	</c:if>
+	
 </div>
 <div id='popup-background'></div>
 <div id='popup' class='center'></div>

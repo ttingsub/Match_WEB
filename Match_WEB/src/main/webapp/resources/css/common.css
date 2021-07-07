@@ -151,7 +151,7 @@ table tr td label:not(:first-child) { margin-left:20px; }
 
 ul { list-style:none; padding:0; }
 
-#list-top { padding:20px 10%; }
+#list-top { padding:15px 10%; }
 
 #list-top div { height:36px }
 
