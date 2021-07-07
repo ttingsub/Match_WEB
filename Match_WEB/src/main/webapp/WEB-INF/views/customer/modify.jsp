@@ -80,7 +80,7 @@ input[name=addr] { width:calc(100% - 24px); }
 <!-- 	<a class='btn-fill' onclick='$("form").submit()'>저장</a> -->
 	<a class='btn-fill' onclick='go_update()'>저장</a>
 	<a class='btn-fill' onclick="history.back();">취소</a> <!-- 취소 누르면 뒤로가기 -->
-	<a class='btn-fill' onclick='drop_out()'>회원 탈퇴</a>
+	<a class='btn-fill' onclick="{drop_out()}">회원 탈퇴</a>
 </div>
 </div>
 	
@@ -98,21 +98,23 @@ input[name=addr] { width:calc(100% - 24px); }
    })
    
    
-   function drop_out() {
+ 
+	   function drop_out() {
 	alert("drop_out() 진입");
-	var pw_check() = prompt('탈퇴하시려면 현재 비밀번호를 입력하세요');
-	alert("pw_check() : " + pw_check())
+	var pw_check = prompt('탈퇴하시려면 현재 비밀번호를 입력하세요');
+		alert("pw_check : " + pw_check)
 	
-	if(pw_check() == '${vo.pw}') {
+	if(pw_check == '${vo.pw}') {
 		alert('비밀번호가 일치합니다.');
+	location.href="delete.cu?id=${vo.id }";
+	alert("정상적으로 탈퇴되었습니다.");
 		return true;
 	}else{
 		alert('비밀번호가 일치하지 않습니다.');
 		return false;
 	}
-	href="delete.cu?id=${vo.id }";
-	alert("정상적으로 탈퇴되었습니다.");
-}
+   }
+;
    </script>
 <script type="text/javascript">
 
