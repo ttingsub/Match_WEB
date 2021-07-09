@@ -25,11 +25,20 @@ img { vertical-align:middle; }
 
 .wrap_content {
 	padding: 20px 200px 20px 200px;
-	
+/* 	min-width: 1200px; */
+	width: 70%;
+	margin: 0px auto;
+/* 	position: absolute; */
+/* 	top: 40%; */
+/* 	left: 50%; */
+/* 	transform: translate(-50%, -50%); */
+/* 	width: 70% */
 }
 
+
+
 table {
-	width:80%;
+	width:100%;
 	margin:0 auto;
 	border:1px solid #DEE9F4;
 	background-color: #EDF2F9;
@@ -151,7 +160,7 @@ table tr td label:not(:first-child) { margin-left:20px; }
 
 ul { list-style:none; padding:0; }
 
-#list-top { padding:15px 10%; }
+/* #list-top { padding:15px 10%; } */
 
 #list-top div { height:36px }
 
@@ -181,7 +190,7 @@ ul.grid {  width:80%;  margin:0 10%; display:inline-block; height: 400px; }
 .grid li div:nth-child(2) { padding:0 10px }
 .grid li.first-row { margin-top:0  } /* 첫번째 줄 li 들에 대해 위쪽여백 없애기 */
 
-.tb_wrap { overflow-y:auto; width:80%; margin: 0 9.97%;  } 
+.tb_wrap { overflow-y:auto; width: 100%;/* 80%;  margin: 0 9.97%; */ } 
 .tb_wrap table { width:100%; }
 
 select { height:34px; border:1px solid #000000; padding:0 5px; cursor:pointer; }

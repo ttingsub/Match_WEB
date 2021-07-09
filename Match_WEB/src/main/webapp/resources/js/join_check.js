@@ -62,6 +62,10 @@ var join = {
 
 			return this.email_status( data );
 
+		}else if( tag=='name' ){
+
+			return this.name_status( data );
+
 		}
 
 	},
@@ -162,8 +166,27 @@ var join = {
 
 		else         return this.id.valid;
 
-	}
+	},
+	
+	name: {
 
+		valid: { code:'valid', desc:'사용가능한 이름입니다'}
+
+		, invalid: { code:'invalid', desc:'사용 불가능한 이름입니다'}
+
+	},
+
+	name_status: function(name){
+
+		var reg = /^[가-힣]{2,5}$/;
+
+		if( name=='' ) return this.common.empty;
+
+		else if( reg.test(name) ) return this.name.valid;
+
+		else return this.name.invalid;
+
+	}
 }
 
 var space = /\s/g;

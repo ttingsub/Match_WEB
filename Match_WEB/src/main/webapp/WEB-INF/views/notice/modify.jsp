@@ -49,7 +49,7 @@
 			<input type="hidden" name='filename' value="${vo.filename}">
 		</table>
 	</form>
-	<div class="btnset">					<!-- //boolean -->
+	<div class="btnSet">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
 		<a class="btn-fill" href="list.no" >취소 </a>
 		

@@ -35,9 +35,7 @@
 	<td><input type="text" name="date" id="date"></td>
 </tr>
 <tr><th class='w-px120'>내용</th>
-	<td colspan="3"><textarea name='content' class='chk' title='내용' id="content1">
-		
-	</textarea></td>	
+	<td colspan="3"><textarea name='content' class='chk' title='내용' id="content1"></textarea></td>	
 </tr>
 <tr><th class='w-px120'>첨부파일</th>
 	<td class='left middle' colspan="3">

@@ -56,6 +56,7 @@
 <div class='tb_wrap'>
 <c:if test="${page.viewType eq 'list' }">
 <table class='tb_list'>
+<thead>
 <tr><th class='w-px60'>번호</th>
 	<th class='back-fill'>제목</th>
 	<th class='w-px100'>작성자</th>
@@ -63,8 +64,10 @@
 	<th class='w-px60'>첨부파일</th>
 	<th class='w-px60'>조회수</th>
 </tr>
+</thead>
+<tbody>
 <c:forEach items="${page.list}" var="vo">
-<tr><td>${vo.no}</td>
+<tr data-token=''><td>${vo.no}</td>
 	<td class='left'><a onclick="go_detail(${vo.id})">${vo.title} [${vo.comment_cnt}]</a></td>
 	<td>${vo.name}</td>
 	<td>${vo.writedate}</td>
@@ -72,6 +75,7 @@
 	<td>${vo.readcnt}</td>
 </tr>
 </c:forEach>
+</tbody>
 </table>
 </c:if>
 
@@ -93,7 +97,25 @@
 </div>
 
 </div>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+<script   src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+
 <script type="text/javascript">
+var firebaseConfig = {
+		 apiKey: "AIzaSyCXREheHWnwVa7eL6I5zKGAjuRdwKp7QRc",
+		    authDomain: "match-app-b8c4a.firebaseapp.com",
+		    databaseURL: "https://match-app-b8c4a-default-rtdb.firebaseio.com",
+		    projectId: "match-app-b8c4a",
+		    storageBucket: "match-app-b8c4a.appspot.com",
+		    messagingSenderId: "217394658931",
+		    appId: "1:217394658931:web:5a5fda3f5e377b29f3f406",
+		    measurementId: "G-0NK2LLS1Z8"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	  
 function go_detail(id){
 	$('[name=id]').val(id);
 	$('form').attr('action', 'detail.bo');
@@ -130,10 +152,35 @@ $(function(){
 	}
 	
 	resize();
+	
+	read();
+	
 });
 $(window).resize(function(){
 	resize();
 });
+
+
+function read(){
+	var idx = -1, info=[];
+	   var database = firebase.database();
+	   var dbTestRef = database.ref('matchapp/Board');
+	   dbTestRef.orderByChild("date").on('child_added', function(data){
+		 	$(data.val()).each(function(){
+	 			idx += 1;
+		      	console.log('>>',idx, ' : ',data.key);	      
+		 		if( $('.tb_list tbody tr').eq(idx).length>0 ){
+		 			$('.tb_list tbody tr').eq(idx).data('token', data.key);
+			 		console.log( 'token> ', $('.tb_list tbody tr').eq(idx).data('token'));
+		 		}
+		 	});
+	   });
+// 	   scoresRef.orderByValue().on("value", function(snapshot) {
+// 		   snapshot.forEach(function(data) {
+// 		     console.log("The " + data.key + " score is " + data.val());
+// 		   });
+// 		 });
+	}
 </script>
 </body>
 </html>

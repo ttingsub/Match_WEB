@@ -43,7 +43,7 @@ new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재",
 	</tr>
 </table>
 
-<div class="btnset">
+<div class="btnSet">
  	 <a class="btn-fill" href='list.qn?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 
