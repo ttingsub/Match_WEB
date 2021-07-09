@@ -7,6 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.tb_list thead tr:first-child th:first-child {
+	border-radius: 10px 0px 0px 0px;
+}
+
+.tb_list thead tr:first-child th:last-child {
+	border-radius: 0px 10px 0px 0px;
+}
+
+</style>
 </head>
 <body>
 <div class="wrap_content">

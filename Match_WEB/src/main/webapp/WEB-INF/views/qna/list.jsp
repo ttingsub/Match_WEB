@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="wrap_content">
-		<h1>모모 고객센터</h1>
+		<h1>모모 QnA</h1>
 		<form action="list.qn" method="post">
 			<div id='list-top'>
 				<div>

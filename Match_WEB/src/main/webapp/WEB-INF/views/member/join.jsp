@@ -26,6 +26,9 @@ input[name=addr] { width:calc(100% - 24px); }
 
 .invalid { color:red; }
 
+#foot {
+	display: none;
+}
 
 </style>
 

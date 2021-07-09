@@ -6,6 +6,12 @@ h1 { font-size : 31px; color: #051B37; }
 
 html, body{ height:100%; } 
 
+#head {
+	border-bottom: 1px solid #ccc; 
+	padding-bottom: 0px; 
+	text-align: center;
+}
+
 body{
 
 	margin:0 auto;
@@ -24,10 +30,10 @@ a:link, a:visited { text-decoration:none; color:#000; }
 img { vertical-align:middle; }
 
 .wrap_content {
-	padding: 20px 200px 20px 200px;
-/* 	min-width: 1200px; */
+/* 	padding: 20px 200px 20px 200px; */
+	min-width: 1200px;
 	width: 70%;
-	margin: 0px auto;
+	margin: -10px auto;
 /* 	position: absolute; */
 /* 	top: 40%; */
 /* 	left: 50%; */
