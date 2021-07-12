@@ -23,34 +23,34 @@
 		<h3>공지사항 등록</h3>
 		<!--첨부파일을 전송할때는 반드시 post enctype = multipart/form-data  -->
 		<form action="insert.no" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="date" id="date">
 			<table>
 				<tr>
 					<th class="w-px160">제목</th>
-					<td colspan="3"><input type="text" name='title' title='제목'
+					<td><input type="text" name='title' title='제목'
 						class='chk' id="title"></td>
 				</tr>
 				<tr>
 					<th class="w-px80" colspan="1">작성자</th>
-					<td style="width: 500px;">${logininfo.name}</td>
-					<th class="back-fill">작성일자</th>
-					<td><input type="text" name="date" id="date"></td>
+					<td>${logininfo.name}</td>
 				</tr>
 
 				<tr>
 					<th class="w-px160">내용</th>
-					<td colspan="3"><textarea name='content' title='내용'
+					<td><textarea name='content' title='내용'
 							class="chk" id="content1"></textarea></td>
 				</tr>
 
 				<tr>
 					<th class="w-px160">파일첨부</th>
-					<td class="left" colspan="3"><label> <input
-							type="file" name='file' id='attach-file' /> <img alt="x"
-							src="imgs/select.png" class="file-img" />
-					</label> <span id='file-name'></span> 
+					<td class='left middle'>
+						<label>
+							<input type="file" name='file' id='attach-file' />
+							<a><img alt="x" src="imgs/select.png" class="file-img" /></a>
+						</label>
+					<span id='file-name'></span> 
 					<span id="preview"></span>
-					<span id='delete-file'><i
-							class="fas fa-times"> </i></span></td>
+					<a id='delete-file'><i class="fas fa-times" ></i></a></td>
 				</tr>
 			</table>
 		</form>

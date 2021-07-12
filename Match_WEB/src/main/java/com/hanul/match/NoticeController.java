@@ -95,7 +95,7 @@ public class NoticeController {
 		String realFile = session.getServletContext().getRealPath("resources") + "/" + notice.getFilepath();
 		
 		if( !file.isEmpty()) {
-			//파일을 첨부한 경우: 원래 없ㄷ었는데 신규 첨부, 원래 있었던거 바꿔서 첨부
+			//파일을 첨부한 경우: 원래 없었는데 신규 첨부, 원래 있었던거 바꿔서 첨부
 			vo.setFilename(file.getOriginalFilename());
 			vo.setFilepath(  common.fileUpload(session, file, "notice"));
 			//원래 첨부된 파일이 있다면 물리적영역에서 파일을 삭제
@@ -121,6 +121,7 @@ public class NoticeController {
 		service.notice_update(vo);
 		//화면에서 변경입력한 정보들이 정확히 들어왔는지 확인을 위해서 다시 veiw.no로 간다.
 		return "redirect:view.no?id=" + vo.getId();
+		
 	}
 	@RequestMapping("delete.no")
 	public String delete(int id) {

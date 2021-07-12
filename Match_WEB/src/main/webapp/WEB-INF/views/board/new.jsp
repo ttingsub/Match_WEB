@@ -25,20 +25,19 @@
 -->
 
 <form action="insert.bo" method="post" enctype="multipart/form-data">
+<input type="hidden" name="date" id="date">
 <table>
 <tr><th class='w-px120'>제목</th>
 	<td colspan="3"><input type='text' name='title' class='chk' title='제목' id="title"/></td>
 </tr>
 <tr><th class='w-px120'>작성자</th>	
 	<td>${logininfo.name}</td>
-	<th class='w-px120'>작성일자</th>
-	<td><input type="text" name="date" id="date"></td>
 </tr>
 <tr><th class='w-px120'>내용</th>
 	<td colspan="3"><textarea name='content' title='내용' class="chk" id="content1"></textarea></td>
 </tr>	
 		
-<tr><th class='w-px120'>첨부파일</th>
+<tr><th class='w-px120'>파일첨부</th>
 	<td class='left middle' colspan="3">
 		<label>
 			<input type='file' name='file' id='attach-file'/>

@@ -7,6 +7,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	#popup {
+		width: 500px;
+		height: 500px;
+		border: 2px solid #666;
+		display: none;
+	}
+	
+	.popup {
+		height: 100%;
+		width: 100%;
+	}
+	
+	#comment_regist span {
+		width: 50%;
+		float: left;
+	}
+</style>
 </head>
 <body>
 <div class="wrap_content">
@@ -48,22 +66,30 @@ new String[]{"운영정책","계정/인증","이벤트/초대", "이용 제재",
  	 <a class="btn-fill" href='list.qn?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 
-	 <!-- 글 쓴 사람인 경우 -->
+	 <!-- 글 쓴 사람이거나 관리자인 경우 수정 삭제 가능 -->
 	 <c:if test="${logininfo.id eq vo.writer or logininfo.name eq '관리자'}">
 	 	<a class="btn-fill" href="modify.qn?id=${vo.id}">수정</a>
 	 	<a class="btn-fill" onclick="if (confirm('정말 삭제하시겠습니까?') ){ location='delete.qn?id=${vo.id}' } ">
 	 	삭제</a>
 	 	</c:if>
-	 
-	  <c:if test="${logininfo.name eq '관리자'}">
-	  	<a class="btn-fill" href="reply.qn?id=${vo.id}">답변 작성</a>
-	  </c:if>
 </div>
 <div id='popup-background'></div>
 <div id='popup' class='center'></div>
 </div>
 <script type="text/javascript" src="js/file_check.js"></script>
 <script type="text/javascript">
+function resize(){
+	$('html, body').css('height', '100%');
+	var headerFooter = $('header').outerHeight(true) + $('footer').outerHeight(true);
+	var content = $('#content').outerHeight(true);
+	var component = $('h3').outerHeight(true) + $('.btnSet').outerHeight(true)
+					+ $('.comment').outerHeight(true)
+					+ $('table').outerHeight(true) + 40;
+	var height = '100%';
+	if( content < component ) height = component + headerFooter;
+	$('html, body').css('height', height);
+	resizeBackground();
+}
 
 $(function(){
 	
@@ -73,7 +99,7 @@ $(function(){
 	//첨부된 파일이 있고 그 파일이 이미지파일인 경우 미리보기되게
 		if( ${!empty vo.filename} ){
 			if( isImage( '${vo.filename}' ) ){
-				$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/> (클릭)' );
+				$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/>' );
 			}
 		}
 	}

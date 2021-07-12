@@ -11,8 +11,8 @@
 
 <style type="text/css">
 	#popup {
-		width: 350px;
-		height: 350px;
+		width: 500px;
+		height: 500px;
 		border: 2px solid #666;
 		display: none;
 	}
@@ -82,18 +82,11 @@
 		<div class='btnSet'>
 			<a class='btn-fill' onclick="$('form').submit()">목록으로</a>
 			<!-- 로그인한 사용자가 작성한 글에 대해서만 수정/삭제 권한 있음 -->
-			<c:if test="${logininfo.id eq vo.writer}">
+	 		<c:if test="${logininfo.id eq vo.writer or logininfo.name eq '관리자'}">
 				<a class='btn-fill'
 					onclick="$('form').attr('action', 'modify.bo');   $('form').submit()">수정</a>
 				<a class='btn-fill'
 					onclick="if( confirm('정말 삭제하시겠습니까?') ){ href='delete.bo?id=${vo.id}' } ">삭제</a>
-			</c:if>
-
-			<c:if test="${logininfo.name eq '관리자' }">
-				<a class='btn-fill'
-					onclick="$('form').attr('action', 'modify.bo');   $('form').submit()">수정</a>
-				<a class='btn-fill'
-					onclick="if( confirm('정말 삭제하시겠습니까?') ){ remove_post(); } ">삭제</a>
 			</c:if>
 
 		</div>
@@ -188,7 +181,7 @@ $(function(){
 	//첨부된 파일이 있고 그 파일이 이미지파일인 경우 미리보기되게
 	if( ${!empty vo.filename} ){
 		if( isImage( '${vo.filename}' ) ){
-			$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/> (클릭)' );
+			$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/>' );
 		}
 	}
 	}

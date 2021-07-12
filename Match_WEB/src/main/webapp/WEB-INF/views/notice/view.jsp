@@ -7,6 +7,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	#popup {
+		width: 500px;
+		height: 500px;
+		border: 2px solid #666;
+		display: none;
+	}
+	
+	.popup {
+		height: 100%;
+		width: 100%;
+	}
+	
+	#comment_regist span {
+		width: 50%;
+		float: left;
+	}
+</style>
 </head>
 <body>
 <div class="wrap_content">
@@ -58,6 +76,19 @@
 <script type="text/javascript" src="js/file_check.js"></script>
 <script type="text/javascript">
 
+function resize(){
+	$('html, body').css('height', '100%');
+	var headerFooter = $('header').outerHeight(true) + $('footer').outerHeight(true);
+	var content = $('#content').outerHeight(true);
+	var component = $('h3').outerHeight(true) + $('.btnSet').outerHeight(true)
+					+ $('.comment').outerHeight(true)
+					+ $('table').outerHeight(true) + 40;
+	var height = '100%';
+	if( content < component ) height = component + headerFooter;
+	$('html, body').css('height', height);
+	resizeBackground();
+}
+
 $(function(){
 	
 	if( ${!empty vo.filename} ){
@@ -66,7 +97,7 @@ $(function(){
 	//첨부된 파일이 있고 그 파일이 이미지파일인 경우 미리보기되게
 		if( ${!empty vo.filename} ){
 			if( isImage( '${vo.filename}' ) ){
-				$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/> (클릭)' );
+				$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/>' );
 			}
 		}
 	}

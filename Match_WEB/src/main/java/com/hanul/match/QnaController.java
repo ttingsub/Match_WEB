@@ -70,11 +70,12 @@ public class QnaController {
 		model.addAttribute("page" , page);
 		return "qna/view";
 	}
+	
 	@RequestMapping("new.qn")
 	public String newWriter() {
-		
 		return "qna/new";
 	}
+	
 	@RequestMapping("modify.qn")
 	public String modify(int id, Model model) {
 	

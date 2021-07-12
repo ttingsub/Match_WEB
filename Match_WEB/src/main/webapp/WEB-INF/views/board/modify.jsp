@@ -19,20 +19,19 @@
 <h3>커뮤니티 글 수정</h3>
 <form method="post" action='update.bo' enctype="multipart/form-data">
 <input type='hidden' name='id' value='${vo.id}'/>
+<input type="hidden" name="date" id="date">
 <table>
 <tr><th class='w-px120'>제목</th>
-	<td colspan="3"><input type='text' name='title' class='chk' title='제목' value='${vo.title}' id="title"/></td>
+	<td><input type='text' name='title' class='chk' title='제목' value='${vo.title}' id="title"/></td>
 </tr>
 <tr><th class='w-px120'>작성자</th>
-	<td class='w-pct40'>${vo.name}</td>
-	<th class='w-px120'>수정일자</th>
-	<td class='w-pct40'><input type="text" name="date" id="date"></td>
+	<td>${vo.name}</td>
 </tr>
 <tr><th class='w-px120'>내용</th>
-	<td colspan="3"><textarea class='chk' title='내용' name='content' id="content1">${vo.content}</textarea></td>
+	<td><textarea class='chk' title='내용' name='content' id="content1">${vo.content}</textarea></td>
 </tr>
 <tr><th class='w-px120'>첨부파일</th>
-	<td class='left middle' colspan="3">
+	<td class='left middle'>
 		<label>
 			<input type='file' name='file' id='attach-file'/>
 			<img src='imgs/select.png' class='file-img'/>
@@ -43,12 +42,12 @@
 	</td>
 </tr>
 </table>
-<input type='hidden' name='attach' />
+<input type='hidden' name='attach'  />
 </form>
 <div class='btnSet'>
 	<a class='btn-fill' 
 	onclick="if( emptyCheck() ){ myFunction();}">저장</a>
-	<a class='btn-fill' onclick='history.go(-1)'>취소</a>
+	<a class='btn-fill' onclick='list.bo'>취소</a>
 </div>
 
 </div>
@@ -129,7 +128,6 @@ $(function(){
 				var date= document.getElementById("date").value;
 				
 				
-				
                 //console.log("현재 : ", now);
 
                 //firebase에 쓰기
@@ -143,6 +141,7 @@ $(function(){
                     
 
                 }, (result)=>{
+                	$('[name=attach]').val(  $('#file-name').text() );
                 	$('form').submit();
                 }); 
                 

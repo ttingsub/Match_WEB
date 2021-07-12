@@ -65,6 +65,7 @@
 		</table>
 		<input type="hidden" name='id' value="${vo.id}" />
 		<input type="hidden" name='filename' value="${vo.filename}" />
+		<input type='hidden' name='attach'  />
 	</form>
 	<div class="btnSet">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
@@ -133,6 +134,7 @@
                 title: title,
                 content: content
               }, (result)=>{
+            	$('[name=attach]').val(  $('#file-name').text() );
               	$('form').submit();
               });
           }

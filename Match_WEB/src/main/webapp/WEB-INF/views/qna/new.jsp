@@ -53,20 +53,21 @@
 				<td><textarea name='content' title='내용' class="chk" id="content1"></textarea> </td>
 			</tr>
 			
-			<tr><th class="w-px160">파일첨부</th>
-				<td class="left">
+			<tr><th class='w-px120'>파일첨부</th>
+				<td class='left middle' colspan="3">
 					<label>
-						<input type="file" name='file' id='attach-file' />
-						<img alt="x" src="imgs/select.png" class="file-img" />
+						<input type='file' name='file' id='attach-file'/>
+						<a><img src='imgs/select.png' class='file-img' /></a>
 					</label>
 					<span id='file-name'></span>
-					<span id='delete-file'><i class="fas fa-times"> </i></span>
+					<span id='preview'></span>
+					<a id='delete-file'><i class="fas fa-times font-img"></i></a>
 				</td>
 			</tr>
 		</table>
 	</form>
 	<div class="btnSet">					<!-- //boolean -->
-		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
+		<a class="btn-fill" onclick="myFunction();" >저장 </a>
 		<a class="btn-fill" href="list.qn" >취소 </a>
 	</div>
 	</div>
@@ -132,20 +133,20 @@
 					alert('문의 카테고리를 선택해 주세요');
 					return false;
 				}
+				
+				if(emptyCheck()){
+					//firebase에 쓰기
 
-                //firebase에 쓰기
+	                firebase.database().ref('matchapp/qna').push({
 
-                firebase.database().ref('matchapp/qna').push({
+	                    category: category,
+	                    title: title,
+	                    content: content
 
-                    category: category,
-                    title: title,
-                    content: content
-
-                }, (result)=>{
-                	$('form').submit();
-                });
-                
-                
+	                }, (result)=>{
+	                	$('form').submit();
+	                });
+				}
 
             }
             

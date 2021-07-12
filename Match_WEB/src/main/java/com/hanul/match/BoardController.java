@@ -62,7 +62,7 @@ public class BoardController {
 		common.fileDownload( vo.getFilename(), vo.getFilepath(), session, response);
 	}
 	
-	//방명록 수정저장처리 요청
+	//수정저장처리 요청
 	@RequestMapping("/update.bo")
 	public String update(BoardVO vo, Model model
 						, MultipartFile file, String attach, HttpSession session) {
@@ -96,8 +96,9 @@ public class BoardController {
 				}
 				
 			}else {
+				//원래 첨부된 파일을 손대지 않은경우
 				vo.setFilename( board.getFilename() );
-				vo.setFilepath( board.getFilepath());
+				vo.setFilepath( board.getFilepath() );
 			}
 		}
 		
