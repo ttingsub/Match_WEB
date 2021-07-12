@@ -41,7 +41,7 @@
 	</tr>
 </table>
 
-<div class="btnset">
+<div class="btnSet">
  	 <a class="btn-fill" href='list.no?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 

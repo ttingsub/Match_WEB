@@ -26,6 +26,9 @@ input[name=addr] { width:calc(100% - 24px); }
 
 .invalid { color:red; }
 
+#foot {
+	display: none;
+}
 
 </style>
 
@@ -54,12 +57,14 @@ input[name=addr] { width:calc(100% - 24px); }
 
 <tr><th class='w-px160'>* 비밀번호 확인</th>
 	<td><input type='password' name='pw_ck' class='chk' /><br>
-		<div class='valid'>비밀번호를 다시 입력하세요</div>
+		<div class='valid'>비밀번호를 입력하세요</div>
 	</td>
 </tr>
 
 <tr><th class='w-px160'>* 성명</th>
-	<td><input type='text' name='name'/></td>
+	<td><input type='text' name='name' class='chk'/>
+		<div class='valid'>성명을 입력하세요</div>
+	</td>
 </tr>
 
 <tr><th class='w-px160'>* 성별</th>
@@ -71,7 +76,7 @@ input[name=addr] { width:calc(100% - 24px); }
 
 <tr><th class='w-px160'>* 이메일</th>
 	<td><input type='text' name='email' class='chk' /><br>
-		<div class='valid'>이메일을 다시 입력하세요</div>
+		<div class='valid'>이메일을 입력하세요</div>
 	</td>
 </tr>
 
@@ -108,18 +113,6 @@ input[name=addr] { width:calc(100% - 24px); }
 
 function go_join(){
 
-	if( $('[name=name]').val()=='' ){
-
-		alert('성명을 입력하세요!');
-
-		$('[name=name]').focus();
-
-		return;
-
-	}
-
-	
-
 	//중복확인 한 경우 : chked 클래스가 있음
 	if( $('[name=id]').hasClass('chked') ){
 		if( $('[name=id]').siblings('div').hasClass('invalid') ){
@@ -127,7 +120,6 @@ function go_join(){
 			$('[name=id]').focus();
 			return;
 		}
-
 
 	}else{
 
@@ -140,9 +132,39 @@ function go_join(){
 		}
 	}
 
-
 	if( ! item_check( $('[name=pw]') ) ) return;
 	if( ! item_check( $('[name=pw_ck]') ) ) return;
+	if( ! item_check( $('[name=name]') ) ) return;
+	
+	/* 성명 유효성 체크 */
+// 	if( $('[name=name]').val()=='' ){
+// 		alert('성명을 입력하세요!');
+// 		$('[name=name]').focus();
+// 		return;
+// 	}
+/* 	if( $('[name=name]') ) {
+		var userName = $('[name=name]').val();
+		var regUserName = /^[가-힣]{2,5}$/;
+		
+		if(userName != "") {
+			while (true) {
+				if (!regUserName.test(userName)) {
+					alert('회원가입 불가!\n' + "성명은 한글 2~5자로 작성해 주세요.");
+					
+					userName.focus();
+					
+					return;
+				} else {
+					break;
+				}
+			}
+		}else{
+			alert('회원가입 불가!\n' + "성명을 입력해 주세요");
+			userName.focus();
+			return;
+		}
+	} */
+	
 	if( ! item_check( $('[name=email]') ) ) return;
 	
 	/* 연락처 유효성 체크 */

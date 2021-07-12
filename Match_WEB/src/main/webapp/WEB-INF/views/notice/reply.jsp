@@ -44,7 +44,7 @@
 				type="hidden" name="step" value="${vo.step}"> <input
 				type="hidden" name="indent" value="${vo.indent}">
 		</form>
-		<div class="btnset">
+		<div class="btnSet">
 			<!-- //boolean -->
 			<a class="btn-fill"
 				onclick=" if( emptyCheck() ) $('form').submit(); ">저장 </a> <a

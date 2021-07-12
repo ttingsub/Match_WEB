@@ -37,7 +37,6 @@
 <!-- 파이어베이스 -->
 <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
 </head>
-<body>
 <body id="page-top">
     
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
@@ -151,7 +150,7 @@
 <!--             </div> -->
 <!--         </nav> -->
         <!-- Masthead-->
-        
+<div class="wrap_content">
                 <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
@@ -765,6 +764,6 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         
-       
+       </div>
 </body>
 </html>

@@ -8,24 +8,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style type="text/css">
-#popup {
-	width: 350px;
-	height: 350px;
-	border: 2px solid #666;
-	display: none;
-}
-
-.popup {
-	width: 100%;
-	height: 100%;
-}
-
-#comment_regist span {
-	width: 50%;
-	float: left;
-}
+	#popup {
+		width: 350px;
+		height: 350px;
+		border: 2px solid #666;
+		display: none;
+	}
+	
+	.popup {
+		width: 100%;
+		height: 100%;
+	}
+	
+	#comment_regist span {
+		width: 50%;
+		float: left;
+	}
 </style>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+<script   src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+<script>
+/* 파이어베이스 기본 세팅 */
+  var firebaseConfig = {
+    apiKey: "AIzaSyAc94EwN9SA39uBieoZols5a9HnqOet5ew",
+    authDomain: "tests-fb68a.firebaseapp.com",
+    databaseURL: "https://tests-fb68a-default-rtdb.firebaseio.com",
+    projectId: "tests-fb68a",
+    storageBucket: "tests-fb68a.appspot.com",
+    messagingSenderId: "188440134618",
+    appId: "1:188440134618:web:51deaafc549460da3db6e3",
+    measurementId: "G-P5DMS6H3KF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </head>
 <body>
 	<div class="wrap_content">
@@ -72,7 +93,7 @@
 				<a class='btn-fill'
 					onclick="$('form').attr('action', 'modify.bo');   $('form').submit()">수정</a>
 				<a class='btn-fill'
-					onclick="if( confirm('정말 삭제하시겠습니까?') ){ href='delete.bo?id=${vo.id}' } ">삭제</a>
+					onclick="if( confirm('정말 삭제하시겠습니까?') ){ remove_post(); } ">삭제</a>
 			</c:if>
 
 		</div>
@@ -100,8 +121,7 @@
 		</div>
 
 	</div>
-
-
+	
 	<script type="text/javascript" src="js/file_check.js"></script>
 	<script type="text/javascript">
 function comment_regist(){
@@ -202,9 +222,15 @@ reader.onload = function(event) {
 	document.querySelector("div#image_container").appendChild(img); }; 
 	reader.readAsDataURL(event.target.files[0]); } 
 
-
+/* function remove_post() {
+	alert('remove_post() 진입');
+	var database = firebase.database();
+    database = database.ref('Post'+'${vo.title}').remove()
+	href='delete.bo?id=${vo.id}'; 
+} */
 
 	</script>
+</script>
 </body>
 </html>
 

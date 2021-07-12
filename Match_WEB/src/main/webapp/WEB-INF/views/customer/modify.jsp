@@ -100,9 +100,7 @@ input[name=addr] { width:calc(100% - 24px); }
    
  
 	   function drop_out() {
-	alert("drop_out() 진입");
 	var pw_check = prompt('탈퇴하시려면 현재 비밀번호를 입력하세요');
-		alert("pw_check : " + pw_check)
 	
 	if(pw_check == '${vo.pw}') {
 		alert('비밀번호가 일치합니다.');
