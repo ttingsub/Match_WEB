@@ -70,11 +70,11 @@
 			</tr>
 			<tr>
 				<th class='w-px120'>첨부파일</th>
-				<td colspan='3' class='left'>${vo.filename}<c:if
-						test="${!empty vo.filename}">
+				<td colspan='3' class='left'>${vo.filename}
+				<c:if test="${!empty vo.filename}">
 						<span id='preview'></span>
-						<a href='download.bo?id=${vo.id}'><i
-							class='fas fa-download font-img'></i></a>
+						<a href='download.bo?id=${vo.id}'>
+						<i class='fas fa-download font-img'></i></a>
 					</c:if>
 				</td>
 			</tr>
@@ -229,7 +229,6 @@ reader.onload = function(event) {
 	href='delete.bo?id=${vo.id}'; 
 } */
 
-	</script>
 </script>
 </body>
 </html>

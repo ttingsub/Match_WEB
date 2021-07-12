@@ -41,7 +41,7 @@
 	</tr>
 </table>
 
-<div class="btnSet">
+<div class="btnset">
  	 <a class="btn-fill" href='list.no?curPage=${page.curPage}&search=${page.search}&keyword=${page.keyword}'>
 	 	목록으로
 	 </a> 
@@ -52,7 +52,10 @@
 	  	<a class="btn-fill" href="reply.no?id=${vo.id}">답글쓰기</a>
 	  </c:if>
 </div>
+<div id='popup-background'></div>
+<div id='popup' class='center'></div>
 </div>
+<script type="text/javascript" src="js/file_check.js"></script>
 <script type="text/javascript">
 
 $(function(){
@@ -68,6 +71,15 @@ $(function(){
 		}
 	}
 // 	resize();
+});
+
+$(window).resize(function(){
+	resize();
+	moveCenter( $('#popup') );
+});
+
+$(window).scroll(function(){
+	moveCenter( $('#popup') );
 });
 
 $(document).on('click', '#preview-img', function(){
