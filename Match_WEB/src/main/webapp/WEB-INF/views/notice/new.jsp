@@ -47,7 +47,9 @@
 					<td class="left" colspan="3"><label> <input
 							type="file" name='file' id='attach-file' /> <img alt="x"
 							src="imgs/select.png" class="file-img" />
-					</label> <span id='file-name'></span> <span id='delete-file'><i
+					</label> <span id='file-name'></span> 
+					<span id="preview"></span>
+					<span id='delete-file'><i
 							class="fas fa-times"> </i></span></td>
 				</tr>
 			</table>

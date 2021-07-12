@@ -45,13 +45,13 @@
 			</tr>
 			<tr>
 				<th class='w-px120'>내용</th>
-				<td colspan='3' class='left'><div id="preview" ></div>${fn: replace(vo.content, crlf, '<br>')}</td>
+				<td colspan='3' class='left'>${fn: replace(vo.content, crlf, '<br>')}</td>
 			</tr>
 			<tr>
 				<th class='w-px120'>첨부파일</th>
 				<td colspan='3' class='left'>${vo.filename}<c:if
 						test="${!empty vo.filename}">
-						<a id='preview'></a>
+						<span id='preview'></span>
 						<a href='download.bo?id=${vo.id}'><i
 							class='fas fa-download font-img'></i></a>
 					</c:if>
@@ -158,14 +158,19 @@ function resize(){
 	resizeBackground();
 }
 
+
+
 $(function(){
 	comment_list();  //댓글목록 조회해오기
+	if( ${!empty vo.filename} ){
+		$('#delete-file').css('display', 'inline');
 	
 	//첨부된 파일이 있고 그 파일이 이미지파일인 경우 미리보기되게
 	if( ${!empty vo.filename} ){
 		if( isImage( '${vo.filename}' ) ){
 			$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/> (클릭)' );
 		}
+	}
 	}
 // 	resize();
 });

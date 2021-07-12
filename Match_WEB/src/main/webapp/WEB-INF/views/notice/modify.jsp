@@ -43,11 +43,12 @@
 					</label>
 					<span id='file-name'>${vo.filename }</span>
 					<span id='delete-file'><i class="fas fa-times"> </i></span>
+
 				</td>
 			</tr>
-			<input type="hidden" name='id' value="${vo.id}">
-			<input type="hidden" name='filename' value="${vo.filename}">
 		</table>
+			<input type="hidden" name='id' value="${vo.id}"/>
+			<input type="hidden" name='filename' value="${vo.filename}"/>
 	</form>
 	<div class="btnset">					<!-- //boolean -->
 		<a class="btn-fill" onclick="if( emptyCheck() ){ myFunction();}" >저장 </a>
@@ -101,7 +102,7 @@ $(function(){
 	var day = date.getDate();
 	var hours = date.getHours();
 	var minutes = date.getMinutes();
-	$('#date').val( year + '-' + month + '-' + day + ' / ' + hours + ':' + minutes);
+	$('#date').val( year + '-' + month + '-' + day);
 });
 
 	

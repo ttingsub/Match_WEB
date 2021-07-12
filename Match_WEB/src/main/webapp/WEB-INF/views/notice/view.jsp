@@ -32,10 +32,12 @@
 		<th class="w-px160">첨부파일</th>
 		<td colspan="5" class="left">${vo.filename}
 		<c:if test="${! empty vo.filename}">
+			<span id="preview"></span>
 			<a href="download.no?id=${vo.id}">
-				<i class="fas fa-download"></i>
+				<i class="fas fa-download font-img"></i>
 			</a>
 		</c:if>
+		</td>
 	</tr>
 </table>
 
@@ -51,6 +53,41 @@
 	  </c:if>
 </div>
 </div>
+<script type="text/javascript">
+
+$(function(){
+	
+	if( ${!empty vo.filename} ){
+		$('#delete-file').css('display', 'inline');
+	
+	//첨부된 파일이 있고 그 파일이 이미지파일인 경우 미리보기되게
+		if( ${!empty vo.filename} ){
+			if( isImage( '${vo.filename}' ) ){
+				$('#preview').html( '<img src="${vo.filepath}" id="preview-img" class="file-img"/> (클릭)' );
+			}
+		}
+	}
+// 	resize();
+});
+
+$(document).on('click', '#preview-img', function(){
+	$('#popup, #popup-background').css('display', 'block');
+	$('#popup').html( "<img src='${vo.filepath}' class='popup' />" );
+	
+}).on('click', '#popup-background', function(){
+	$('#popup, #popup-background').css('display', 'none');
+	
+});
+
+function setThumbnail(event) 
+{ var reader = new FileReader(); 
+reader.onload = function(event) { 
+	var img = document.createElement("img"); 
+	img.setAttribute("src", event.target.result); 
+	document.querySelector("div#image_container").appendChild(img); }; 
+	reader.readAsDataURL(event.target.files[0]); }
+
+</script>
 </body>
 </html>
 
