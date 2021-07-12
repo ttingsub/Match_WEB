@@ -89,7 +89,7 @@ public class QnaController {
 		return "qna/reply";
 	}
 	@RequestMapping("update.qn")
-	public String update(QnaVO vo, MultipartFile file, String filename , HttpSession session) {
+	public String update(QnaVO vo,Model model, MultipartFile file, String attach , HttpSession session) {
 		QnaVO qna = service.qna_view(vo.getId());
 		//원본 파일 (변경처리 되기전 ) 위치를 알아옴
 		String realFile = session.getServletContext().getRealPath("resources") + "/" + qna.getFilepath();
@@ -105,7 +105,7 @@ public class QnaController {
 			}
 		}else {
 			//파일을 첨부하지 않은 경우
-			if(filename.isEmpty()) {
+			if(attach.isEmpty()) {
 				//원래 첨부된 파일을 삭제한 경우
 				if(qna.getFilename() != null) {
 					File f = new File(realFile);
@@ -120,7 +120,9 @@ public class QnaController {
 		
 		service.qna_update(vo);
 		//화면에서 변경입력한 정보들이 정확히 들어왔는지 확인을 위해서 다시 veiw.qn로 간다.
-		return "redirect:view.qn?id=" + vo.getId();
+		model.addAttribute("id", vo.getId());
+		model.addAttribute("url", "view.qn");
+		return "qna/redirect";
 	}
 	@RequestMapping("delete.qn")
 	public String delete(int id) {

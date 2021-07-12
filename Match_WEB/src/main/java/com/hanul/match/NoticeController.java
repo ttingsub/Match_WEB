@@ -89,7 +89,7 @@ public class NoticeController {
 		return "notice/reply";
 	}
 	@RequestMapping("update.no")
-	public String update(NoticeVO vo, MultipartFile file, String filename , HttpSession session) {
+	public String update(NoticeVO vo, MultipartFile file, String attach , HttpSession session, Model model) {
 		NoticeVO notice = service.notice_view(vo.getId());
 		//원본 파일 (변경처리 되기전 ) 위치를 알아옴
 		String realFile = session.getServletContext().getRealPath("resources") + "/" + notice.getFilepath();
@@ -105,7 +105,7 @@ public class NoticeController {
 			}
 		}else {
 			//파일을 첨부하지 않은 경우
-			if(filename.isEmpty()) {
+			if(attach.isEmpty()) {
 				//원래 첨부된 파일을 삭제한 경우
 				if(notice.getFilename() != null) {
 					File f = new File(realFile);
@@ -120,8 +120,11 @@ public class NoticeController {
 		
 		service.notice_update(vo);
 		//화면에서 변경입력한 정보들이 정확히 들어왔는지 확인을 위해서 다시 veiw.no로 간다.
-		return "redirect:view.no?id=" + vo.getId();
+		//return "redirect:view.no?id=" + vo.getId();
 		
+		model.addAttribute("id", vo.getId());
+		model.addAttribute("url", "view.no");
+		return "notice/redirect";
 	}
 	@RequestMapping("delete.no")
 	public String delete(int id) {
