@@ -36,7 +36,15 @@ input[name=addr] { width:calc(100% - 24px); }
 
 	<tr>
 		<th class="w-px160">* 비밀번호</th>
-		<td><a class='btn-fill-s' id='btn-pass' href='password.cu?id=${logininfo.id}'>비밀번호 변경</a></td>
+		
+		<c:if test="${logininfo.name eq '관리자' }">
+					<td>${vo.pw}</td>
+		</c:if>
+		<c:if test="${logininfo.name ne '관리자' }">
+					<td><a class='btn-fill-s' id='btn-pass' href='password.cu?id=${logininfo.id}'>비밀번호 변경</a></td>
+		</c:if>
+		
+		
 	</tr>
 	
 	<tr>
@@ -80,7 +88,10 @@ input[name=addr] { width:calc(100% - 24px); }
 <!-- 	<a class='btn-fill' onclick='$("form").submit()'>저장</a> -->
 	<a class='btn-fill' onclick='go_update()'>저장</a>
 	<a class='btn-fill' onclick="history.back();">취소</a> <!-- 취소 누르면 뒤로가기 -->
-	<a class='btn-fill' onclick="{drop_out()}">회원 탈퇴</a>
+	<c:if test="${logininfo.name ne '관리자' }">
+		<a class='btn-fill' onclick="{drop_out()}">회원 탈퇴</a>
+	</c:if>
+	
 </div>
 </div>
 	
