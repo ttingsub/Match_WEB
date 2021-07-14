@@ -51,7 +51,7 @@ input[name=addr] { width:calc(100% - 24px); }
 </form>
 <div class='imsi'>
 	<a class='btn-fill' onclick='goPassUpdate()'>저장</a>
-	<a class='btn-fill' href='list.cu'>취소</a>
+	<a class='btn-fill' onclick="history.back();">취소</a>
 </div>
 
 </div>
