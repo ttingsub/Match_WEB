@@ -5,7 +5,7 @@
 <c:forEach items="${list}" var="vo" varStatus="status">
 ${status.index eq 0 ? '<hr>' : ''}
 <div data-id='${vo.id}'>${vo.name} [ ${vo.writedate} ]
-	<c:if test="${vo.writer eq logininfo.id}"> 
+	<c:if test="${vo.writer eq logininfo.id or logininfo.id eq 'admin'}"> 
 	<span style='float:right;'>
 		<a class='btn-fill-s btn-modify-save'>수정</a>
 		<a class='btn-fill-s btn-delete-cancel'>삭제</a>
