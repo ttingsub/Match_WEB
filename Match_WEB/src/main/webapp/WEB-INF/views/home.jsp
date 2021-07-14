@@ -157,7 +157,7 @@
 		<div class="container">
 			<div class="masthead-subheading">　</div>
 			<div class="masthead-heading text-uppercase">　</div>
-			<a class="btn btn-info btn-xl text-uppercase" href="momo.ho">모모
+			<a class="btn btn-info btn-xl text-uppercase" href="momo.ho" style="margin-top: 85px;">모모
 				시작하기!</a>
 		</div>
 	</header>
