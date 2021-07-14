@@ -188,7 +188,7 @@ function go_join(){
 	}
 	
 	$('form').submit();
-
+	
 }
 
  

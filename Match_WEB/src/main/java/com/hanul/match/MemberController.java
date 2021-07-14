@@ -265,7 +265,7 @@ public class MemberController {
 			//회원가입이 정상적으로 된 경우에는 email을 보내준다.
 			/* common.sendEmail(vo.getEmail(), vo.getName()); */
 			msg.append("alert('회원가입을 축하드립니다. '); location='" +
-							request.getContextPath() + "'; ");
+							request.getContextPath() + "/login'; ");
 														
 		}else {
 			msg.append("alert('회원가입이 실패했습니다. ');  history.go(-1)");
