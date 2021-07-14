@@ -44,7 +44,7 @@ public class MemberController {
 		StringBuffer url 
 			= new StringBuffer("https://kauth.kakao.com/oauth/authorize?response_type=code");
 		url.append("&client_id=").append(kakao_client_id);
-		url.append("&redirect_uri=").append("http://localhost:8989/match/kakaocallback");
+		url.append("&redirect_uri=").append("http://121.179.5.202:9999/match/kakaocallback");
 		url.append("&state=").append(state);
 		
 		return "redirect:" + url.toString();
@@ -123,7 +123,7 @@ public class MemberController {
 			= new StringBuffer("https://nid.naver.com/oauth2.0/authorize?response_type=code");
 		url.append("&client_id=").append(naver_client_id);
 		url.append("&state=").append(state);
-		url.append("&redirect_uri=").append("http://localhost:8989/match/navercallback");
+		url.append("&redirect_uri=").append("http://121.179.5.202:9999/match/navercallback");
 		
 		return "redirect:" + url.toString();
 	}
@@ -234,7 +234,7 @@ public class MemberController {
 			
 			StringBuffer url = new StringBuffer("https://kauth.kakao.com/oauth/logout");
 			url.append("?client_id=").append( kakao_client_id );
-			url.append("&logout_redirect_uri=").append("http://localhost:8989/match");
+			url.append("&logout_redirect_uri=").append("http://121.179.5.202:9999/match");
 			
 			return "redirect:" + url.toString();
 			
