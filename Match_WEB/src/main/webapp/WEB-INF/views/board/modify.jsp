@@ -47,7 +47,7 @@
 <div class='btnSet'>
 	<a class='btn-fill' 
 	onclick="if( emptyCheck() ){ myFunction();}">저장</a>
-	<a class='btn-fill' onclick='list.bo'>취소</a>
+	<a class='btn-fill' onclick='history.back();'>취소</a>
 </div>
 
 </div>
