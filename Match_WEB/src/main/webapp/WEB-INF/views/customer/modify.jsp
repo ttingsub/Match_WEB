@@ -26,7 +26,7 @@ input[name=addr] { width:calc(100% - 24px); }
 <div class="wrap_content">
 <h3>회원정보 수정</h3>
 <p class='w-pct50 right' style='margin:0 auto; padding-bottom:10px'>* 는 필수입력항목입니다</p>
-<form method="post" action="update.cu">
+<form method="post" action="list.cu">
 <input type="hidden" name="id" value="${vo.id}"/>
 <table class='w-pct50'>
 	<tr>
@@ -38,7 +38,7 @@ input[name=addr] { width:calc(100% - 24px); }
 		<th class="w-px160">* 비밀번호</th>
 		
 		<c:if test="${logininfo.name eq '관리자' }">
-					<td>${vo.pw}</td>
+					<td><input type="text" name="pw" value="${vo.pw}" class='chk'/></td>
 		</c:if>
 		<c:if test="${logininfo.name ne '관리자' }">
 					<td><a class='btn-fill-s' id='btn-pass' href='password.cu?id=${logininfo.id}'>비밀번호 변경</a></td>
@@ -49,7 +49,7 @@ input[name=addr] { width:calc(100% - 24px); }
 	
 	<tr>
 		<th class="w-px160">* 성명</th>
-		<td>${vo.name}</td>
+		<td><input type='text' name='name' value="${vo.name}" /></td>
 	</tr>
 
 	<tr>
@@ -70,7 +70,7 @@ input[name=addr] { width:calc(100% - 24px); }
 	</tr>
 
 	<tr><th class='w-px160'>연락처</th>
-		<td><input type='text' name='tel' min="0" value="${vo.tel}"/>
+		<td><input type='text' name='tel' min="0" value="${vo.tel}" class="chk"/>
 		</td>
 	</tr>
 	

@@ -297,15 +297,9 @@
                             <img class="mx-auto rounded-circle" src="resources/assets/img/team/1.jpg" alt="..." />
                             <h4>전 준 원</h4>
                             <p class="text-muted">Team Leader</p>
-<<<<<<< HEAD
                             <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-=======
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.instagram.com"><i class="fab fa-linkedin-in"></i></a>
->>>>>>> 5af76be3a0a17e7a268ed2700e0ad0c00227b0fa
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -313,15 +307,9 @@
                             <img class="mx-auto rounded-circle" src="resources/assets/img/team/2.jpg" alt="..." />
                             <h4>정 고 운</h4>
                             <p class="text-muted">Developer</p>
-<<<<<<< HEAD
                             <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/profile.php?id=100011275692256" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-=======
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.facebook.com/profile.php?id=100011275692256"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.instagram.com/"><i class="fab fa-linkedin-in"></i></a>
->>>>>>> 5af76be3a0a17e7a268ed2700e0ad0c00227b0fa
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -329,15 +317,9 @@
                             <img class="mx-auto rounded-circle" src="resources/assets/img/team/3.jpg" alt="..." />
                             <h4>최 명 섭</h4>
                             <p class="text-muted">Developer</p>
-<<<<<<< HEAD
                             <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/myeongseob.choe/" target="_blank"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-=======
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.facebook.com/campaign/landing.php?&campaign_id=1662308814&extra_1=s%7Cc%7C514638008096%7Ce%7C%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EB%B6%81%7C&placement=&creative=514638008096&keyword=%ED%8E%98%EC%9D%B4%EC%8A%A4%20%EB%B6%81&partner_id=googlesem&extra_2=campaignid%3D1662308814%26adgroupid%3D69637362208%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-303215285480%26loc_physical_ms%3D1009856%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjwlYCHBhAQEiwA4K21m0sO7qe5z-9GnSDgGKjp6t36yAV9z09t6KBZ7qFxuMlpPWoCGCx8rRoCWMEQAvD_BwE"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" target="_blank" href="https://www.instagram.com/"><i class="fab fa-linkedin-in"></i></a>
->>>>>>> 5af76be3a0a17e7a268ed2700e0ad0c00227b0fa
                         </div>
                     </div>
                 </div>
