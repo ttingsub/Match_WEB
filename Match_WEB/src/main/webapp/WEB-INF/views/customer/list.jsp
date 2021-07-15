@@ -6,7 +6,7 @@
    <title></title>
 </head>
 <body>
-<c:if test="${logininfo.admin eq 'Y'}">
+<c:if test="${logininfo.admin eq 'y'}">
 <div class="wrap_content">
    <!--Content  -->
    
@@ -27,8 +27,8 @@
 </div>
 </c:if>
 <c:if test="${logininfo.admin ne 'y' }">
-      <h2>관리자만 이용할 수 있는페이지입니다.</h2>
-
+      <h2>관리자만 이용할 수 있는 페이지입니다.</h2>
+		<div>잘못된 접근입니다.</div>
 </c:if>
 </body>
 </html>
