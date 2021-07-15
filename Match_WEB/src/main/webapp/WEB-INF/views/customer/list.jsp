@@ -30,5 +30,32 @@
       <h2>관리자만 이용할 수 있는 페이지입니다.</h2>
 		<div>잘못된 접근입니다.</div>
 </c:if>
+<script type="text/javascript">
+function resize(){
+	console.log('resize')
+	/*
+	테이블 자체에 스크롤을 주는 경우
+	$('.tb_wrap').css('height', $('#content').height() - $('h3').outerHeight(true)
+				- $('#list-top').outerHeight(true) 
+				- $('.page_list').closest('.btnSet').outerHeight(true) - 20);
+	*/
+	//브라우저에 스크롤을 주는 경우
+	$('html, body').css('height', '100%');
+	var headerFooter = $('header').outerHeight(true) + $('footer').outerHeight(true);
+	var content = $('#content').outerHeight(true);
+	var component = $('h3').outerHeight(true) + $('#list-top').outerHeight(true)
+					+ $('.btnSet').outerHeight(true) + 40;
+	var total = '100%';
+	if( $('table.tb_list').length>0 && content < $('table.tb_list').outerHeight(true) + component  ){
+		total = $('table.tb_list').outerHeight(true) + component + headerFooter;
+	}else if( $('ul.grid').length>0 && content < $('ul.grid').outerHeight(true) + component ){
+		total = $('ul.grid').outerHeight(true) + component + headerFooter;
+	}
+	$('html, body').css('height', total);
+}
+$(window).resize(function(){
+	resize();
+});
+</script>
 </body>
 </html>

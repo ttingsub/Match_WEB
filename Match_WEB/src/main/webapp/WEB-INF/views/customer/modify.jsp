@@ -26,7 +26,7 @@ input[name=addr] { width:calc(100% - 24px); }
 <div class="wrap_content">
 <h3>회원정보 수정</h3>
 <p class='w-pct50 right' style='margin:0 auto; padding-bottom:10px'>* 는 필수입력항목입니다</p>
-<form method="post" action="list.cu">
+<form method="post" action="momo.ho">
 <input type="hidden" name="id" value="${vo.id}"/>
 <table class='w-pct50'>
 	<tr>
@@ -38,7 +38,7 @@ input[name=addr] { width:calc(100% - 24px); }
 		<th class="w-px160">* 비밀번호</th>
 		
 		<c:if test="${logininfo.name eq '관리자' }">
-					<td><input type="text" name="pw" value="${vo.pw}" class='chk'/></td>
+					<td><input type="text" name="pw" value="${vo.pw}" /></td>
 		</c:if>
 		<c:if test="${logininfo.name ne '관리자' }">
 					<td><a class='btn-fill-s' id='btn-pass' href='password.cu?id=${logininfo.id}'>비밀번호 변경</a></td>

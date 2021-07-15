@@ -132,6 +132,7 @@ function go_detail(id){
 	$('form').submit();
 }
 function resize(){
+	console.log('resize')
 	/*
 	테이블 자체에 스크롤을 주는 경우
 	$('.tb_wrap').css('height', $('#content').height() - $('h3').outerHeight(true)
@@ -142,15 +143,12 @@ function resize(){
 	$('html, body').css('height', '100%');
 	var headerFooter = $('header').outerHeight(true) + $('footer').outerHeight(true);
 	var content = $('#content').outerHeight(true);
-	var component = $('h3').outerHeight(true) + $('#list-top').outerHeight(true)
+	var component = $('h1').outerHeight(true) + $('#list-top').outerHeight(true)
 					+ $('.btnSet').outerHeight(true) + 40;
-	
 	var total = '100%';
 	if( $('table.tb_list').length>0 && content < $('table.tb_list').outerHeight(true) + component  ){
 		total = $('table.tb_list').outerHeight(true) + component + headerFooter;
-		console.log('table')
 	}else if( $('ul.grid').length>0 && content < $('ul.grid').outerHeight(true) + component ){
-		console.log('grid')
 		total = $('ul.grid').outerHeight(true) + component + headerFooter;
 	}
 	$('html, body').css('height', total);

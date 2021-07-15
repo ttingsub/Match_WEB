@@ -89,7 +89,7 @@
 					//그외는 해당 화면
 					location.href = ( document.referrer.match(/member/g) 
 							|| !document.referrer.match(/list/g) )
-							? '<c:url value="/"/>' : document.referrer;
+							? '<c:url value="/momo.ho"/>' : document.referrer;
 				}else{
 					alert('아이디나 비밀번호가 틀렸습니다.');
 				}	
