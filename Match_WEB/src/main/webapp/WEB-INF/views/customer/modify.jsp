@@ -53,7 +53,7 @@ input[name=addr] { width:calc(100% - 24px); }
 	
 	<tr>
 		<th class="w-px160">* 성명</th>
-		<td><input type='text' name='name' value="${vo.name}" /></td>
+		<td>${vo.name}</td>
 	</tr>
 
 	<tr>
