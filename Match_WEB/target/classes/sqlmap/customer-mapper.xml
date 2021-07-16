@@ -12,8 +12,8 @@
 
 <update id="update">
 	update member
-	set	email=#{email} ,
-		birth=#{birth},
+	set	email=#{email},
+		birth=#{birth},		
 		tel= #{tel},
 		pw= #{pw},
 		post=#{post},
